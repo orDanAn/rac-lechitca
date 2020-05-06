@@ -8,21 +8,21 @@
   </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style>
-  .title {
-    font-size: 45px;
-    display: flex;
-    justify-content: center;
-  }
-  a {
+.title {
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+}
+a {
   cursor: pointer;
-  color:black;
+  color: black;
   text-decoration: none;
   margin-left: 15px;
-
 }
 </style>

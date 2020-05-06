@@ -7,15 +7,13 @@
 </template>
 
 <script>
-  export default {
-
-  }
+export default {};
 </script>
 
 <style scoped>
-  .therd-title{
-    font-size: 15;
-    display: flex;
-    justify-content: center;
-  }
+.therd-title {
+  font-size: 15;
+  display: flex;
+  justify-content: center;
+}
 </style>
