@@ -55,7 +55,7 @@ export default {};
   line-height: 24px;
   color: black;
   text-decoration: none;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .header__link:hover {
   opacity: 0.8;
