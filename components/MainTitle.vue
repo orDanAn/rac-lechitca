@@ -18,7 +18,6 @@ export default {};
   font-weight: 800;
   font-size: 92px;
   line-height: 111px;
-  text-align: center;
   color: #ffffff;
   background: #613a93;
   width: 100%;
