@@ -1,15 +1,18 @@
 <template>
   <div class="container">
     <main-title />
+    <section-you-stori />
   </div>
 </template>
 
 <script>
 import MainTitle from '@/components/MainTitle';
+import SectionYouStori from '@/components/SectionYouStori';
 
 export default {
   components: {
     'main-title': MainTitle,
+    'section-you-stori': SectionYouStori,
   },
 };
 </script>
