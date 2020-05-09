@@ -28,4 +28,14 @@ export default {};
 .button-smoll:hover {
   opacity: 0.9;
 }
+
+@media screen and (max-width: 1280px) {
+  .button-smoll {
+    width: 230px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
 </style>

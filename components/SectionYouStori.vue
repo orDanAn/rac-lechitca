@@ -1,27 +1,26 @@
 <template>
   <section>
-    <h4 class="proba-title">
+    <title-section class="title-you-stori">
       Расскажите свою историю
-    </h4>
+    </title-section>
     <div class="you-stori-conteiner">
-      <p class="proba-p">
+      <info-section>
         Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
         поделиться своей историей неизлечимых привычек, навязчивых идей и
         болезненных привязанностей.
-      </p>
+      </info-section>
       <div class="you-stori-conteiner_inside">
         <div>
-          <a class="link-section">1-й вариант</a>
-          <a class="link-section">2-й вариант</a>
+          <link-section class="link-activ">1-й вариант</link-section>
+          <link-section>2-й вариант</link-section>
         </div>
-
         <div>
-          <p class="proba-p_long">
+          <info-section-long>
             Заполнить подробную форму прямо на сайте и мы опубликуем вашу
             историю после проверки. Пожалуйста, заполняйте все пункты корректно,
             если вы испытаете какие-то сложности, воспользуйтесь 2-м вариантом.
-          </p>
-          <button-smoll>Заполнить форму</button-smoll>
+          </info-section-long>
+          <buttonSmoll>Заполнить форму</buttonSmoll>
         </div>
       </div>
     </div>
@@ -30,9 +29,19 @@
 
 <script>
 import ButtonSmoll from '@/components/ButtonSmoll';
+import Info_section_long from '@/components/Info_section_long';
+import Info_section from '@/components/Info_section';
+import Title_section from '@/components/Title_section';
+import LinkSection from '@/components/LinkSection';
 
 export default {
-  'button-smoll': ButtonSmoll,
+  components: {
+    buttonSmoll: ButtonSmoll,
+    'info-section': Info_section,
+    'info-section-long': Info_section_long,
+    'title-section': Title_section,
+    'link-section': LinkSection,
+  },
 };
 </script>
 
@@ -43,13 +52,7 @@ section {
   background: #f7f7f7;
 }
 
-.proba-title {
-  width: 413px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 36px;
+.title-you-stori {
   margin: 100px 0 32px 60px;
 }
 
@@ -65,27 +68,7 @@ section {
   flex-basis: 785px;
 }
 
-.proba-p {
-  width: 340px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  color: #666666;
-}
-
-.proba-p_long {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  color: #666666;
-  width: 640px;
-}
-
-.link-section {
-  display: block;
+.link-activ {
+  color: #000000;
 }
 </style>
