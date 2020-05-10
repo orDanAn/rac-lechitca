@@ -2,14 +2,18 @@
   <div>
     <project-header />
     <nuxt />
+    <project-footer />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default {
   components: {
     'project-header': Header,
+    'project-footer': Footer,
   },
 };
 </script>
