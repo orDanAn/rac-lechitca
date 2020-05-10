@@ -32,7 +32,7 @@ import ButtonSmoll from '@/components/ui/ButtonSmoll';
 import Info_section_long from '@/components/Info_section_long';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
-import LinkSection from '@/components/LinkSection';
+import LinkSection from '@/components/ui/LinkSection';
 
 export default {
   components: {

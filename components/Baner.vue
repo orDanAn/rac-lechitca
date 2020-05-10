@@ -1,9 +1,9 @@
 <template>
   <div class="stories-rectangle">
-    <p class="stories-rectangle__text">
-      И В ОТЛИЧИЕ ОТ РАКА,
+    <h2 class="stories-rectangle__text">
+      <slot>текст заголовка</slot>
       <span class="stories-rectangle__tag">#ЭТОНЕЛЕЧИТСЯ</span>
-    </p>
+    </h2>
   </div>
 </template>
 
