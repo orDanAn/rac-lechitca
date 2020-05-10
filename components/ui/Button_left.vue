@@ -13,9 +13,11 @@ export default {};
   width: 40px;
   height: 40px;
   background: #fbfbfb;
-  background-image: url('../Button-imgL.jpg');
+  background-image: url('/ui-image/Button-imgL.jpg');
   background-repeat: no-repeat;
   background-size: 8px 16px;
   background-position: center;
+  border: none;
+  cursor: pointer;
 }
 </style>

@@ -5,11 +5,7 @@
 </template>
 
 <script>
-import ButtonSmoll from '@/components/ButtonSmoll';
-
-export default {
-  'button-smoll': ButtonSmoll,
-};
+export default {};
 </script>
 
 <style scoped>
