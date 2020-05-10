@@ -13,6 +13,7 @@ export default {};
 
 <style scoped>
 .stories-rectangle {
+  margin-top: 74px;
   margin-bottom: 100px;
   min-height: 86px;
   background-color: #613a93;
