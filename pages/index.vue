@@ -1,20 +1,15 @@
 <template>
-  <body>
-    <div class="container">
-      <main-title />
-    </div>
-    <project-footer />
-  </body>
+  <div class="container">
+    <main-title />
+  </div>
 </template>
 
 <script>
 import MainTitle from '@/components/MainTitle';
-import Footer from '@/components/Footer';
 
 export default {
   components: {
     'main-title': MainTitle,
-    'project-footer': Footer,
   },
 };
 </script>
