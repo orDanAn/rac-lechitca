@@ -2,24 +2,6 @@
   <div class="container">
     <main-title />
     <section-video />
-    <<<<<<< HEAD
-    <section class="stories">
-      <stories-rectangle></stories-rectangle>
-      <section-subtitle />
-      <div class="stories__wrap">
-        <stories-item />
-        <stories-item />
-        <stories-item />
-        <stories-item />
-        <stories-item />
-        <stories-item />
-        <stories-item />
-        <stories-item />
-      </div>
-      <button class="stories__button">Больше статей</button>
-    </section>
-    <section-you-stori />
-    =======
     <section-stories>
       <stories-wrap>
         <div v-for="item in stories" :key="item.id" class="story-item">
@@ -32,33 +14,28 @@
       </stories-wrap>
       <more-stories>Больше статей</more-stories>
     </section-stories>
-    >>>>>>> dec-button-main-title
+    <section-you-stori />
   </div>
 </template>
 
 <script>
 import MainTitle from '@/components/MainTitle';
-import SectionYouStori from '@/components/SectionYouStori';
 import Video from '@/components/Video';
 import SectionStories from '@/components/SectionStories';
 import StoriesWrap from '@/components/StoriesWrap';
 import StoryImage from '@/components/StoryImage';
 import MoreStoriesBtn from '@/components/MoreStoriesBtn';
+import SectionYouStori from '@/components/SectionYouStori';
 
 export default {
   components: {
-    'section-video': Video,
     'main-title': MainTitle,
-<<<<<<< HEAD
-    'section-you-stori': SectionYouStori,
-    'stories-rectangle': Rectangle,
-    'section-subtitle': SectionSubtitle,
-    'stories-item': StoriesItem,
-=======
+    'section-video': Video,
     'section-stories': SectionStories,
     'stories-wrap': StoriesWrap,
     'story-image': StoryImage,
     'more-stories': MoreStoriesBtn,
+    'section-you-stori': SectionYouStori,
   },
   data() {
     return {
@@ -109,7 +86,6 @@ export default {
         },
       ],
     };
->>>>>>> dec-button-main-title
   },
 };
 </script>
