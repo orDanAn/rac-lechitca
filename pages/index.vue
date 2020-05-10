@@ -29,8 +29,8 @@ import SectionYouStori from '@/components/SectionYouStori';
 
 export default {
   components: {
-    'section-video': Video,
     'main-title': MainTitle,
+    'section-video': Video,
     'section-stories': SectionStories,
     'stories-wrap': StoriesWrap,
     'story-image': StoryImage,
