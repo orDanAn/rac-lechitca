@@ -14,6 +14,8 @@
       </stories-wrap>
       <more-stories>Больше статей</more-stories>
     </section-stories>
+    <section-instagram />
+    <section-statics />
   </div>
 </template>
 
@@ -24,6 +26,8 @@ import SectionStories from '@/components/SectionStories';
 import StoriesWrap from '@/components/StoriesWrap';
 import StoryImage from '@/components/StoryImage';
 import MoreStoriesBtn from '@/components/MoreStoriesBtn';
+import SectionInstagram from '@/components/SectionInstagram';
+import SectionStatics from '@/components/SectionStatics';
 
 export default {
   components: {
@@ -33,6 +37,8 @@ export default {
     'stories-wrap': StoriesWrap,
     'story-image': StoryImage,
     'more-stories': MoreStoriesBtn,
+    'section-instagram': SectionInstagram,
+    'section-statics': SectionStatics,
   },
   data() {
     return {
