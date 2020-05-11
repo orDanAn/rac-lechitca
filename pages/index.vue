@@ -6,6 +6,7 @@
     <section-instagram />
     <section-you-stori />
     <section-statics />
+    <section-rac-lechitca />
   </div>
 </template>
 
@@ -13,20 +14,20 @@
 import MainTitle from '@/components/MainTitle';
 import Video from '@/components/Video';
 import SectionStories from '@/components/SectionStories';
-
 import SectionYouStori from '@/components/SectionYouStori';
 import SectionInstagram from '@/components/SectionInstagram';
 import SectionStatics from '@/components/SectionStatics';
+import SectionRacLechitca from '@/components/SectionRacLechitca';
 
 export default {
   components: {
     'main-title': MainTitle,
     'section-video': Video,
     'section-stories': SectionStories,
-
     'section-instagram': SectionInstagram,
     'section-you-stori': SectionYouStori,
     'section-statics': SectionStatics,
+    'section-rac-lechitca': SectionRacLechitca,
   },
 };
 </script>

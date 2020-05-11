@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="conteiner-info">
     <p class="info_section"><slot></slot></p>
   </div>
 </template>
@@ -9,6 +9,10 @@ export default {};
 </script>
 
 <style scoped>
+.conteiner-info {
+  color: #666666;
+}
+
 .info_section {
   width: 640px;
   font-family: Inter;
@@ -16,7 +20,6 @@ export default {};
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  color: #666666;
 }
 @media (min-width: 1280px) and (max-width: 1439px) {
   .info_section {

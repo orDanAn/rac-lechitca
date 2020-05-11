@@ -16,7 +16,6 @@ export default {};
   font-weight: 600;
   font-size: 32px;
   line-height: 36px;
-  color: #000000;
 }
 
 @media (min-width: 1280px) and (max-width: 1439px) {
