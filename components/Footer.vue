@@ -69,6 +69,7 @@ export default {};
   justify-content: space-between;
   list-style-type: none;
   min-height: 94px;
+  margin-right: 60px;
 }
 .footer__info {
   display: flex;
@@ -86,7 +87,7 @@ export default {};
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
-  margin-right: 230px;
+  margin-right: 237px;
 }
 .footer__main-link {
   padding-right: 40px;
@@ -135,7 +136,7 @@ export default {};
     max-width: 330px;
   }
   .footer__main-list {
-    margin-right: 285px;
+    margin-right: 230px;
   }
   .footer__list {
     min-height: 90px;
