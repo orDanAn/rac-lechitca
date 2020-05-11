@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="info_section"><slot></slot></p>
+    <p class="info_section"><slot>текст параграфа</slot></p>
   </div>
 </template>
 

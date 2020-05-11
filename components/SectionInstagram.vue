@@ -1,6 +1,8 @@
 <template>
   <root>
-    <instagram-banner> </instagram-banner>
+    <instagram-banner
+      >РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ <br
+    /></instagram-banner>
     <div class="instagram__main-container">
       <div class="instargam__text-container">
         <section-title class="instagram__title">Инстаграм</section-title>
@@ -16,7 +18,7 @@
           v-for="card in cards"
           :key="card.id"
           :src="card.url"
-          alt=""
+          alt="фотка из инстаграм"
           class="instagram__preview-card"
         />
       </div>
@@ -25,16 +27,16 @@
 </template>
 
 <script>
-import Rectangle from '@/components/Rectangle';
-import SectionTitle from '@/components/SectionTitle2version';
-import SectionSubtitle from '@/components/SectionSubtitle2version';
+import Baner from '@/components/Baner';
+import Info_section from '@/components/Info_section';
+import Title_section from '@/components/Title_section';
 import Root from '@/components/Root';
 
 export default {
   components: {
-    'instagram-banner': Rectangle,
-    'section-title': SectionTitle,
-    'section-subtitle': SectionSubtitle,
+    'instagram-banner': Baner,
+    'section-title': Title_section,
+    'section-subtitle': Info_section,
     root: Root,
   },
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="title_section"><slot></slot></h4>
+    <h3 class="title_section"><slot>ЗАГОЛОВОК</slot></h3>
   </div>
 </template>
 

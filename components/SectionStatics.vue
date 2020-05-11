@@ -62,14 +62,14 @@
 </template>
 
 <script>
-import SectionTitle from '@/components/SectionTitle2version';
+import Title_section from '@/components/Title_section';
 import Root from '@/components/Root';
 import ProgressBarInline from '@/components/ui/ProgressBarInline';
 import ProgressiveBarColumn from '@/components/ui/ProgressiveBarColumn';
 
 export default {
   components: {
-    'section-title': SectionTitle,
+    'section-title': Title_section,
     root: Root,
     'progress-bar-inline': ProgressBarInline,
     'progressive-bar-column': ProgressiveBarColumn,

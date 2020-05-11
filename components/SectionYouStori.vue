@@ -20,7 +20,7 @@
             историю после проверки. Пожалуйста, заполняйте все пункты корректно,
             если вы испытаете какие-то сложности, воспользуйтесь 2-м вариантом.
           </info-section-long>
-          <buttonSmoll>Заполнить форму</buttonSmoll>
+          <button-smoll>Заполнить форму</button-smoll>
         </div>
       </div>
     </div>
@@ -28,15 +28,15 @@
 </template>
 
 <script>
-import ButtonSmoll from '@/components/ButtonSmoll';
+import ButtonSmoll from '@/components/ui/ButtonSmoll';
 import Info_section_long from '@/components/Info_section_long';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
-import LinkSection from '@/components/LinkSection';
+import LinkSection from '@/components/ui/LinkSection';
 
 export default {
   components: {
-    buttonSmoll: ButtonSmoll,
+    'button-smoll': ButtonSmoll,
     'info-section': Info_section,
     'info-section-long': Info_section_long,
     'title-section': Title_section,

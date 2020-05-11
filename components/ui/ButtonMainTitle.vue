@@ -14,5 +14,6 @@ export default {};
   height: 12px;
   border: none;
   padding: 10px;
+  cursor: pointer;
 }
 </style>
