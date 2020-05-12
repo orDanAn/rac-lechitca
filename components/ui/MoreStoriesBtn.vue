@@ -18,7 +18,7 @@ export default {};
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   padding: 31px 0;
   cursor: pointer;
 }

@@ -10,7 +10,7 @@ export default {};
 
 <style scoped>
 .root {
-  max-width: 1280px;
+  max-width: 1320px;
   width: 100%;
 }
 
