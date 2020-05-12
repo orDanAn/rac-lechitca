@@ -17,9 +17,13 @@ export default {};
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
 }
 .button:active,
 .button:focus {
   outline: none;
+}
+button:hover {
+  opacity: 0.8;
 }
 </style>
