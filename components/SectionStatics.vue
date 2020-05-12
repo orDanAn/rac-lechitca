@@ -50,8 +50,8 @@
         <div class="section-statics__stat-illustration">
           <progressive-bar-column
             :value="50"
-            :maxValue="100"
-            :absValue="70"
+            :maxValue="90"
+            :absValue="67"
           ></progressive-bar-column>
           <p class="section-statics__stat-numbers">↓25%</p>
           <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
