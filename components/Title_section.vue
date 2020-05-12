@@ -11,7 +11,6 @@ export default {};
 <style scoped>
 .title_section {
   width: 413px;
-  font-family: Inter;
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
