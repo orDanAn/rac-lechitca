@@ -1,19 +1,10 @@
 <template>
-  <div class="popup">
-    <popup-conteiner />
+  <div class="popup" @click="$emit('clickPopup')">
+    <slot> </slot>
   </div>
 </template>
 <script>
-import PopupConteiner from '@/components/PopupConteiner';
-import Title_section from '@/components/Title_section';
-import ButtonSmoll from '@/components/ui/ButtonSmoll';
-import ButtonBack from '@/components/ui/ButtonBack';
-
-export default {
-  components: {
-    'popup-conteiner': PopupConteiner,
-  },
-};
+export default {};
 </script>
 
 <style scoped>

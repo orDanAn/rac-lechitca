@@ -3,7 +3,7 @@
     <p class="header__text">
       Проект Благотворительного Фонда Константина Хабенского
     </p>
-    <menu-header />
+    <menu-header @clicBtnOpenPopap="$emit('clicBtnOpenPopap')" />
   </header>
 </template>
 

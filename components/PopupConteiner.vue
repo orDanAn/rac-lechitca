@@ -6,7 +6,7 @@
     <p class="popup__question">
       {{ question }} <span class="popup__explanation"> {{ explanation }}</span>
     </p>
-    <form>
+    <form @submit.prevent="">
       <input-popup />
       <div class="button__container">
         <button-back>
@@ -17,7 +17,10 @@
         </button-next>
       </div>
     </form>
-    <button-close class="button-close" />
+    <button-close
+      class="button-close"
+      @clickBtnClose="$emit('clickBtnClose')"
+    />
   </div>
 </template>
 
@@ -89,6 +92,6 @@ export default {
 }
 
 .button-next {
-  margin: 0 0 0 30px;
+  margin: 0 0 0 10px;
 }
 </style>

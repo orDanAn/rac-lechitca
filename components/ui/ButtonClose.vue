@@ -1,5 +1,5 @@
 <template>
-  <button class="button-close"></button>
+  <button class="button-close" @click="$emit('clickBtnClose')"></button>
 </template>
 
 <script>
@@ -13,8 +13,8 @@ export default {};
   height: 30px;
   border: none;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 35px;
+  top: 35px;
   cursor: pointer;
 }
 </style>

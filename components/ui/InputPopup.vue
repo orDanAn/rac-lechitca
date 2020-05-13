@@ -5,7 +5,7 @@
     placeholder="Напишите тут"
     required
     minlength="2"
-    maxlength="30"
+    maxlength="500"
   />
 </template>
 
@@ -22,7 +22,7 @@ export default {};
   font-size: 18px;
   line-height: 24px;
   color: #000000;
-  margin-top: 130px;
+  margin-top: 80px;
   margin-left: 40px;
   border: none;
   border-bottom: 1px solid #e7e7e7;

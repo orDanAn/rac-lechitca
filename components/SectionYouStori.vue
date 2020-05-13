@@ -20,7 +20,9 @@
             историю после проверки. Пожалуйста, заполняйте все пункты корректно,
             если вы испытаете какие-то сложности, воспользуйтесь 2-м вариантом.
           </info-section-long>
-          <button-smoll>Заполнить форму</button-smoll>
+          <button-smoll @clicBtnSmoll="$emit('clicBtnYouStor')"
+            >Заполнить форму</button-smoll
+          >
         </div>
       </div>
     </div>

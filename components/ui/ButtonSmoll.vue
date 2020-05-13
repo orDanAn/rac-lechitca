@@ -1,5 +1,5 @@
 <template>
-  <button class="button-smoll">
+  <button class="button-smoll" @click="$emit('clicBtnSmoll')">
     <slot>Текст кнопки</slot>
   </button>
 </template>
@@ -20,7 +20,7 @@ export default {};
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  width: 280px;
+  padding: 0 88px;
   height: 52px;
   border: none;
 }

@@ -26,6 +26,7 @@ export default {
   max-width: 1440px;
   height: 689px;
   background: #613a93;
+  position: relative;
 }
 
 .main-title {
@@ -48,6 +49,6 @@ export default {
 
 .button {
   position: absolute;
-  margin-top: 639px;
+  bottom: 40px;
 }
 </style>
