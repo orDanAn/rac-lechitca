@@ -12,6 +12,7 @@ export default {};
 .root {
   max-width: 1320px;
   width: 100%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1280px) {
