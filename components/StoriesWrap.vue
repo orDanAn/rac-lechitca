@@ -10,6 +10,7 @@ export default {};
 
 <style scoped>
 .stories__wrap {
+  margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
