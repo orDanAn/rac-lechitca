@@ -37,6 +37,7 @@ export default {
   justify-content: space-between;
   list-style-type: none;
   min-height: 94px;
+  margin-right: 42px;
 }
 .footer__link {
   font-style: normal;
