@@ -19,6 +19,8 @@ export default {};
 
   color: #a2a2a2;
   cursor: pointer;
+
+  margin-bottom: 10px;
 }
 
 .link-section:hover {
