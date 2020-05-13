@@ -59,7 +59,7 @@ section {
   max-width: 1440px;
   background: #613a93;
   padding-top: 90px;
-  padding-bottom: 62px;
+  padding-bottom: 100px;
 }
 
 .main-section-titlerac-lechitca {
