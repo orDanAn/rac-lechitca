@@ -78,6 +78,7 @@ export default {
   line-height: 24px;
   margin-top: 40px;
   margin-left: 40px;
+  width: 840px;
 }
 
 .popup__explanation {
