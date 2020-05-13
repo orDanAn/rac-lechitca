@@ -1,7 +1,9 @@
 <template>
   <section class="stories">
     <baner>И В ОТЛИЧИЕ ОТ РАКА</baner>
-    <section-subtitle>Истории неизлечимых привычек</section-subtitle>
+    <section-subtitle class="stories__subtitle"
+      >Истории неизлечимых привычек</section-subtitle
+    >
     <stories-wrap>
       <div v-for="item in stories" :key="item.id" class="story-item">
         <story-image />
@@ -88,5 +90,15 @@ export default {
 .stories {
   width: 92%;
   max-width: 1320px;
+}
+
+.stories__subtitle {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+  .stories__subtitle {
+    margin-top: 90px;
+  }
 }
 </style>

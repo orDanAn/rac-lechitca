@@ -1,12 +1,12 @@
 <template>
   <root>
-    <instagram-banner
+    <instagram-banner class="instagram-banner"
       >РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ <br
     /></instagram-banner>
     <div class="instagram__main-container">
       <div class="instargam__text-container">
         <section-title class="instagram__title">Инстаграм</section-title>
-        <section-subtitle
+        <section-subtitle class="instagram__subtitle"
           >Два раза в неделю мы просматриваем все посты по хештегу
           #этонелечится. Все истории, где нет нецензурных выражений и
           запрещенного контента попадают сюда. Следите за правильным написанием
@@ -89,7 +89,14 @@ export default {
 </script>
 
 <style scoped>
+.instagram-banner {
+  margin-top: 100px;
+  /* height: 12.5vh; */
+  height: 129px;
+}
+
 .instagram__main-container {
+  margin: 100px auto 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -105,6 +112,10 @@ export default {
 
 .instagram__title {
   text-decoration-line: underline;
+}
+
+.instagram__subtitle {
+  margin-top: 2em;
 }
 
 .instagram__preview-container {

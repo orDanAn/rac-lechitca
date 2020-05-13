@@ -48,12 +48,12 @@ export default {
   justify-content: space-between;
   width: 100%;
   max-width: 1440px;
-  margin: auto;
-  padding: 0 60px 0 60px;
+  margin: 100px auto 0 auto;
 }
 .video__text-container {
   display: flex;
   flex-direction: column;
+  margin-top: 11px;
 }
 .video__button-container {
   display: flex;
@@ -66,15 +66,16 @@ export default {
   width: 867px;
   height: 450px;
   background: #e5e5e5;
+  margin-left: 40px;
 }
 .video__text {
-  font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
   color: #666666;
-  margin-top: 10px;
+  margin-top: 6px;
+  margin-left: 40px;
 }
 .video__link {
   color: #666666;
@@ -82,9 +83,6 @@ export default {
   margin: 0;
 }
 @media (min-width: 1280px) and (max-width: 1439px) {
-  .video {
-    padding: 0 50px 0 50px;
-  }
   .video__button-container {
     margin-top: 124px;
   }
