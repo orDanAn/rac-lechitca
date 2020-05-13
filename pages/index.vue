@@ -4,9 +4,17 @@
     <section-video />
     <section-stories />
     <section-instagram />
-    <section-you-stori />
+    <section-you-stori @clicBtnYouStor="popupOpen" />
     <section-statics />
     <section-rac-lechitca />
+    <popup v-if="popupShow">
+      <popup-conteiner
+        @clickBtnClose="popupClose"
+        :title="title"
+        :question="question"
+        :explanation="explanation"
+      />
+    </popup>
   </div>
 </template>
 
@@ -18,6 +26,8 @@ import SectionYouStori from '@/components/SectionYouStori';
 import SectionInstagram from '@/components/SectionInstagram';
 import SectionStatics from '@/components/SectionStatics';
 import SectionRacLechitca from '@/components/SectionRacLechitca';
+import Popup from '@/components/Popup';
+import PopupConteiner from '@/components/PopupConteiner';
 
 export default {
   components: {
@@ -28,6 +38,28 @@ export default {
     'section-you-stori': SectionYouStori,
     'section-statics': SectionStatics,
     'section-rac-lechitca': SectionRacLechitca,
+    popup: Popup,
+    'popup-conteiner': PopupConteiner,
+  },
+
+  methods: {
+    popupOpen() {
+      this.popupShow = true;
+    },
+
+    popupClose() {
+      this.popupShow = false;
+    },
+  },
+
+  data() {
+    return {
+      popupShow: false,
+      title: 'Шаг 2 из 12',
+      question: 'Было ли у вас онкологическое заболевание?',
+      explanation:
+        ' Если да – расскажите, пожалуйста, кратко, какой диагноз и текущий статус. Если нет — приглашаем Вас поделиться своей историей неизлечимых привычек в Инстаграм с хештегами #раклечится и #этонелечится.',
+    };
   },
 };
 </script>

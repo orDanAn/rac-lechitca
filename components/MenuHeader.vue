@@ -10,7 +10,9 @@
         <nuxt-link to="/stories" class="menu__link">Истории</nuxt-link>
       </li>
       <li class="menu__list-elem">
-        <button-open-popup class="menu__button"
+        <button-open-popup
+          class="menu__button"
+          @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
           >Рассказать историю</button-open-popup
         >
       </li>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <project-header />
+    <project-header @clicBtnOpenPopap="messeg" />
     <nuxt />
     <project-footer />
   </div>
@@ -14,6 +14,11 @@ export default {
   components: {
     'project-header': Header,
     'project-footer': Footer,
+  },
+  methods: {
+    messeg() {
+      alert('я пока не работаю, нажмите кнопку Заполнить форму');
+    },
   },
 };
 </script>
