@@ -48,6 +48,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
+  height: 522px;
   max-width: 1440px;
   background: #f7f7f7;
 }
