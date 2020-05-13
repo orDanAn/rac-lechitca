@@ -3,28 +3,17 @@
     <p class="header__text">
       Проект Благотворительного Фонда Константина Хабенского
     </p>
-    <nav class="header__menu">
-      <ul class="header__list">
-        <li class="header__list-elem">
-          <nuxt-link to="/" class="header__link header__link_selected"
-            >Главная</nuxt-link
-          >
-        </li>
-        <li class="header__list-elem">
-          <nuxt-link to="/stories/index" class="header__link"
-            >Истории</nuxt-link
-          >
-        </li>
-        <li class="header__list-elem">
-          <nuxt-link to="#" class="header__link">Рассказать историю</nuxt-link>
-        </li>
-      </ul>
-    </nav>
+    <menu-header />
   </header>
 </template>
 
 <script>
-export default {};
+import MenuHeader from '@/components/MenuHeader';
+export default {
+  components: {
+    'menu-header': MenuHeader,
+  },
+};
 </script>
 
 <style scoped>
@@ -44,31 +33,7 @@ export default {};
   line-height: 20px;
   max-width: 340px;
 }
-.header__list {
-  display: flex;
-  list-style-type: none;
-}
-.header__link {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  color: black;
-  text-decoration: none;
-  transition: opacity 0.3s ease-in-out;
-}
-.header__link:hover {
-  opacity: 0.8;
-}
-.header__link_selected {
-  text-decoration: underline;
-}
-.header__list-elem {
-  padding-left: 40px;
-}
-.header__list-elem:first-of-type {
-  padding-left: 0;
-}
+
 @media screen and (max-width: 1280px) {
   .header {
     max-width: 1280px;
