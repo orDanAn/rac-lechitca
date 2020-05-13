@@ -14,7 +14,7 @@ export default {};
 <style scoped>
 .stories-rectangle {
   margin-top: 74px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; использование боттома мешает переиспользованию, лучше миксы или модификаторы */
   min-height: 86px;
   background-color: #613a93;
 }
@@ -29,7 +29,7 @@ export default {};
 }
 
 .stories-rectangle__tag {
-  font-weight: bold;
+  font-weight: 800;
   font-size: 34px;
   line-height: 50px;
 }

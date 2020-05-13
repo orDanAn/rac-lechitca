@@ -50,8 +50,8 @@
         <div class="section-statics__stat-illustration">
           <progressive-bar-column
             :value="50"
-            :maxValue="100"
-            :absValue="70"
+            :maxValue="90"
+            :absValue="67"
           ></progressive-bar-column>
           <p class="section-statics__stat-numbers">↓25%</p>
           <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
@@ -163,6 +163,7 @@ export default {
 
 .section-statics__stat-text {
   margin: 20px 20px 0;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -183,7 +184,7 @@ export default {
 
 @media screen and (max-width: 1280px) {
   .section-statics__stat-numbers {
-    margin: 20px 18px 0;
+    margin: 18px 15px 0 23px;
     font-size: 38px;
     line-height: 105%;
   }
@@ -198,7 +199,7 @@ export default {
 
 @media screen and (max-width: 1280px) {
   .section-statics__stat-source {
-    margin: 20px 18px 18px;
+    margin: 15px 18px 18px;
     font-size: 12px;
     line-height: 133%;
   }
