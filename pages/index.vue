@@ -7,6 +7,7 @@
     <section-you-stori />
     <section-statics />
     <section-rac-lechitca />
+    <popup v-if="1" />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import SectionYouStori from '@/components/SectionYouStori';
 import SectionInstagram from '@/components/SectionInstagram';
 import SectionStatics from '@/components/SectionStatics';
 import SectionRacLechitca from '@/components/SectionRacLechitca';
+import Popup from '@/components/Popup';
 
 export default {
   components: {
@@ -28,6 +30,7 @@ export default {
     'section-you-stori': SectionYouStori,
     'section-statics': SectionStatics,
     'section-rac-lechitca': SectionRacLechitca,
+    popup: Popup,
   },
 };
 </script>
