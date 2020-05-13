@@ -15,7 +15,6 @@ export default {};
 
 .info_section {
   width: 340px;
-  font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
