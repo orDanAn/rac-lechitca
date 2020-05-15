@@ -1,5 +1,5 @@
 <template>
-  <a class="link-section">
+  <a class="link-section" @click.prevent="$emit('clicLink')">
     <slot>Текст ссылки</slot>
   </a>
 </template>

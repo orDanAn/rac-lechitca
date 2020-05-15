@@ -11,14 +11,29 @@
       </info-section>
       <div class="you-stori-conteiner_inside">
         <div>
-          <link-section class="link-activ">1-й вариант</link-section>
-          <link-section>2-й вариант</link-section>
+          <link-section
+            :class="{ link_activ: variant.variantOne }"
+            @clicLink="onVariantOne"
+            >1-й вариант</link-section
+          >
+          <link-section
+            :class="{ link_activ: variant.variantTwo }"
+            @clicLink="onVariantTwo"
+            >2-й вариант</link-section
+          >
         </div>
         <div>
           <info-section-long>
-            Заполнить подробную форму прямо на сайте и мы опубликуем вашу
-            историю после проверки. Пожалуйста, заполняйте все пункты корректно,
-            если вы испытаете какие-то сложности, воспользуйтесь 2-м вариантом.
+            <template v-if="variant.variantOne">
+              Заполнить подробную форму прямо на сайте и мы опубликуем вашу
+              историю после проверки. Пожалуйста, заполняйте все пункты
+              корректно, если вы испытаете какие-то сложности, воспользуйтесь
+              2-м вариантом.
+            </template>
+            <template v-if="variant.variantTwo">
+              Оставить контакт (почту или номер телефона) и мы свяжемся с вами,
+              зададим вопросы, уточним детали вашей истории.
+            </template>
           </info-section-long>
           <button-smoll @clicBtnSmoll="$emit('clicBtnYouStor')"
             >Заполнить форму</button-smoll
@@ -43,6 +58,22 @@ export default {
     'info-section-long': Info_section_long,
     'title-section': Title_section,
     'link-section': LinkSection,
+  },
+
+  computed: {
+    variant() {
+      return this.$store.getters['storeYouStori/getVariant'];
+    },
+  },
+
+  methods: {
+    onVariantOne() {
+      this.$store.commit('storeYouStori/onVariantOne');
+    },
+
+    onVariantTwo() {
+      this.$store.commit('storeYouStori/onVariantTwo');
+    },
   },
 };
 </script>
@@ -71,7 +102,7 @@ section {
   flex-basis: 785px;
 }
 
-.link-activ {
+.link_activ {
   color: #000000;
 }
 </style>
