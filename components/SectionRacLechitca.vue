@@ -1,30 +1,36 @@
 <template>
-  <section>
-    <h2 class="main-section-titlerac-lechitca">
+  <section class="rac-lechitca">
+    <h2 class="rac-lechitca__main-title">
       #РАКЛЕЧИТСЯ
     </h2>
-    <title-section class="title-rac-lechitca">
+    <title-section class="rac-lechitca__second-title">
       О проекте
     </title-section>
-    <div class="rac-lechitca-conteiner">
-      <info-section class="paragraph-rac-lechitca">
+    <div class="rac-lechitca__container">
+      <info-section class="rac-lechitca__paragraph">
         Этот проект был создан благотворительным фондом Константина Хабенского.
       </info-section>
-      <div class="rac-lechitca-conteiner_inside">
-        <div class="conteiner-link">
+      <div class="rac-lechitca__container_inside">
+        <div class="rac-lechitca__conteiner-link">
           <link-section
-            :class="{ link_white: variant.varOne, link_grey: variant.varTwo }"
+            :class="{
+              'rac-lechitca___link_white': variant.varOne,
+              'rac-lechitca__link_grey': variant.varTwo,
+            }"
             @clicLink="onVarOne"
             >Рак Лечится</link-section
           >
           <link-section
-            :class="{ link_grey: variant.varOne, link_white: variant.varTwo }"
+            :class="{
+              'rac-lechitca__link_grey': variant.varOne,
+              'rac-lechitca___link_white': variant.varTwo,
+            }"
             @clicLink="onVarTwo"
             >Фонд Хабенского</link-section
           >
         </div>
         <div>
-          <info-section-long class="paragraph-rac-lechitca">
+          <info-section-long class="rac-lechitca__paragraph">
             <template v-if="variant.varOne">
               Есть вещи, которые не лечатся. Особенности характера, страстные
               увлечения, привычки, ставшие частью нашего «я», фобии, которые мы
@@ -87,7 +93,7 @@ export default {
 </script>
 
 <style scoped>
-section {
+.rac-lechitca {
   width: 100%;
   max-width: 1440px;
   height: 650px;
@@ -96,50 +102,50 @@ section {
   padding-bottom: 100px;
 }
 
-.main-section-titlerac-lechitca {
+.rac-lechitca__main-title {
   font-family: Inter;
   font-style: normal;
   font-weight: 800;
   font-size: 58px;
   line-height: 70px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 
-.title-rac-lechitca {
+.rac-lechitca__second-title {
   margin: 80px 0 32px 60px;
-  color: #ffffff;
+  color: #fff;
 }
 
-.rac-lechitca-conteiner {
+.rac-lechitca__container {
   display: flex;
   justify-content: space-between;
   margin: 0 60px 0 60px;
 }
 
-.rac-lechitca-conteiner_inside {
+.rac-lechitca__container_inside {
   display: flex;
   justify-content: space-between;
   flex-basis: 785px;
 }
 
-.link_white {
-  color: #ffffff;
+.rac-lechitca___link_white {
+  color: #fff;
 }
 
-.link_grey {
+.rac-lechitca__link_grey {
   color: #c9c9c9;
 }
 
 .link-section:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 .link_whitey:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-.conteiner-link {
+.rac-lechitca__conteiner-link {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -147,7 +153,7 @@ section {
   margin-right: 40px;
 }
 
-.paragraph-rac-lechitca {
+.rac-lechitca__paragraph {
   color: #dedede;
   margin-bottom: 18px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <project-header @clicBtnOpenPopap="messeg" />
+    <project-header @clicBtnOpenPopap="messege" />
     <nuxt />
     <project-footer />
   </div>
@@ -16,7 +16,7 @@ export default {
     'project-footer': Footer,
   },
   methods: {
-    messeg() {
+    messege() {
       alert('я пока не работаю, нажмите кнопку Заполнить форму');
     },
   },

@@ -1,23 +1,23 @@
 <template>
-  <section>
-    <title-section class="title-you-stori">
+  <section class="you-story">
+    <title-section class="you-story__title">
       Расскажите свою историю
     </title-section>
-    <div class="you-stori-conteiner">
+    <div class="you-story__conteiner">
       <info-section>
         Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
         поделиться своей историей неизлечимых привычек, навязчивых идей и
         болезненных привязанностей.
       </info-section>
-      <div class="you-stori-conteiner_inside">
+      <div class="you-story__conteiner_inside">
         <div>
           <link-section
-            :class="{ link_activ: variant.variantOne }"
+            :class="{ 'you-story__link_active': variant.variantOne }"
             @clicLink="onVariantOne"
             >1-й вариант</link-section
           >
           <link-section
-            :class="{ link_activ: variant.variantTwo }"
+            :class="{ 'you-story__link_active': variant.variantTwo }"
             @clicLink="onVariantTwo"
             >2-й вариант</link-section
           >
@@ -35,8 +35,8 @@
               зададим вопросы, уточним детали вашей истории.
             </template>
           </info-section-long>
-          <button-smoll @clicBtnSmoll="$emit('clicBtnYouStor')"
-            >Заполнить форму</button-smoll
+          <button-small @clicBtnSmoll="$emit('clicBtnYouStor')"
+            >Заполнить форму</button-small
           >
         </div>
       </div>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import ButtonSmoll from '@/components/ui/ButtonSmoll';
+import ButtonSmall from '@/components/ui/ButtonSmall';
 import Info_section_long from '@/components/Info_section_long';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
@@ -53,7 +53,7 @@ import LinkSection from '@/components/ui/LinkSection';
 
 export default {
   components: {
-    'button-smoll': ButtonSmoll,
+    'button-small': ButtonSmall,
     'info-section': Info_section,
     'info-section-long': Info_section_long,
     'title-section': Title_section,
@@ -62,47 +62,47 @@ export default {
 
   computed: {
     variant() {
-      return this.$store.getters['storeYouStori/getVariant'];
+      return this.$store.getters['storeYouStory/getVariant'];
     },
   },
 
   methods: {
     onVariantOne() {
-      this.$store.commit('storeYouStori/onVariantOne');
+      this.$store.commit('storeYouStory/onVariantOne');
     },
 
     onVariantTwo() {
-      this.$store.commit('storeYouStori/onVariantTwo');
+      this.$store.commit('storeYouStory/onVariantTwo');
     },
   },
 };
 </script>
 
 <style scoped>
-section {
+.you-story {
   width: 100%;
-  height: 522px;
+  min-height: 522px;
   max-width: 1440px;
   background: #f7f7f7;
 }
 
-.title-you-stori {
+.you-story__title {
   margin: 100px 0 32px 60px;
 }
 
-.you-stori-conteiner {
+.you-story__conteiner {
   display: flex;
   justify-content: space-between;
   margin: 0 60px 0 60px;
 }
 
-.you-stori-conteiner_inside {
+.you-story__conteiner_inside {
   display: flex;
   justify-content: space-between;
   flex-basis: 785px;
 }
 
-.link_activ {
+.you-story__link_active {
   color: #000000;
 }
 </style>
