@@ -9,7 +9,7 @@
     </div>
 
     <div class="footer__description">
-      <p class="footer__description-text">Рак Лечится 2020</p>
+      <p class="footer__description-text">Рак Лечится {{ date }}</p>
       <p class="footer__description-text">
         Сделано студентами Яндекс Практикум
       </p>
@@ -21,10 +21,17 @@
 import MenuFooter from '@/components/MenuFooter';
 import SocialMenuFooter from '@/components/SocialMenuFooter';
 
+const currenData = new Date();
+
 export default {
   components: {
     'menu-footer': MenuFooter,
     'social-menu': SocialMenuFooter,
+  },
+  data() {
+    return {
+      date: currenData.getFullYear(),
+    };
   },
 };
 </script>
