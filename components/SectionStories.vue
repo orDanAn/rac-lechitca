@@ -96,6 +96,9 @@ export default {
   max-width: 1320px;
 }
 
+.story-item {
+  width: 300px;
+}
 .stories__subtitle {
   margin-top: 100px;
 }
