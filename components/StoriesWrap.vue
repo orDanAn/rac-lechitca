@@ -15,4 +15,10 @@ export default {};
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 535px) {
+  .stories__wrap {
+    justify-content: center;
+  }
+}
 </style>
