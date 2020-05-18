@@ -10,7 +10,7 @@ export default {};
 
 <style scoped>
 .conteiner-info {
-  color: #666666;
+  color: #666;
 }
 
 .info_section {
@@ -25,6 +25,27 @@ export default {};
     width: 305px;
     font-size: 16px;
     line-height: 20px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .info_section {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info_section {
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .info_section {
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
   }
 }
 </style>
