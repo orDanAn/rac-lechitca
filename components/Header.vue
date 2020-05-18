@@ -72,4 +72,9 @@ export default {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .header {
+    max-width: 1024px;
+  }
+}
 </style>
