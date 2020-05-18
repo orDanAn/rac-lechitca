@@ -4,7 +4,7 @@
     <section-video />
     <section-stories />
     <section-instagram />
-    <section-you-stori @clicBtnYouStor="popupOpen" />
+    <section-you-story @clicBtnYouStor="popupOpen" />
     <section-statics />
     <section-rac-lechitca />
     <popup v-if="popupShow">
@@ -22,12 +22,12 @@
 import MainTitle from '@/components/MainTitle';
 import Video from '@/components/Video';
 import SectionStories from '@/components/SectionStories';
-import SectionYouStori from '@/components/SectionYouStori';
+import SectionYouStory from '@/components/SectionYouStory';
 import SectionInstagram from '@/components/SectionInstagram';
 import SectionStatics from '@/components/SectionStatics';
 import SectionRacLechitca from '@/components/SectionRacLechitca';
 import Popup from '@/components/Popup';
-import PopupConteiner from '@/components/PopupConteiner';
+import Content from '@/components/Content';
 
 export default {
   components: {
@@ -35,11 +35,11 @@ export default {
     'section-video': Video,
     'section-stories': SectionStories,
     'section-instagram': SectionInstagram,
-    'section-you-stori': SectionYouStori,
+    'section-you-story': SectionYouStory,
     'section-statics': SectionStatics,
     'section-rac-lechitca': SectionRacLechitca,
     popup: Popup,
-    'popup-conteiner': PopupConteiner,
+    'popup-conteiner': Content,
   },
 
   methods: {

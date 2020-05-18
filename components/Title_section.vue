@@ -24,4 +24,26 @@ export default {};
     line-height: 32px;
   }
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .title_section {
+    width: 288px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title_section {
+    width: 380px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .title_section {
+    width: 290px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
 </style>

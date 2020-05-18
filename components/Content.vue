@@ -1,24 +1,25 @@
 <template>
-  <div class="popup__conteiner">
-    <title-popup class="title_popup">
+  <div class="content">
+    <title-popup class="content__title">
       {{ title }}
     </title-popup>
-    <p class="popup__question">
-      {{ question }} <span class="popup__explanation"> {{ explanation }}</span>
+    <p class="content__question">
+      {{ question }}
+      <span class="content__explanation"> {{ explanation }}</span>
     </p>
     <form @submit.prevent="">
       <input-popup />
-      <div class="button__container">
+      <div class="content__button-container">
         <button-back>
           Назад
         </button-back>
-        <button-next class="button-next">
+        <button-next class="content__button-next">
           Далее
         </button-next>
       </div>
     </form>
     <button-close
-      class="button-close"
+      class="content__button-close"
       @clickBtnClose="$emit('clickBtnClose')"
     />
   </div>
@@ -27,7 +28,7 @@
 <script>
 import ButtonClose from '@/components/ui/ButtonClose';
 import Title_section from '@/components/Title_section';
-import ButtonSmoll from '@/components/ui/ButtonSmoll';
+import ButtonSmall from '@/components/ui/ButtonSmall';
 import ButtonBack from '@/components/ui/ButtonBack';
 import InputPopup from '@/components/ui/InputPopup';
 
@@ -50,7 +51,7 @@ export default {
   components: {
     'title-popup': Title_section,
     'button-close': ButtonClose,
-    'button-next': ButtonSmoll,
+    'button-next': ButtonSmall,
     'button-back': ButtonBack,
     'input-popup': InputPopup,
   },
@@ -58,19 +59,19 @@ export default {
 </script>
 
 <style scoped>
-.popup__conteiner {
-  width: 920px;
+.content {
+  max-width: 920px;
   padding-bottom: 40px;
   background-color: #ffffff;
   position: relative;
 }
 
-.title_popup {
+.content__title {
   margin-top: 40px;
   margin-left: 40px;
 }
 
-.popup__question {
+.content__question {
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
@@ -81,18 +82,18 @@ export default {
   width: 840px;
 }
 
-.popup__explanation {
+.content__explanation {
   color: #666666;
 }
 
-.button__container {
+.content__button-container {
   display: flex;
   align-items: center;
   margin-top: 200px;
   margin-left: 40px;
 }
 
-.button-next {
+.content__button-next {
   margin: 0 0 0 10px;
 }
 </style>
