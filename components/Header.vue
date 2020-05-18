@@ -3,15 +3,27 @@
     <p class="header__text">
       Проект Благотворительного Фонда Константина Хабенского
     </p>
-    <menu-header @clicBtnOpenPopap="$emit('clicBtnOpenPopap')" />
+    <div class="header__block-menu">
+      <main-menu
+        class="header__menu"
+        @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
+      />
+      <button-open-popup
+        class="header__button"
+        @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
+        >Рассказать историю</button-open-popup
+      >
+    </div>
   </header>
 </template>
 
 <script>
-import MenuHeader from '@/components/MenuHeader';
+import MainMenu from '@/components/MainMenu';
+import ButtonOpenPopup from '@/components/ui/ButtonOpenPopup';
 export default {
   components: {
-    'menu-header': MenuHeader,
+    'main-menu': MainMenu,
+    'button-open-popup': ButtonOpenPopup,
   },
 };
 </script>
@@ -26,12 +38,21 @@ export default {
   max-width: 1440px;
   padding: 0 60px;
 }
+.header__block-menu {
+  display: flex;
+}
+
 .header__text {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   max-width: 340px;
+}
+.header__button {
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 40px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -45,6 +66,9 @@ export default {
     line-height: 18px;
   }
   .header__link {
+    font-size: 16px;
+  }
+  .header__button {
     font-size: 16px;
   }
 }

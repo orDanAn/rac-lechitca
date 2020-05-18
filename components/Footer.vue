@@ -4,7 +4,7 @@
       <p class="footer__text">
         Спасибо всем, кто помог состояться этому проекту
       </p>
-      <menu-footer />
+      <main-menu class="footer__menu" />
       <social-list />
     </div>
 
@@ -25,14 +25,15 @@
 </template>
 
 <script>
-import MenuFooter from '@/components/MenuFooter';
+import MainMenu from '@/components/MainMenu';
+
 import SocialListFooter from '@/components/SocialListFooter';
 
 const currenData = new Date();
 
 export default {
   components: {
-    'menu-footer': MenuFooter,
+    'main-menu': MainMenu,
     'social-list': SocialListFooter,
   },
   data() {
@@ -75,6 +76,9 @@ export default {
   line-height: 18px;
   color: #898989;
   text-decoration: none;
+}
+.footer__menu {
+  margin-right: 230px;
 }
 @media screen and (max-width: 1280px) {
   .footer {
