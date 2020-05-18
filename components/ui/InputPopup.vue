@@ -1,16 +1,43 @@
 <template>
   <input
     class="input_popup"
-    type="text"
-    placeholder="Напишите тут"
-    required
-    minlength="2"
-    maxlength="500"
+    :type="type"
+    :placeholder="placeholder"
+    :required="required"
+    :minlength="minlength"
+    :maxlength="maxlength"
   />
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    type: {
+      type: String,
+      default: 'text',
+    },
+
+    placeholder: {
+      type: String,
+      default: 'Напишите тут',
+    },
+
+    required: {
+      type: String,
+      default: 'required',
+    },
+
+    minlength: {
+      type: String,
+      default: '2',
+    },
+
+    maxlength: {
+      type: String,
+      default: '500',
+    },
+  },
+};
 </script>
 
 <style scoped>

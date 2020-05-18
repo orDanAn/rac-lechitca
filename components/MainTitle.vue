@@ -1,5 +1,5 @@
 <template>
-  <div class="conteiner">
+  <div class="container">
     <h1 class="main-title">
       #РАКЛЕЧИТСЯ
     </h1>
@@ -17,14 +17,14 @@ export default {
 </script>
 
 <style scoped>
-.conteiner {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1440px;
-  height: 689px;
+  min-height: calc(100vh - 100px);
   background: #613a93;
   position: relative;
 }
@@ -35,7 +35,7 @@ export default {
   font-weight: 800;
   font-size: 92px;
   line-height: 111px;
-  color: #ffffff;
+  color: #fff;
 }
 
 @media screen and (max-width: 1280px) {
@@ -50,5 +50,7 @@ export default {
 .button {
   position: absolute;
   bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
