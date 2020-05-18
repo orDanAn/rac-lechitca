@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-main">
     <main-title />
     <section-video />
     <section-stories />
@@ -65,37 +65,10 @@ export default {
 </script>
 
 <style>
-.container {
+.container-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-
-.story-item {
-  width: 300px;
-  margin-bottom: 70px;
-}
-
-@media screen and (max-width: 1350px) {
-  .story-item {
-    width: 265px;
-  }
-}
-
-.story-item__name {
-  margin-top: 16px;
-  margin-bottom: 14px;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 22px;
-}
-
-.story-item__text {
-  width: 83%;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: #666666;
 }
 </style>
