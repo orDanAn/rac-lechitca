@@ -5,8 +5,8 @@
         <main-title>{{ text }}</main-title>
         <description class="video__description">{{ info }}</description>
         <div class="video__button-container">
-          <button-left />
-          <button-right />
+          <button-left class="video__buttonL"></button-left>
+          <button-right class="video__buttonR"></button-right>
         </div>
       </div>
       <div class="video__container">
@@ -78,7 +78,7 @@ export default {
   margin-left: 40px;
 }
 .video__link {
-  color: #666666;
+  color: #666;
   text-decoration: underline;
   margin: 0;
 }
@@ -92,6 +92,92 @@ export default {
   .video__iframe {
     width: 773px;
     height: 400px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .video__iframe {
+    width: 606px;
+    height: 314px;
+    margin-left: 30px;
+  }
+  .video__description {
+    margin-top: 20px;
+  }
+  .video__button-container {
+    margin-top: 80px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .video {
+    margin-top: 80px;
+    flex-direction: column;
+  }
+  .video__iframe {
+    width: 580px;
+    height: 300px;
+    margin: 0;
+  }
+  .video__text {
+    margin: 15px 0 0 0;
+  }
+  .video__text-container {
+    width: 380px;
+    margin: 0 auto 0 auto;
+  }
+  .video__button-container {
+    width: 80px;
+    margin: 60px auto 0 auto;
+    position: relative;
+  }
+  .video__buttonL {
+    position: absolute;
+    top: 130px;
+    right: 345px;
+  }
+  .video__buttonR {
+    position: absolute;
+    top: 130px;
+    left: 345px;
+  }
+  .video__description {
+    margin-top: 26px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .video {
+    margin: 50px auto 0 auto;
+    flex-direction: column;
+  }
+  .video__iframe {
+    width: 290px;
+    height: 150px;
+    margin: 0;
+  }
+  .video__text-container {
+    width: 290px;
+    margin: 0 auto 0 auto;
+  }
+  .video__text {
+    display: none;
+  }
+  .video__button-container {
+    width: 80px;
+    margin: 40px auto 0 auto;
+    position: relative;
+  }
+  .video__buttonL {
+    position: absolute;
+    top: 66px;
+    right: 170px;
+  }
+  .video__buttonR {
+    position: absolute;
+    top: 66px;
+    left: 170px;
+  }
+  .video__description {
+    margin-top: 17px;
   }
 }
 </style>

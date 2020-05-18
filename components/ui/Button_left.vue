@@ -20,4 +20,10 @@ export default {};
   border: none;
   cursor: pointer;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .button_left {
+    width: 8px;
+    height: 16px;
+  }
+}
 </style>

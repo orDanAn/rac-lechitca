@@ -289,7 +289,7 @@ export default {};
   border-bottom: 1px solid #efefef;
   border-top: 1px solid #efefef;
   padding: 30px 0 30px 0;
-  width: 780px;
+  width: 100%;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -301,11 +301,12 @@ export default {};
   margin-top: 100px;
   padding: 0 0 260px 0;
   list-style-type: none;
+  width: 100%;
 }
 .politika__title {
   margin-bottom: 40px;
   margin-top: 90px;
-  width: 780px;
+  width: 100%;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -314,7 +315,7 @@ export default {};
 }
 .politika__paragraph {
   margin-bottom: 30px;
-  width: 780px;
+  width: 100%;
   font-style: normal;
   font-weight: normal;
   font-size: 23px;
@@ -324,7 +325,7 @@ export default {};
 .politika__item {
   margin-top: 30px;
   margin-left: 0;
-  width: 740px;
+  width: 100%;
   font-style: normal;
   font-weight: normal;
   font-size: 23px;
@@ -337,7 +338,6 @@ export default {};
     margin: 90px auto 0 auto;
   }
   .politika__main-title {
-    width: 700px;
     font-size: 34px;
     line-height: 44px;
   }
@@ -345,17 +345,65 @@ export default {};
     margin-top: 90px;
   }
   .politika__title {
-    width: 700px;
     font-size: 20px;
     line-height: 38px;
   }
   .politika__paragraph {
-    width: 700px;
     font-size: 20px;
     line-height: 28px;
   }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .politika {
+    max-width: 640px;
+    margin: 80px auto 0 auto;
+  }
+  .politika__main-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .politika__information {
+    margin-top: 80px;
+  }
+  .politika__title {
+    font-size: 18px;
+    line-height: 27px;
+  }
   .politika__item {
-    width: 660px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .politika__paragraph {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .politika {
+    max-width: 290px;
+    margin: 50px auto 0 auto;
+  }
+  .politika__main-title {
+    font-size: 18px;
+    line-height: 21px;
+    padding: 20px 0 20px 0;
+  }
+  .politika__information {
+    margin-top: 40px;
+  }
+  .politika__title {
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  .politika__paragraph {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .politika__item {
+    font-size: 13px;
+    line-height: 16px;
   }
 }
 </style>
