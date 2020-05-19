@@ -5,7 +5,7 @@
       >Истории неизлечимых привычек</section-subtitle
     >
     <stories-wrap>
-      <div v-for="item in stories" :key="item.id" class="story-item">
+      <div v-for="item in itemsToLoop" :key="item.id" class="story-item">
         <story-image />
         <p class="story-item__name">{{ item.name }}</p>
         <p class="story-item__text">
@@ -32,7 +32,18 @@ export default {
     'story-image': StoryImage,
     'more-stories': MoreStoriesBtn,
   },
-
+  computed: {
+    itemsToLoop() {
+      if (process.browser) {
+        console.log(window.innerWidth);
+        if (window.innerWidth <= 1145) {
+          return this.stories.filter((item, index) => index < 9);
+        } else {
+          return this.stories.filter((item, index) => index < 8);
+        }
+      }
+    },
+  },
   data() {
     return {
       stories: [
@@ -77,6 +88,11 @@ export default {
         },
         {
           id: 8,
+          name: 'Владимир Познер',
+          text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
+        },
+        {
+          id: 9,
           name: 'Владимир Познер',
           text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
         },
@@ -169,11 +185,23 @@ export default {
     width: 218px;
     margin-bottom: 40px;
   }
+
+  .stories__subtitle {
+    text-align: center;
+    width: 380px;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .story-item {
     width: 216px;
+  }
+
+  .stories__subtitle {
+    width: 290px;
+    margin-top: 80px;
   }
 }
 
@@ -186,6 +214,13 @@ export default {
 @media screen and (max-width: 535px) {
   .story-item {
     width: 290px;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .stories__subtitle {
+    text-align: left;
+    margin-top: 50px;
   }
 }
 </style>
