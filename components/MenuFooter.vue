@@ -2,7 +2,7 @@
   <nav class="footer__menu">
     <ul class="footer__main-list">
       <li class="footer__list-elem">
-        <nuxt-link to="/" class="footer__link footer__main-link"
+        <nuxt-link to="/" class="footer__link footer_main-link"
           >Главная</nuxt-link
         >
       </li>
@@ -25,7 +25,7 @@ export default {};
   padding: 0;
   margin-right: 230px;
 }
-.footer__main-link {
+.footer_main-link {
   padding-right: 40px;
 }
 .footer__link {

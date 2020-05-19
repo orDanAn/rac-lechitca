@@ -5,13 +5,20 @@
         Спасибо всем, кто помог состояться этому проекту
       </p>
       <menu-footer />
-      <social-menu />
+      <social-list />
     </div>
 
     <div class="footer__description">
-      <p class="footer__description-text">Рак Лечится 2020</p>
+      <p class="footer__description-text">Рак Лечится {{ date }}</p>
       <p class="footer__description-text">
-        Сделано студентами Яндекс Практикум
+        Сделано студентами
+        <a
+          class="footer__description-text"
+          href="https://praktikum.yandex.ru/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Яндекс Практикум</a
+        >
       </p>
     </div>
   </footer>
@@ -19,12 +26,19 @@
 
 <script>
 import MenuFooter from '@/components/MenuFooter';
-import SocialMenuFooter from '@/components/SocialMenuFooter';
+import SocialListFooter from '@/components/SocialListFooter';
+
+const currenData = new Date();
 
 export default {
   components: {
     'menu-footer': MenuFooter,
-    'social-menu': SocialMenuFooter,
+    'social-list': SocialListFooter,
+  },
+  data() {
+    return {
+      date: currenData.getFullYear(),
+    };
   },
 };
 </script>
@@ -60,6 +74,7 @@ export default {
   font-size: 18px;
   line-height: 18px;
   color: #898989;
+  text-decoration: none;
 }
 @media screen and (max-width: 1280px) {
   .footer {
