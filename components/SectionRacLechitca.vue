@@ -1,62 +1,65 @@
 <template>
   <section class="rac-lechitca">
-    <h2 class="rac-lechitca__main-title">
-      #РАКЛЕЧИТСЯ
-    </h2>
-    <title-section class="rac-lechitca__second-title">
-      О проекте
-    </title-section>
-    <div class="rac-lechitca__container">
-      <info-section class="rac-lechitca__paragraph">
-        Этот проект был создан благотворительным фондом Константина Хабенского.
-      </info-section>
-      <div class="rac-lechitca__container_inside">
-        <div class="rac-lechitca__conteiner-link">
-          <link-section
-            :class="{
-              'rac-lechitca___link_white': variant.varOne,
-              'rac-lechitca__link_grey': variant.varTwo,
-            }"
-            @clicLink="onVarOne"
-            >Рак Лечится</link-section
-          >
-          <link-section
-            :class="{
-              'rac-lechitca__link_grey': variant.varOne,
-              'rac-lechitca___link_white': variant.varTwo,
-            }"
-            @clicLink="onVarTwo"
-            >Фонд Хабенского</link-section
-          >
-        </div>
-        <div>
-          <info-section-long class="rac-lechitca__paragraph">
-            <template v-if="variant.varOne">
-              Есть вещи, которые не лечатся. Особенности характера, страстные
-              увлечения, привычки, ставшие частью нашего «я», фобии, которые мы
-              приобрели в детстве. Список можно продолжать до бесконечности, но
-              одна болезнь в него точно не войдет. Эта болезнь — рак. Рак
-              лечится, и лучшее доказательство — люди с их неизлечимыми
-              особенностями, которые сумели победить рак.
-              <br />
-              <br />
-              Рак лечится — проект Благотворительного Фонда Константина
-              Хабенского и Leo Burnett Moscow. С его помощью мы надеемся
-              изменить отношение людей к раку и заставить каждого поверить:
-              онкологическое заболевание — это не приговор.
-            </template>
-            <template v-if="variant.varTwo">
-              Благотворительный Фонд Константина Хабенского с 2008 года помогает
-              детям с онкологическими и другими тяжелыми заболеваниями головного
-              мозга. Фонд не только поддерживает семью заболевшего ребенка в
-              самый сложный момент, оплачивая обследования, лечение и
-              медицинские препараты, но и в целом меняет систему оказания помощи
-              детям с опухолями мозга в России.
-            </template>
-          </info-section-long>
+    <container>
+      <h2 class="rac-lechitca__main-title">
+        #РАКЛЕЧИТСЯ
+      </h2>
+      <title-section class="rac-lechitca__second-title">
+        О проекте
+      </title-section>
+      <div class="rac-lechitca__container">
+        <info-section class="rac-lechitca__paragraph">
+          Этот проект был создан благотворительным фондом Константина
+          Хабенского.
+        </info-section>
+        <div class="rac-lechitca__container_inside">
+          <div class="rac-lechitca__conteiner-link">
+            <link-section
+              :class="{
+                'rac-lechitca___link_white': variant.varOne,
+                'rac-lechitca__link_grey': variant.varTwo,
+              }"
+              @clicLink="onVarOne"
+              >Рак Лечится</link-section
+            >
+            <link-section
+              :class="{
+                'rac-lechitca__link_grey': variant.varOne,
+                'rac-lechitca___link_white': variant.varTwo,
+              }"
+              @clicLink="onVarTwo"
+              >Фонд Хабенского</link-section
+            >
+          </div>
+          <div>
+            <info-section-long class="rac-lechitca__paragraph">
+              <template v-if="variant.varOne">
+                Есть вещи, которые не лечатся. Особенности характера, страстные
+                увлечения, привычки, ставшие частью нашего «я», фобии, которые
+                мы приобрели в детстве. Список можно продолжать до
+                бесконечности, но одна болезнь в него точно не войдет. Эта
+                болезнь — рак. Рак лечится, и лучшее доказательство — люди с их
+                неизлечимыми особенностями, которые сумели победить рак.
+                <br />
+                <br />
+                Рак лечится — проект Благотворительного Фонда Константина
+                Хабенского и Leo Burnett Moscow. С его помощью мы надеемся
+                изменить отношение людей к раку и заставить каждого поверить:
+                онкологическое заболевание — это не приговор.
+              </template>
+              <template v-if="variant.varTwo">
+                Благотворительный Фонд Константина Хабенского с 2008 года
+                помогает детям с онкологическими и другими тяжелыми
+                заболеваниями головного мозга. Фонд не только поддерживает семью
+                заболевшего ребенка в самый сложный момент, оплачивая
+                обследования, лечение и медицинские препараты, но и в целом
+                меняет систему оказания помощи детям с опухолями мозга в России.
+              </template>
+            </info-section-long>
+          </div>
         </div>
       </div>
-    </div>
+    </container>
   </section>
 </template>
 
@@ -66,6 +69,7 @@ import Info_section_long from '@/components/Info_section_long';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
 import LinkSection from '@/components/ui/LinkSection';
+import Container from '@/components/Container';
 
 export default {
   components: {
@@ -73,6 +77,7 @@ export default {
     'info-section-long': Info_section_long,
     'title-section': Title_section,
     'link-section': LinkSection,
+    container: Container,
   },
   computed: {
     variant() {
@@ -95,8 +100,8 @@ export default {
 <style scoped>
 .rac-lechitca {
   width: 100%;
-  max-width: 1440px;
-  height: 650px;
+
+  min-height: 650px;
   background: #613a93;
   padding-top: 90px;
   padding-bottom: 100px;

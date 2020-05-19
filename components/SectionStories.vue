@@ -1,19 +1,21 @@
 <template>
   <section class="stories">
     <baner>И В ОТЛИЧИЕ ОТ РАКА</baner>
-    <section-subtitle class="stories__subtitle"
-      >Истории неизлечимых привычек</section-subtitle
-    >
-    <stories-wrap>
-      <div v-for="item in stories" :key="item.id" class="story-item">
-        <story-image />
-        <p class="story-item__name">{{ item.name }}</p>
-        <p class="story-item__text">
-          {{ item.text }}
-        </p>
-      </div>
-    </stories-wrap>
-    <more-stories>Больше статей</more-stories>
+    <container>
+      <section-subtitle class="stories__subtitle"
+        >Истории неизлечимых привычек</section-subtitle
+      >
+      <stories-wrap>
+        <div v-for="item in stories" :key="item.id" class="story-item">
+          <story-image />
+          <p class="story-item__name">{{ item.name }}</p>
+          <p class="story-item__text">
+            {{ item.text }}
+          </p>
+        </div>
+      </stories-wrap>
+      <more-stories>Больше статей</more-stories>
+    </container>
   </section>
 </template>
 
@@ -23,6 +25,7 @@ import Title_section from '@/components/Title_section';
 import StoriesWrap from '@/components/StoriesWrap';
 import StoryImage from '@/components/StoryImage';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
+import Container from '@/components/Container';
 
 export default {
   components: {
@@ -31,6 +34,7 @@ export default {
     'stories-wrap': StoriesWrap,
     'story-image': StoryImage,
     'more-stories': MoreStoriesBtn,
+    container: Container,
   },
 
   data() {
@@ -92,6 +96,9 @@ export default {
   max-width: 1320px;
 }
 
+.story-item {
+  width: 300px;
+}
 .stories__subtitle {
   margin-top: 100px;
 }

@@ -1,17 +1,21 @@
 <template>
   <div class="container">
-    <h1 class="main-title">
-      #РАКЛЕЧИТСЯ
-    </h1>
-    <button-main-title class="button" />
+    <container>
+      <h1 class="main-title">
+        #РАКЛЕЧИТСЯ
+      </h1>
+      <button-main-title class="button" />
+    </container>
   </div>
 </template>
 
 <script>
 import ButtonMainTitle from '@/components/ui/ButtonMainTitle';
+import Container from '@/components/Container';
 export default {
   components: {
     'button-main-title': ButtonMainTitle,
+    container: Container,
   },
 };
 </script>
@@ -23,8 +27,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 76px);
   background: #613a93;
   position: relative;
 }
