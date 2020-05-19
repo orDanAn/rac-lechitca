@@ -23,6 +23,7 @@ export default {
 .menu__list {
   display: flex;
   list-style-type: none;
+  padding: 0;
 }
 .menu__link {
   font-style: normal;

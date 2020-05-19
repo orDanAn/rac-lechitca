@@ -5,12 +5,14 @@
         <a
           href="https://www.instagram.com/raklechitsa/"
           class="social-list__link"
+          target="_blank"
           >Мы в Инстаграме</a
         >
         <span class="social-list__link">и</span>
         <a
           href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
           class="social-list__link"
+          target="_blank"
           >Youtube</a
         >
       </li>
@@ -66,6 +68,17 @@ export default {
   }
   .social-list__button {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .social-list__list {
+    min-width: 221px;
+    margin-right: 0;
+    padding-left: 0;
+    justify-content: start;
+  }
+  .social-list__list-elem {
+    margin-bottom: 30px;
   }
 }
 </style>
