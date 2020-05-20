@@ -1,17 +1,23 @@
 <template>
-  <root>
+  <container>
     <section class="storie-header">
-      <img src="" alt="" class="storie-header__img" />
-      <div class="storie-header__title-containe">
+      <img
+        src="https://tverlife.ru/wp-content/uploads/2019/11/683174-592828-1voopUqS.jpg"
+        alt=""
+        class="storie-header__img"
+      />
+      <div class="storie-header__title-container">
         <div class="storie__grey-line"></div>
         <h3 class="storie-header__text">
-          Александр Тарханов: «Я не могу победить свою пунктуальность в отличии
-          от рака»
+          <span class="storie-header__text-bold">Александр Тарханов:</span>
+          «Я не могу победить свою пунктуальность в отличии от рака»
         </h3>
       </div>
       <div class="storie-header__subtitle-container">
-        <p class="storie-header__share">Поделитесь ↗</p>
-        <p class="storie-header__date">20 апреля 2018</p>
+        <div class="storie-header__subtitle-text">
+          <p class="storie-header__share">Поделитесь ↗</p>
+          <p class="storie-header__date">20 апреля 2018</p>
+        </div>
         <div class="storie__grey-line storie__grey-line_underline"></div>
       </div>
     </section>
@@ -59,18 +65,19 @@
       </p>
     </section>
 
-    <section class="share">
+    <section class="storie-share">
       <div class="storie__grey-line"></div>
-      <!-- здесь воткнуть мнемоник -->
-      <share class="share-link"
-        >Поделитесь этой статьей в своих социальных сетях ↗</share
-      >
+      <p class="storie-share__link">
+        Поделитесь этой статьей в своих социальных сетях ↗
+      </p>
+      <!-- Хаз, здесь элемент grey-line в блоке storie с мод. underline, разве нет? -->
       <div class="storie__grey-line_underline"></div>
     </section>
 
     <additional-stories>
       <div v-for="item in stories" :key="item.id" class="story-item">
         <story-image />
+        <!-- спросить у Данилы, у него позаимствовал -->
         <p class="story-item__name">{{ item.name }}</p>
         <p class="story-item__text">
           {{ item.text }}
@@ -79,22 +86,23 @@
     </additional-stories>
 
     <more-stories>Больше статей</more-stories>
-  </root>
+  </container>
 </template>
 
 <script>
-import Root from '@/components/Root';
+import Container from '@/components/Container';
 import StoriesWrap from '@/components/StoriesWrap';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 
 export default {
   components: {
-    root: Root,
     'additional-stories': StoriesWrap,
     'more-stories': MoreStoriesBtn,
+    container: Container,
   },
 
   data() {
+    // вынести в отдельный store
     return {
       stories: [
         {
@@ -125,4 +133,114 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.storie-header {
+  display: grid;
+  grid-template: 290px 290px / 580px 680px;
+  grid-gap: 10px;
+  margin: 100px auto;
+  justify-content: space-between;
+  max-width: 1320px;
+}
+
+.storie-header__img {
+  grid-area: 1 / 1 / span 2;
+  background: limegreen;
+  width: 580px;
+  height: 580px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.storie-header__title-container {
+  grid-area: 1 / 2;
+  margin: 0 auto 0;
+  display: flex;
+  flex-direction: column;
+  width: 680px;
+}
+
+.storie-header__text {
+  font-family: 'Inter';
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 48px;
+  margin: 30px auto;
+}
+
+.storie-header__text-bold {
+  font-weight: bold;
+}
+
+.storie-header__subtitle-container {
+  grid-area: 2 / 2;
+  max-width: 680px;
+  width: 100%;
+  margin: auto auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.storie-header__subtitle-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.storie-header__share {
+  grid-area: 1 / 1;
+}
+
+.storie-header__date {
+  grid-area: 1 / 2;
+}
+
+.storie__grey-line {
+  background-color: #efefef;
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+}
+
+.storie__grey-line_underline {
+  grid-area: 2 / 1 / 2 / span 2;
+  background-color: #efefef;
+  width: 100%;
+  height: 1px;
+  margin: 30px auto 0;
+}
+
+.storie-text {
+  max-width: 780px;
+  width: 100%;
+  margin: 100px auto 0;
+}
+
+.storie-text__abzac {
+  width: 100%;
+  margin-top: 30px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 136%;
+}
+
+.storie-text__abzac_bold {
+  font-weight: bold;
+}
+
+.storie-share {
+  max-width: 780px;
+  width: 100%;
+  margin: 70px auto;
+}
+
+.storie-share__link {
+  margin: 30px auto;
+  padding: 0;
+  text-align: center;
+}
+</style>

@@ -1,6 +1,7 @@
 <template>
   <root>
-    <instagram-banner class="instagram-banner"
+    <!-- тут тоже надо прокидывать класс миксин если он нужен, а если нет то прямо внутри компонента можно прописать этот же класс -->
+    <instagram-banner
       >РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ <br
     /></instagram-banner>
     <div class="instagram__main-container">
@@ -27,14 +28,14 @@
 </template>
 
 <script>
-import Baner from '@/components/Baner';
+// import Baner from '@/components/Baner';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
 import Root from '@/components/Root';
 
 export default {
   components: {
-    'instagram-banner': Baner,
+    // 'instagram-banner': Baner,
     'section-title': Title_section,
     'section-subtitle': Info_section,
     root: Root,
@@ -89,11 +90,10 @@ export default {
 </script>
 
 <style scoped>
-.instagram-banner {
-  margin-top: 100px;
-  /* height: 12.5vh; */
-  height: 129px;
-}
+/* .instagram-banner {
+  margin-top: 100px; */
+/* height: 129px;
+} */
 
 .instagram__main-container {
   margin: 100px auto 0;
