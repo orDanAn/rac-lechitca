@@ -12,17 +12,26 @@ export default {};
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 60px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
   .container {
     padding: 0 50px;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 768px) {
   .container {
-    padding: 0 50px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 0 15px;
   }
 }
 </style>
