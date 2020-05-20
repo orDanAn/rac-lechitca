@@ -8,20 +8,17 @@
       <span class="content__explanation"> {{ explanation }}</span>
     </p>
     <form @submit.prevent="">
-      <input-popup />
+      <input-popup name="answer" v-model="answer" value="answer" />
       <div class="content__button-container">
-        <button-back>
+        <button-back @clickButtonBack="prevQustion">
           Назад
         </button-back>
-        <button-next class="content__button-next">
+        <button-next class="content__button-next" @clicBtnSmoll="nextQustion">
           Далее
         </button-next>
       </div>
     </form>
-    <button-close
-      class="content__button-close"
-      @clickBtnClose="$emit('clickBtnClose')"
-    />
+    <button-close class="content__button-close" @clickBtnClose="popupClose" />
   </div>
 </template>
 
@@ -33,6 +30,12 @@ import ButtonBack from '@/components/ui/ButtonBack';
 import InputPopup from '@/components/ui/InputPopup';
 
 export default {
+  data() {
+    return {
+      answer: '',
+    };
+  },
+
   props: {
     title: {
       requerd: true,
@@ -54,6 +57,32 @@ export default {
     'button-next': ButtonSmall,
     'button-back': ButtonBack,
     'input-popup': InputPopup,
+  },
+
+  computed: {
+    initAnswer() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      const { currentQustion, answers } = quiz;
+      return answers[currentQustion] || '';
+    },
+  },
+
+  methods: {
+    async nextQustion() {
+      await this.$store.dispatch('storeContentPopup/nextButton', {
+        answer: this.answer,
+      });
+      this.answer = this.initAnswer;
+    },
+
+    async prevQustion() {
+      await this.$store.dispatch('storeContentPopup/prevButton');
+      this.answer = this.initAnswer;
+    },
+
+    popupClose() {
+      this.$store.commit('storePopup/closePopup');
+    },
   },
 };
 </script>

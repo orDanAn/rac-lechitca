@@ -1,23 +1,47 @@
 <template>
   <div>
-    <project-header @clicBtnOpenPopap="messege" />
+    <project-header @clicBtnOpenPopap="popupOpen" />
     <nuxt />
     <project-footer />
+    <popup v-if="popup.popupShow">
+      <popup-container
+        :title="currentQustion.title"
+        :question="currentQustion.question"
+        :explanation="currentQustion.explanation"
+      />
+    </popup>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Popup from '@/components/Popup';
+import Content from '@/components/Content';
 
 export default {
   components: {
     'project-header': Header,
     'project-footer': Footer,
+    popup: Popup,
+    'popup-container': Content,
   },
+
+  computed: {
+    popup() {
+      return this.$store.getters['storePopup/getPopup'];
+    },
+
+    currentQustion() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      const { currentQustion, infoContent } = quiz;
+      return infoContent[currentQustion];
+    },
+  },
+
   methods: {
-    messege() {
-      alert('я пока не работаю, нажмите кнопку Заполнить форму');
+    popupOpen() {
+      this.$store.commit('storePopup/openPopup');
     },
   },
 };

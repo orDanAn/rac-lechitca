@@ -6,12 +6,20 @@
     :required="required"
     :minlength="minlength"
     :maxlength="maxlength"
+    :name="name"
+    v-model="content"
+    @input="$emit('input', $event.target.value)"
   />
 </template>
 
 <script>
 export default {
   props: {
+    value: {
+      type: String,
+      default: '',
+    },
+
     type: {
       type: String,
       default: 'text',
@@ -35,6 +43,23 @@ export default {
     maxlength: {
       type: String,
       default: '500',
+    },
+
+    name: {
+      type: String,
+      default: 'name',
+    },
+  },
+
+  data() {
+    return { content: this.value };
+  },
+
+  watch: {
+    value(newVal) {
+      if (newVal !== this.content) {
+        this.content = newVal;
+      }
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <button class="button-back">
+  <button class="button-back" @click.prevent="$emit('clickButtonBack')">
     <slot>Текст кнопки</slot>
   </button>
 </template>

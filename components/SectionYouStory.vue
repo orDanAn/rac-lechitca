@@ -36,7 +36,7 @@
                 вами, зададим вопросы, уточним детали вашей истории.
               </template>
             </info-section-long>
-            <button-small @clicBtnSmoll="$emit('clicBtnYouStor')"
+            <button-small @clicBtnSmoll="popupOpen"
               >Заполнить форму</button-small
             >
           </div>
@@ -77,6 +77,10 @@ export default {
 
     onVariantTwo() {
       this.$store.commit('storeYouStory/onVariantTwo');
+    },
+
+    popupOpen() {
+      this.$store.commit('storePopup/openPopup');
     },
   },
 };
