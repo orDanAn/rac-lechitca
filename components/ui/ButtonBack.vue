@@ -1,5 +1,5 @@
 <template>
-  <button class="button-back">
+  <button class="button-back" @click.prevent="$emit('clickButtonBack')">
     <slot>Текст кнопки</slot>
   </button>
 </template>
@@ -24,5 +24,19 @@ export default {};
 
 .button-back:hover {
   color: #000000;
+}
+
+@media screen and (max-width: 1024px) {
+  .button-back {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .button-back {
+    font-size: 13px;
+    line-height: 16px;
+  }
 }
 </style>

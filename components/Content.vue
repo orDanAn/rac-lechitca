@@ -1,26 +1,37 @@
 <template>
   <div class="content">
-    <title-popup class="content__title">
+    <title-popup
+      :class="{ content__title: question, content__title_center: !question }"
+    >
       {{ title }}
     </title-popup>
-    <p class="content__question">
+    <p class="content__question" v-if="question">
       {{ question }}
-      <span class="content__explanation"> {{ explanation }}</span>
+      <span class="content__explanation" v-if="explanation">
+        {{ explanation }}</span
+      >
     </p>
-    <form @submit.prevent="">
-      <input-popup />
+    <form v-if="question" @submit.prevent="">
+      <input-popup name="answer" v-model="answer" value="answer" />
       <div class="content__button-container">
-        <button-back>
+        <button-back @clickButtonBack="prevQustion">
           Назад
         </button-back>
-        <button-next class="content__button-next">
-          Далее
+        <button-next class="content__button-next" @clicBtnSmoll="nextQustion">
+          {{ isLastQuestion ? 'Далее' : 'Отправить' }}
         </button-next>
       </div>
     </form>
+    <button-next
+      class="content__button-finish"
+      v-if="!question"
+      @clicBtnSmoll="popupClose"
+      >Закрыть</button-next
+    >
     <button-close
       class="content__button-close"
-      @clickBtnClose="$emit('clickBtnClose')"
+      v-if="question"
+      @clickBtnClose="popupClose"
     />
   </div>
 </template>
@@ -33,6 +44,12 @@ import ButtonBack from '@/components/ui/ButtonBack';
 import InputPopup from '@/components/ui/InputPopup';
 
 export default {
+  data() {
+    return {
+      answer: '',
+    };
+  },
+
   props: {
     title: {
       requerd: true,
@@ -55,13 +72,57 @@ export default {
     'button-back': ButtonBack,
     'input-popup': InputPopup,
   },
+
+  computed: {
+    initAnswer() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      const { currentQustion, answers } = quiz;
+      return answers[currentQustion] || '';
+    },
+    quiz() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      return quiz;
+    },
+    isLastQuestion() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      const { currentQustion, infoContent } = quiz;
+      const lengthQustion = Object.keys(quiz.infoContent).length;
+
+      if (quiz.currentQustion < lengthQustion - 1) {
+        return true;
+      }
+      return false;
+    },
+  },
+
+  methods: {
+    async nextQustion() {
+      await this.$store.dispatch('storeContentPopup/nextButton', {
+        answer: this.answer,
+      });
+      this.answer = this.initAnswer;
+    },
+
+    async prevQustion() {
+      await this.$store.dispatch('storeContentPopup/prevButton');
+      this.answer = this.initAnswer;
+    },
+
+    popupClose() {
+      this.$store.commit('storePopup/closePopup');
+    },
+  },
 };
 </script>
 
 <style scoped>
+form {
+  position: absolute;
+  top: 274px;
+}
 .content {
-  max-width: 920px;
-  padding-bottom: 40px;
+  min-width: 920px;
+  min-height: 600px;
   background-color: #ffffff;
   position: relative;
 }
@@ -69,6 +130,13 @@ export default {
 .content__title {
   margin-top: 40px;
   margin-left: 40px;
+}
+
+.content__title_center {
+  margin: 0 auto;
+  width: auto;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .content__question {
@@ -95,5 +163,107 @@ export default {
 
 .content__button-next {
   margin: 0 0 0 10px;
+  width: 226px;
+  height: 52px;
+}
+
+.content__button-finish {
+  display: block;
+  margin: 0 auto;
+  margin-top: 432px;
+}
+
+@media screen and (max-width: 1280px) {
+  form {
+    top: 232px;
+  }
+  .content {
+    min-width: 800px;
+    min-height: 520px;
+  }
+  .content__button-next {
+    width: 200px;
+    height: 48px;
+  }
+  .content__question {
+    font-size: 16px;
+    line-height: 22px;
+    width: 720px;
+  }
+  .content__button-container {
+    margin-top: 165px;
+  }
+  .content__button-close {
+    top: 27px;
+    right: 28px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  form {
+    top: 230px;
+  }
+  .content__question {
+    font-size: 15px;
+  }
+  .content__button-next {
+    height: 46px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    top: 230px;
+  }
+  .content {
+    min-width: 580px;
+    min-height: 520px;
+  }
+
+  .content__title {
+    text-align: left;
+  }
+  .content__button-container {
+    margin-top: 172px;
+  }
+
+  .content__question {
+    line-height: 19px;
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  form {
+    top: 186px;
+  }
+  .content {
+    min-width: 290px;
+    width: 290px;
+  }
+  .content__title {
+    margin: 15px 0 0 15px;
+  }
+  .content__button-next {
+    width: 206px;
+    height: 40x;
+  }
+
+  .content__question {
+    font-size: 13px;
+    line-height: 16px;
+    width: 260px;
+    margin: 30px 0 0 15px;
+  }
+  .content__button-container {
+    margin-left: 15px;
+  }
+  .content__button-close {
+    top: 10px;
+    right: 9px;
+  }
+  .content__button-container {
+    margin-top: 250px;
+  }
 }
 </style>

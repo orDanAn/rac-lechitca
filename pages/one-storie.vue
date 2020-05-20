@@ -90,18 +90,13 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import Container from '@/components/Container';
-import StoriesWrap from '@/components/StoriesWrap';
-=======
-import Root from '@/components/Root';
-
->>>>>>> b75249f6107088d1114fb701c6f05a217765c108
+import StoryContainer from '@/components/StoryContainer';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 
 export default {
   components: {
-    'additional-stories': StoriesWrap,
+    'additional-stories': StoryContainer,
     'more-stories': MoreStoriesBtn,
     container: Container,
   },

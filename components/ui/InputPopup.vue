@@ -6,12 +6,20 @@
     :required="required"
     :minlength="minlength"
     :maxlength="maxlength"
+    :name="name"
+    v-model="content"
+    @input="$emit('input', $event.target.value)"
   />
 </template>
 
 <script>
 export default {
   props: {
+    value: {
+      type: String,
+      default: '',
+    },
+
     type: {
       type: String,
       default: 'text',
@@ -36,6 +44,23 @@ export default {
       type: String,
       default: '500',
     },
+
+    name: {
+      type: String,
+      default: 'name',
+    },
+  },
+
+  data() {
+    return { content: this.value };
+  },
+
+  watch: {
+    value(newVal) {
+      if (newVal !== this.content) {
+        this.content = newVal;
+      }
+    },
   },
 };
 </script>
@@ -49,11 +74,40 @@ export default {
   font-size: 18px;
   line-height: 24px;
   color: #000000;
-  margin-top: 80px;
   margin-left: 40px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 10px;
   width: 840px;
+}
+
+@media screen and (max-width: 1280px) {
+  .input_popup {
+    font-size: 16px;
+    line-height: 22px;
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .input_popup {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input_popup {
+    width: 500px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .input_popup {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-left: 15px;
+  }
 }
 </style>

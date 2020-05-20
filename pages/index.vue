@@ -18,17 +18,9 @@
       <more-stories>Больше статей</more-stories>
     </section-stories>
     <section-instagram />
-    <section-you-story @clicBtnYouStor="popupOpen" />
+    <section-you-story />
     <section-statics />
     <section-rac-lechitca />
-    <popup v-if="popupShow">
-      <popup-conteiner
-        @clickBtnClose="popupClose"
-        :title="title"
-        :question="question"
-        :explanation="explanation"
-      />
-    </popup>
   </div>
 </template>
 
@@ -40,8 +32,6 @@ import SectionYouStory from '@/components/SectionYouStory';
 import SectionInstagram from '@/components/SectionInstagram';
 import SectionStatics from '@/components/SectionStatics';
 import SectionRacLechitca from '@/components/SectionRacLechitca';
-import Popup from '@/components/Popup';
-import Content from '@/components/Content';
 import Baner from '@/components/Baner';
 import Title_section from '@/components/Title_section';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
@@ -57,8 +47,6 @@ export default {
     'section-you-story': SectionYouStory,
     'section-statics': SectionStatics,
     'section-rac-lechitca': SectionRacLechitca,
-    popup: Popup,
-    'popup-conteiner': Content,
     baner: Baner,
     'section-subtitle': Title_section,
     'more-stories': MoreStoriesBtn,
@@ -66,15 +54,10 @@ export default {
     'story-container': StoryContainer,
   },
 
-  methods: {
-    popupOpen() {
-      this.popupShow = true;
-    },
+  computed: {},
 
-    popupClose() {
-      this.popupShow = false;
-    },
-  },
+  methods: {},
+
   computed: {
     stories() {
       return this.$store.getters['stories/getStories'];
