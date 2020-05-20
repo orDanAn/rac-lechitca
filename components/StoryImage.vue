@@ -11,5 +11,6 @@ export default {};
 <style scoped>
 .story-item__image {
   width: 100%;
+  margin-bottom: 20px;
 }
 </style>

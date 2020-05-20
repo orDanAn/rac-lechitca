@@ -34,7 +34,7 @@ export default {};
     width: 380px;
     font-size: 24px;
     line-height: 28px;
-    text-align: center;
+    /*text-align: center; */
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {

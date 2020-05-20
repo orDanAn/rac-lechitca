@@ -18,7 +18,7 @@
           Назад
         </button-back>
         <button-next class="content__button-next" @clicBtnSmoll="nextQustion">
-          Далее
+          {{ isLastQuestion ? 'Далее' : 'Отправить' }}
         </button-next>
       </div>
     </form>
@@ -78,6 +78,20 @@ export default {
       const { quiz } = this.$store.state['storeContentPopup'];
       const { currentQustion, answers } = quiz;
       return answers[currentQustion] || '';
+    },
+    quiz() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      return quiz;
+    },
+    isLastQuestion() {
+      const { quiz } = this.$store.state['storeContentPopup'];
+      const { currentQustion, infoContent } = quiz;
+      const lengthQustion = Object.keys(quiz.infoContent).length;
+
+      if (quiz.currentQustion < lengthQustion - 1) {
+        return true;
+      }
+      return false;
     },
   },
 
