@@ -1,9 +1,23 @@
 <template>
-  <i class="icon-menu"></i>
+  <div
+    @click="SvitchMenu"
+    :class="['icon-menu', { 'icon-menu_is_open': MenuIsOpen }]"
+  ></div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    MenuIsOpen() {
+      return this.$store.getters['mobile-menu/getMenuState'];
+    },
+  },
+  methods: {
+    SvitchMenu() {
+      this.$store.commit('mobile-menu/SelectMenuState');
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -14,5 +28,9 @@ export default {};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+.icon-menu_is_open {
+  background-image: url('/ui-image/mobile-menu-close.svg');
 }
 </style>

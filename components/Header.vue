@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    <mobile-menu v-if="MobileMenuIsOpen" />
     <container class="header__container">
       <p class="header__text">
         Проект Благотворительного Фонда Константина Хабенского
@@ -22,6 +23,7 @@
 
 <script>
 import MainMenu from '@/components/MainMenu';
+import MobileMenu from '@/components/MobileMenu';
 import ButtonOpenPopup from '@/components/ui/ButtonOpenPopup';
 import Container from '@/components/Container';
 import IconMenu from '@/components/ui/IconMenu';
@@ -32,6 +34,12 @@ export default {
     'button-open-popup': ButtonOpenPopup,
     container: Container,
     'icon-menu': IconMenu,
+    'mobile-menu': MobileMenu,
+  },
+  computed: {
+    MobileMenuIsOpen() {
+      return this.$store.getters['mobile-menu/getMenuState'];
+    },
   },
 };
 </script>
