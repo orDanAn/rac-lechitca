@@ -114,7 +114,7 @@ export default {
     margin-right: 0;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .footer__container {
     max-width: 768px;
   }
@@ -126,7 +126,43 @@ export default {
   }
 
   .footer__menu /deep/ .menu__list-elem {
-    padding: 0 0 14px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .footer__info {
+    display: block;
+  }
+  .footer__text {
+    padding-bottom: 50px;
+  }
+  .footer__menu /deep/ .menu__list-elem {
+    margin-bottom: 18px;
+    padding: 0;
+  }
+  .footer__description {
+    display: block;
+  }
+  .footer__description-text {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .footer__text {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .footer__menu /deep/ .menu__link {
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  .footer__description-text {
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 15px;
   }
 }
 </style>
