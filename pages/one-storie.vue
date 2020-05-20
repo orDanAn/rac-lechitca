@@ -84,7 +84,7 @@
 
 <script>
 import Root from '@/components/Root';
-import StoriesWrap from '@/components/StoriesWrap';
+
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 
 export default {

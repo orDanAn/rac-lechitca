@@ -33,4 +33,18 @@ export default {};
   font-size: 34px;
   line-height: 50px;
 }
+
+@media screen and (max-width: 600px) {
+  .stories-rectangle__text {
+    padding-top: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .stories-rectangle__tag {
+    font-size: 22px;
+    line-height: 50px;
+  }
+}
 </style>
