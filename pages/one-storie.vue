@@ -90,8 +90,13 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import Container from '@/components/Container';
 import StoriesWrap from '@/components/StoriesWrap';
+=======
+import Root from '@/components/Root';
+
+>>>>>>> b75249f6107088d1114fb701c6f05a217765c108
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 
 export default {
