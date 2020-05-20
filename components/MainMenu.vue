@@ -2,9 +2,7 @@
   <nav class="menu">
     <ul class="menu__list">
       <li class="menu__list-elem">
-        <nuxt-link to="/" class="menu__link menu__link_selected"
-          >Главная</nuxt-link
-        >
+        <nuxt-link to="/" class="menu__link">Главная</nuxt-link>
       </li>
       <li class="menu__list-elem">
         <nuxt-link to="/stories" class="menu__link">Истории</nuxt-link>
@@ -37,8 +35,8 @@ export default {
 .menu__link:hover {
   opacity: 0.8;
 }
-.menu__link_selected {
-  text-decoration: underline;
+.nuxt-link-exact-active {
+  border-bottom: 1.5px solid black;
 }
 .menu__list-elem {
   padding-left: 40px;
