@@ -1,5 +1,5 @@
 <template>
-  <root>
+  <container>
     <section class="storie-header">
       <img src="" alt="" class="storie-header__img" />
       <div class="storie-header__title-containe">
@@ -59,18 +59,19 @@
       </p>
     </section>
 
-    <section class="share">
+    <section class="storie-share">
       <div class="storie__grey-line"></div>
-      <!-- здесь воткнуть мнемоник -->
-      <share class="share-link"
-        >Поделитесь этой статьей в своих социальных сетях ↗</share
-      >
+      <p class="storie-share__link">
+        Поделитесь этой статьей в своих социальных сетях ↗
+      </p>
+      <!-- Хаз, здесь элемент grey-line в блоке storie с мод. underline, разве нет? -->
       <div class="storie__grey-line_underline"></div>
     </section>
 
     <additional-stories>
       <div v-for="item in stories" :key="item.id" class="story-item">
         <story-image />
+        <!-- спросить у Данилы, у него позаимствовал -->
         <p class="story-item__name">{{ item.name }}</p>
         <p class="story-item__text">
           {{ item.text }}
@@ -79,11 +80,11 @@
     </additional-stories>
 
     <more-stories>Больше статей</more-stories>
-  </root>
+  </container>
 </template>
 
 <script>
-import Root from '@/components/Root';
+import Container from '@/components/Container';
 import StoriesWrap from '@/components/StoriesWrap';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 
@@ -92,9 +93,11 @@ export default {
     root: Root,
     'additional-stories': StoriesWrap,
     'more-stories': MoreStoriesBtn,
+    container: Container,
   },
 
   data() {
+    // вынести в отдельный store
     return {
       stories: [
         {
@@ -125,4 +128,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.storie-header {
+}
+</style>
