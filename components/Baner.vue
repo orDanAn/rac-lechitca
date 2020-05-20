@@ -60,10 +60,10 @@ export default {};
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .stories-rectangle__text {
     padding-top: 15px;
-    width: auto;
+    color: #fff;
     font-size: 16px;
     line-height: 18px;
   }

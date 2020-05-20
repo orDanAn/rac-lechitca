@@ -1,5 +1,5 @@
 <template>
-  <div class="stories__wrap">
+  <div class="story-container">
     <slot></slot>
   </div>
 </template>
@@ -9,8 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.stories__wrap {
-  margin-top: 70px;
+.story-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
