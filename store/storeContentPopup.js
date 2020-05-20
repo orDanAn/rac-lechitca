@@ -23,7 +23,7 @@ export const mutations = {
 export const actions = {
   async nextButton({ commit, state }, { answer }) {
     const { currentQustion } = state.quiz;
-    if (currentQustion === 12) {
+    if (currentQustion === 13) {
       return;
     }
     await commit('saveAnswer', { answer, currentQustion });
@@ -37,6 +37,12 @@ export const actions = {
       return;
     }
     await commit('setCurrentQustion', { currentQustion: currentQustion - 1 });
+  },
+};
+
+export const getters = {
+  getQuiz(state) {
+    return state.quiz;
   },
 };
 
@@ -119,5 +125,11 @@ const INFOCONTENT = {
     question: 'Почта или телефон для связи. ',
     explanation:
       'Укажите удобный для вас формат связи. После обработки анкеты координатор проекта свяжется с Вами для размещения Вашей истории на сайте.',
+  },
+
+  13: {
+    title: 'Спасибо что приняли участие!',
+    question: '',
+    explanation: '',
   },
 };

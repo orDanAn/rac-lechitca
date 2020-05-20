@@ -10,6 +10,7 @@
         :explanation="currentQustion.explanation"
       />
     </popup>
+    <popup v-if="popup.popupShowСontacts"> </popup>
   </div>
 </template>
 

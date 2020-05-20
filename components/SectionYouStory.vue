@@ -36,8 +36,13 @@
                 вами, зададим вопросы, уточним детали вашей истории.
               </template>
             </info-section-long>
-            <button-small @clicBtnSmoll="popupOpen"
+            <button-small v-if="variant.variantOne" @clicBtnSmoll="popupOpen"
               >Заполнить форму</button-small
+            >
+            <button-small
+              v-if="variant.variantTwo"
+              @clicBtnSmoll="popupOpenContact"
+              >Оставить контакт</button-small
             >
           </div>
         </div>
@@ -81,6 +86,10 @@ export default {
 
     popupOpen() {
       this.$store.commit('storePopup/openPopup');
+    },
+
+    popupOpenContact() {
+      this.$store.commit('storePopup/openPopupShowСontacts');
     },
   },
 };

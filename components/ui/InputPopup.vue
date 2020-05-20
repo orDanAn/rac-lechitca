@@ -74,11 +74,40 @@ export default {
   font-size: 18px;
   line-height: 24px;
   color: #000000;
-  margin-top: 80px;
   margin-left: 40px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 10px;
   width: 840px;
+}
+
+@media screen and (max-width: 1280px) {
+  .input_popup {
+    font-size: 16px;
+    line-height: 22px;
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .input_popup {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input_popup {
+    width: 500px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .input_popup {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-left: 15px;
+  }
 }
 </style>

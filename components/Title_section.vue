@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h3 class="title_section"><slot>ЗАГОЛОВОК</slot></h3>
-  </div>
+  <h3 class="title_section"><slot>ЗАГОЛОВОК</slot></h3>
 </template>
 
 <script>

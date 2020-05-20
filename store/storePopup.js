@@ -1,6 +1,7 @@
 export const state = () => ({
   popup: {
     popupShow: false,
+    popupShowСontacts: false,
   },
 });
 
@@ -11,6 +12,14 @@ export const mutations = {
 
   closePopup(state) {
     return (state.popup.popupShow = false);
+  },
+
+  openPopupShowСontacts(state) {
+    return (state.popup.popupShowСontacts = true);
+  },
+
+  closePopupShowСontacts(state) {
+    return (state.popup.popupShowСontacts = false);
   },
 };
 

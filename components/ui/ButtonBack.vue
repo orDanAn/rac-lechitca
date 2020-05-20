@@ -25,4 +25,18 @@ export default {};
 .button-back:hover {
   color: #000000;
 }
+
+@media screen and (max-width: 1024px) {
+  .button-back {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .button-back {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
 </style>
