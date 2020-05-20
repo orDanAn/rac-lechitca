@@ -1,35 +1,43 @@
 <template>
   <header class="header">
-    <p class="header__text">
-      Проект Благотворительного Фонда Константина Хабенского
-    </p>
-    <div class="header__block-menu">
-      <main-menu
-        class="header__menu"
-        @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
-      />
-      <button-open-popup
-        class="header__button"
-        @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
-        >Рассказать историю</button-open-popup
-      >
-    </div>
+    <container class="header__container">
+      <p class="header__text">
+        Проект Благотворительного Фонда Константина Хабенского
+      </p>
+      <div class="header__block-menu">
+        <main-menu
+          class="header__menu"
+          @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
+        />
+        <button-open-popup
+          class="header__button"
+          @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
+          >Рассказать историю</button-open-popup
+        >
+      </div>
+      <icon-menu class="header__icon-menu"></icon-menu>
+    </container>
   </header>
 </template>
 
 <script>
 import MainMenu from '@/components/MainMenu';
 import ButtonOpenPopup from '@/components/ui/ButtonOpenPopup';
+import Container from '@/components/Container';
+import IconMenu from '@/components/ui/IconMenu';
+
 export default {
   components: {
     'main-menu': MainMenu,
     'button-open-popup': ButtonOpenPopup,
+    container: Container,
+    'icon-menu': IconMenu,
   },
 };
 </script>
 
 <style scoped>
-.header {
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,9 +62,11 @@ export default {
   line-height: 24px;
   padding-left: 40px;
 }
-
+.header__icon-menu {
+  display: none;
+}
 @media screen and (max-width: 1280px) {
-  .header {
+  .header__container {
     max-width: 1280px;
     min-height: 72px;
     padding: 0 50px;
@@ -65,7 +75,7 @@ export default {
     font-size: 16px;
     line-height: 18px;
   }
-  .header__link {
+  .header__menu {
     font-size: 16px;
   }
   .header__button {
@@ -73,8 +83,49 @@ export default {
   }
 }
 @media screen and (max-width: 1024px) {
-  .header {
+  .header__container {
     max-width: 1024px;
+  }
+}
+@media screen and (max-width: 775px) {
+  .header__container {
+    max-width: 768px;
+  }
+  .header__text {
+    line-height: 18px;
+  }
+  .header__block-menu {
+    display: none;
+  }
+  .header__icon-menu {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header__container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__container {
+    max-width: 320px;
+    min-height: 64px;
+  }
+  .header__text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .header__icon-menu {
+    height: 22px;
+  }
+  .header__menu /deep/ .menu__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .header__button {
+    font-size: 13px;
+    line-height: 16px;
   }
 }
 </style>
