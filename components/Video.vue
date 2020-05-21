@@ -5,8 +5,14 @@
         <main-title>{{ text }}</main-title>
         <description class="video__description">{{ info }}</description>
         <div class="video__button-container">
-          <button-left class="video__buttonL"></button-left>
-          <button-right class="video__buttonR"></button-right>
+          <button-switch
+            :position="'left'"
+            class="video__buttonL"
+          ></button-switch>
+          <button-switch
+            :position="'right'"
+            class="video__buttonR"
+          ></button-switch>
         </div>
       </div>
       <div class="video__container">
@@ -23,14 +29,12 @@
 <script>
 import Title_section from '@/components/Title_section';
 import Info_section from '@/components/Info_section';
-import Button_left from '@/components/ui/Button_left';
-import Button_right from '@/components/ui/Button_right';
+import ButtonSwitch from '@/components/ui/ButtonSwitch';
 export default {
   components: {
     'main-title': Title_section,
     description: Info_section,
-    'button-left': Button_left,
-    'button-right': Button_right,
+    'button-switch': ButtonSwitch,
   },
   data() {
     return {
