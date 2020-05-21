@@ -3,10 +3,10 @@
     <section-subtitle class="stories__subtitle"
       >Истории неизлечимых привычек</section-subtitle
     >
-    <div class="container">
+    <form class="container">
       <input-search></input-search>
       <button-search class="button-search">Поиск</button-search>
-    </div>
+    </form>
     <story-container>
       <story-item
         v-for="item in storyRender"
@@ -98,11 +98,39 @@ a {
 .container {
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 
 .button-search {
   padding: 0;
   margin: 0;
   width: 226px;
+  height: 52px;
+  margin-left: 20px;
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .button-search {
+    width: 226px;
+    height: 48px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .button-search {
+    width: 208px;
+    height: 48px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .button-search {
+    width: 208px;
+    height: 46px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .button-search {
+    width: 46px;
+    height: 46px;
+    margin-left: 6px;
+  }
 }
 </style>
