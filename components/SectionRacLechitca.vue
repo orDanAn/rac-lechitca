@@ -8,7 +8,9 @@
         О проекте
       </title-section>
       <div class="rac-lechitca__container">
-        <info-section class="rac-lechitca__paragraph">
+        <info-section
+          class="rac-lechitca__paragraph rac-lechitca__info-section"
+        >
           Этот проект был создан благотворительным фондом Константина
           Хабенского.
         </info-section>
@@ -32,7 +34,9 @@
             >
           </div>
           <div>
-            <info-section-long class="rac-lechitca__paragraph">
+            <info-section-long
+              class="rac-lechitca__paragraph rac-lechitca__info-section-long"
+            >
               <template v-if="variant.varOne">
                 Есть вещи, которые не лечатся. Особенности характера, страстные
                 увлечения, привычки, ставшие частью нашего «я», фобии, которые
@@ -118,14 +122,14 @@ export default {
 }
 
 .rac-lechitca__second-title {
-  margin: 80px 0 32px 60px;
+  margin: 80px 0 32px 0px;
   color: #fff;
 }
 
 .rac-lechitca__container {
   display: flex;
   justify-content: space-between;
-  margin: 0 60px 0 60px;
+  margin: 0;
 }
 
 .rac-lechitca__container_inside {
@@ -161,5 +165,107 @@ export default {
 .rac-lechitca__paragraph {
   color: #dedede;
   margin-bottom: 18px;
+}
+
+@media screen and (max-width: 1280px) {
+  .rac-lechitca {
+    min-height: 626px;
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  .rac-lechitca__second-title {
+    margin: 60px 0 30px 0px;
+  }
+  .rac-lechitca__container_inside {
+    flex-basis: 715px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .rac-lechitca {
+    min-height: 571px;
+    padding-bottom: 80px;
+  }
+  .rac-lechitca__main-title {
+    font-size: 52px;
+    line-height: 63px;
+  }
+  .rac-lechitca__second-title {
+    margin: 46px 0 30px 0px;
+  }
+  .rac-lechitca__info-section {
+    width: 260px;
+  }
+
+  .rac-lechitca__conteiner-link {
+    width: 165px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .rac-lechitca__conteiner-link {
+    width: 145px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .rac-lechitca__main-title {
+    display: none;
+  }
+  .rac-lechitca {
+    min-height: 660px;
+    padding: 0 0 0 0;
+  }
+  .rac-lechitca___link_white {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 6px;
+  }
+
+  .rac-lechitca__container {
+    display: block;
+    margin: 0 auto;
+    width: 380px;
+  }
+
+  .rac-lechitca__second-title {
+    margin: 80px auto 26px;
+    text-align: center;
+  }
+
+  .rac-lechitca__conteiner-link {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin: 77px 0 30px 0;
+  }
+
+  .rac-lechitca__container_inside {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .rac-lechitca {
+    min-height: 628px;
+  }
+
+  .rac-lechitca__container {
+    width: 290px;
+  }
+
+  .rac-lechitca__second-title {
+    margin: 50px 0 15px;
+    text-align: left;
+  }
+  .rac-lechitca__info-section-long {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .rac-lechitca__conteiner-link {
+    margin: 40px 0 20px 0;
+  }
 }
 </style>

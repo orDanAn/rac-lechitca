@@ -48,7 +48,7 @@ export default {};
 @media screen and (max-width: 768px) {
   .stories-rectangle__text {
     padding-top: 12px;
-    width: 444px;
+    max-width: 444px;
     margin: 0 auto;
     font-size: 22px;
     line-height: 36px;

@@ -4,14 +4,14 @@
       <title-section class="you-story__title">
         Расскажите свою историю
       </title-section>
-      <div class="you-story__conteiner">
+      <div class="you-story__container">
         <info-section>
           Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
           поделиться своей историей неизлечимых привычек, навязчивых идей и
           болезненных привязанностей.
         </info-section>
-        <div class="you-story__conteiner_inside">
-          <div>
+        <div class="you-story__container_inside">
+          <div class="you-story__container-link">
             <link-section
               :class="{ 'you-story__link_active': variant.variantOne }"
               @clicLink="onVariantOne"
@@ -23,7 +23,7 @@
               >2-й вариант</link-section
             >
           </div>
-          <div>
+          <div class="you-story__container_info">
             <info-section-long>
               <template v-if="variant.variantOne">
                 Заполнить подробную форму прямо на сайте и мы опубликуем вашу
@@ -36,10 +36,14 @@
                 вами, зададим вопросы, уточним детали вашей истории.
               </template>
             </info-section-long>
-            <button-small v-if="variant.variantOne" @clicBtnSmoll="popupOpen"
+            <button-small
+              class="you-story__button"
+              v-if="variant.variantOne"
+              @clicBtnSmoll="popupOpen"
               >Заполнить форму</button-small
             >
             <button-small
+              class="you-story__button"
               v-if="variant.variantTwo"
               @clicBtnSmoll="popupOpenContact"
               >Оставить контакт</button-small
@@ -103,22 +107,110 @@ export default {
 }
 
 .you-story__title {
-  margin: 100px 0 32px 60px;
+  margin: 100px 0 32px 0;
 }
 
-.you-story__conteiner {
+.you-story__container {
   display: flex;
   justify-content: space-between;
-  margin: 0 60px 0 60px;
+  margin: 0;
 }
 
-.you-story__conteiner_inside {
+.you-story__container_inside {
   display: flex;
   justify-content: space-between;
   flex-basis: 785px;
 }
+.you-story__container_info {
+  position: relative;
+}
 
 .you-story__link_active {
   color: #000000;
+}
+.you-story__button {
+  position: absolute;
+  top: 166px;
+}
+@media screen and (max-width: 1280px) {
+  .you-story {
+    min-height: 488px;
+  }
+
+  .you-story__title {
+    margin: 90px 0 30px 0;
+  }
+  .you-story__container {
+    margin: 0;
+  }
+  .you-story__container_inside {
+    flex-basis: 715px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .you-story {
+    min-height: 436px;
+  }
+
+  .you-story__title {
+    margin: 80px 0 20px 0;
+  }
+  .you-story__container_inside {
+    flex-basis: 566px;
+  }
+  .you-story__button {
+    top: 152px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .you-story {
+    min-height: 598px;
+  }
+  .you-story__link_active {
+    color: #000;
+    border-bottom: 2px solid #613a93;
+    padding-bottom: 6px;
+  }
+  .you-story__title {
+    margin: 80px auto 26px;
+  }
+  .you-story__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    height: 270px;
+  }
+  .you-story__container_inside {
+    display: block;
+  }
+  .you-story__container-link {
+    display: flex;
+    margin-top: 95px;
+    margin-bottom: 30px;
+  }
+  .you-story__button {
+    top: 145px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .you-story {
+    min-height: 462px;
+  }
+
+  .you-story__title {
+    margin: 50px auto 16px;
+  }
+
+  .you-story__container-link {
+    margin-top: 55px;
+    margin-bottom: 15px;
+  }
+  .you-story__button {
+    top: 125px;
+  }
 }
 </style>

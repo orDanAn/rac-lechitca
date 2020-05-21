@@ -1,7 +1,7 @@
 <template>
-  <div class="conteiner-info">
-    <p class="info_section"><slot></slot></p>
-  </div>
+  <p class="info-section">
+    <slot></slot>
+  </p>
 </template>
 
 <script>
@@ -9,23 +9,41 @@ export default {};
 </script>
 
 <style scoped>
-.conteiner-info {
-  color: #666666;
-}
-
-.info_section {
+.info-section {
   width: 640px;
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
+  color: #666;
 }
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .info_section {
+
+@media screen and (max-width: 1280px) {
+  .info-section {
     width: 570px;
-    font-size: 16px;
-    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .info-section {
+    width: 447px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .info-section {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .info-section {
+    width: 290px;
+    font-size: 13px;
+    line-height: 16px;
   }
 }
 </style>

@@ -41,19 +41,38 @@ export default {
   color: #fff;
 }
 
-@media screen and (max-width: 1280px) {
-  .main-title {
-    height: 620px;
-    font-weight: 800;
-    font-size: 78px;
-    line-height: 94px;
-  }
-}
-
 .button {
   position: absolute;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1280px) {
+  .main-title {
+    font-size: 78px;
+    line-height: 94px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 64px;
+    line-height: 77px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .main-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 </style>
