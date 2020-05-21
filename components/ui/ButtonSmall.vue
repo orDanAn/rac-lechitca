@@ -10,7 +10,7 @@ export default {};
 
 <style scoped>
 .button-smoll {
-  margin-top: 78px;
+  width: 280px;
   background: #613a93;
   font-family: Inter;
   font-style: normal;
@@ -20,7 +20,6 @@ export default {};
   text-align: center;
   color: #ffffff;
   cursor: pointer;
-  padding: 0 88px;
   height: 52px;
   border: none;
 }
@@ -33,9 +32,26 @@ export default {};
   .button-smoll {
     width: 230px;
     height: 48px;
-    font-weight: 500;
     font-size: 16px;
     line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .button-smoll {
+    width: 230px;
+    height: 46px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .button-smoll {
+    width: 290px;
+    height: 40px;
+    font-size: 13px;
+    line-height: 16px;
   }
 }
 </style>

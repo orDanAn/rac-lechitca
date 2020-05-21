@@ -28,14 +28,14 @@
 </template>
 
 <script>
-// import Baner from '@/components/Baner';
+import Baner from '@/components/Baner';
 import Info_section from '@/components/Info_section';
 import Title_section from '@/components/Title_section';
 import Root from '@/components/Root';
 
 export default {
   components: {
-    // 'instagram-banner': Baner,
+    'instagram-banner': Baner,
     'section-title': Title_section,
     'section-subtitle': Info_section,
     root: Root,
