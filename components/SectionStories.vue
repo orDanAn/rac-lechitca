@@ -18,7 +18,6 @@ export default {
 
 <style scoped>
 .stories {
-  width: 92%;
   max-width: 1320px;
   margin: 0 auto;
 }
