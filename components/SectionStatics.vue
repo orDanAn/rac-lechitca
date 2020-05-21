@@ -1,6 +1,5 @@
 <template>
-  <root>
-    <!-- компоненты должны быть отдельными блоками, иначе нет смысла их изолировать (переиспользовать все-равно не получится нигде кроме текущего блока) -->
+  <container>
     <section-title class="section-statics__title"
       >Статистика по онкозаболеваниям</section-title
     >
@@ -59,19 +58,19 @@
         </div>
       </div>
     </div>
-  </root>
+  </container>
 </template>
 
 <script>
 import Title_section from '@/components/Title_section';
-import Root from '@/components/Root';
+import Container from '@/components/Container';
 import ProgressBarInline from '@/components/ui/ProgressBarInline';
 import ProgressiveBarColumn from '@/components/ui/ProgressiveBarColumn';
 
 export default {
   components: {
     'section-title': Title_section,
-    root: Root,
+    container: Container,
     'progress-bar-inline': ProgressBarInline,
     'progressive-bar-column': ProgressiveBarColumn,
   },
@@ -80,13 +79,7 @@ export default {
 
 <style scoped>
 .section-statics__title {
-  margin-top: 100px;
-}
-
-@media screen and (max-width: 1280px) {
-  .section-statics__title {
-    margin-top: 90px;
-  }
+  margin-top: 105px;
 }
 
 .section-statics__stats-container {
@@ -94,12 +87,6 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin: 70px auto 100px;
-}
-
-@media screen and (max-width: 1280px) {
-  .section-statics__stats-container {
-    margin: 60px auto 90px;
-  }
 }
 
 .section-statics__singe-stat {
@@ -112,13 +99,6 @@ export default {
   border: 1px solid #efefef;
 }
 
-@media screen and (max-width: 1280px) {
-  .section-statics__singe-stat {
-    width: 265px;
-    height: 265px;
-  }
-}
-
 .section-statics__stat-graphic {
   height: 40px;
   width: 86.6%;
@@ -127,35 +107,16 @@ export default {
   margin: 0 20px 0;
 }
 
-@media screen and (max-width: 1280px) {
-  .section-statics__stat-graphic {
-    width: 229px;
-    margin: 0 18px 0;
-  }
-}
-
 .section-statics__stat-graphic .section-statics__graphic-2pic {
   position: relative;
   left: -260px;
   overflow: visible;
 }
 
-@media screen and (max-width: 1280px) {
-  .section-statics__stat-graphic .section-statics__graphic-2pic {
-    left: -229px;
-  }
-}
-
 .section-statics__stat-graphic_column {
   height: 40px;
   width: 86.6%;
   margin: 0 20px 0;
-}
-
-@media screen and (max-width: 1280px) {
-  .section-statics__stat-graphic_column {
-    height: 36px;
-  }
 }
 
 .section-statics__stat-graphic_column .section-statics__graphic-pic {
@@ -167,28 +128,12 @@ export default {
   font-size: 12px;
 }
 
-@media screen and (max-width: 1280px) {
-  .section-statics__stat-text {
-    margin: 18px 18px 0;
-    font-size: 12px;
-    line-height: 133%;
-  }
-}
-
 .section-statics__stat-numbers {
   text-align: right;
   margin: 20px 20px 0;
   font-size: 38px;
   line-height: 105%;
   font-weight: bold;
-}
-
-@media screen and (max-width: 1280px) {
-  .section-statics__stat-numbers {
-    margin: 18px 15px 0 23px;
-    font-size: 38px;
-    line-height: 105%;
-  }
 }
 
 .section-statics__stat-source {
@@ -199,10 +144,144 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
+  .section-statics__title {
+    margin-top: 90px;
+  }
+
+  .section-statics__stats-container {
+    margin: 60px auto 90px;
+  }
+
+  .section-statics__singe-stat {
+    width: 265px;
+    height: 265px;
+  }
+
+  .section-statics__stat-graphic {
+    width: 229px;
+    margin: 0 18px 0;
+  }
+
+  .section-statics__stat-graphic .section-statics__graphic-2pic {
+    left: -229px;
+  }
+
+  .section-statics__stat-graphic_column {
+    height: 36px;
+  }
+
+  .section-statics__stat-text {
+    margin: 18px 18px 0;
+    font-size: 12px;
+    line-height: 133%;
+  }
+
+  .section-statics__stat-numbers {
+    margin: 18px 15px 0 23px;
+    font-size: 38px;
+    line-height: 105%;
+  }
+
   .section-statics__stat-source {
     margin: 15px 18px 18px;
     font-size: 12px;
     line-height: 133%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section-statics__title {
+    margin: 80px 0 0 50px;
+  }
+
+  .section-statics__stats-container {
+    margin: 60px auto 90px;
+    width: 90%;
+  }
+
+  .section-statics__singe-stat {
+    max-width: 208px;
+    max-height: 208px;
+  }
+
+  .section-statics__stat-graphic {
+    width: 229px;
+    margin: 0 18px 0;
+  }
+
+  .section-statics__stat-graphic .section-statics__graphic-2pic {
+    left: -229px;
+  }
+
+  .section-statics__stat-graphic_column {
+    height: 36px;
+  }
+
+  .section-statics__stat-text {
+    margin: 5px 15px 0 5px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .section-statics__stat-numbers {
+    margin: 18px 15px 0 23px;
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .section-statics__stat-source {
+    margin: 15px 18px 18px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-statics__title {
+    margin: 80px auto 50px;
+    text-align: center;
+  }
+
+  .section-statics__stats-container {
+    margin: 60px 0 90px;
+    width: 688px;
+  }
+
+  .section-statics__singe-stat {
+    width: 216px;
+    height: 216px;
+    overflow: scroll;
+  }
+
+  .section-statics__stat-graphic {
+    width: 229px;
+    margin: 0 18px 0;
+  }
+
+  .section-statics__stat-graphic .section-statics__graphic-2pic {
+    left: -229px;
+  }
+
+  .section-statics__stat-graphic_column {
+    height: 36px;
+  }
+
+  .section-statics__stat-text {
+    margin: 5px 15px 0 5px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .section-statics__stat-numbers {
+    margin: 18px 15px 0 23px;
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .section-statics__stat-source {
+    margin: 15px 18px 18px;
+    font-size: 10px;
+    line-height: 14px;
   }
 }
 </style>
