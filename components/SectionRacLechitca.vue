@@ -122,14 +122,14 @@ export default {
 }
 
 .rac-lechitca__second-title {
-  margin: 80px 0 32px 0px;
+  margin: 80px 0 32px 60px;
   color: #fff;
 }
 
 .rac-lechitca__container {
   display: flex;
   justify-content: space-between;
-  margin: 0;
+  margin: 0 60px;
 }
 
 .rac-lechitca__container_inside {
@@ -173,7 +173,9 @@ export default {
     padding-top: 80px;
     padding-bottom: 90px;
   }
-
+  .rac-lechitca__container {
+    margin: 0;
+  }
   .rac-lechitca__second-title {
     margin: 60px 0 30px 0px;
   }

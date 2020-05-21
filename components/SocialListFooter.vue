@@ -17,7 +17,7 @@
           >Youtube</a
         >
       </li>
-      <li class="social-list__list-elem">
+      <li class="social-list__list-elem" @click="clickSeti">
         <button-open-popup class="social-list__button"
           >Поделитесь ↗</button-open-popup
         >
@@ -31,6 +31,11 @@ import ButtonOpenPopup from '@/components/ui/ButtonOpenPopup';
 export default {
   components: {
     'button-open-popup': ButtonOpenPopup,
+  },
+  methods: {
+    clickSeti() {
+      this.$store.commit('storePopup/openPopupShowSeti');
+    },
   },
 };
 </script>

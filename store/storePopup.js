@@ -2,6 +2,7 @@ export const state = () => ({
   popup: {
     popupShow: false,
     popupShowСontacts: false,
+    popupShowSeti: false,
   },
 });
 
@@ -20,6 +21,14 @@ export const mutations = {
 
   closePopupShowСontacts(state) {
     return (state.popup.popupShowСontacts = false);
+  },
+
+  openPopupShowSeti(state) {
+    return (state.popup.popupShowSeti = true);
+  },
+
+  closePopupShowSeti(state) {
+    return (state.popup.popupShowSeti = false);
   },
 };
 

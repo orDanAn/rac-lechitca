@@ -13,6 +13,9 @@
     <popup v-if="popup.popupShowСontacts">
       <content-contact />
     </popup>
+    <popup v-if="popup.popupShowSeti">
+      <content-seti />
+    </popup>
   </div>
 </template>
 
@@ -22,6 +25,7 @@ import Footer from '@/components/Footer';
 import Popup from '@/components/Popup';
 import Content from '@/components/Content';
 import ContentContact from '@/components/ContentContact';
+import ContentSeti from '@/components/ContentSeti';
 
 export default {
   components: {
@@ -30,6 +34,7 @@ export default {
     popup: Popup,
     'popup-container': Content,
     'content-contact': ContentContact,
+    'content-seti': ContentSeti,
   },
 
   computed: {

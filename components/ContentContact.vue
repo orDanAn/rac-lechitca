@@ -86,6 +86,11 @@ export default {
     'button-next': ButtonSmall,
     'input-popup': InputPopup,
   },
+  methods: {
+    popupClose() {
+      this.$store.commit('storePopup/closePopupShowСontacts');
+    },
+  },
 };
 </script>
 

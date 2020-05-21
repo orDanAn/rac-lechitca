@@ -107,13 +107,13 @@ export default {
 }
 
 .you-story__title {
-  margin: 100px 0 32px 0;
+  margin: 100px 0 32px 60px;
 }
 
 .you-story__container {
   display: flex;
   justify-content: space-between;
-  margin: 0;
+  margin: 0 60px 0 60px;
 }
 
 .you-story__container_inside {
