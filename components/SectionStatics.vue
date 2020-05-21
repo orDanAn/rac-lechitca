@@ -284,4 +284,11 @@ export default {
     line-height: 14px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .section-statics__title {
+    margin: 40px auto 30px;
+    text-align: center;
+  }
+}
 </style>
