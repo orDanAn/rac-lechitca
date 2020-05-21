@@ -10,7 +10,9 @@
         :explanation="currentQustion.explanation"
       />
     </popup>
-    <popup v-if="popup.popupShowСontacts"> </popup>
+    <popup v-if="popup.popupShowСontacts">
+      <content-contact />
+    </popup>
   </div>
 </template>
 
@@ -19,6 +21,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Popup from '@/components/Popup';
 import Content from '@/components/Content';
+import ContentContact from '@/components/ContentContact';
 
 export default {
   components: {
@@ -26,6 +29,7 @@ export default {
     'project-footer': Footer,
     popup: Popup,
     'popup-container': Content,
+    'content-contact': ContentContact,
   },
 
   computed: {
