@@ -8,9 +8,7 @@
         <nuxt-link to="/stories" class="mobile-menu__link">Истории</nuxt-link>
       </li>
     </ul>
-    <button-open-popup
-      class="mobile-menu__button"
-      @clicBtnOpenPopap="$emit('clicBtnOpenPopap')"
+    <button-open-popup class="mobile-menu__button" @clicBtnOpenPopap="popupOpen"
       >Рассказать историю</button-open-popup
     >
   </nav>
@@ -21,6 +19,11 @@ import ButtonOpenPopup from '@/components/ui/ButtonOpenPopup';
 export default {
   components: {
     'button-open-popup': ButtonOpenPopup,
+  },
+  methods: {
+    popupOpen() {
+      this.$store.commit('storePopup/openPopup');
+    },
   },
 };
 </script>
