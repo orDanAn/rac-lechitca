@@ -121,5 +121,11 @@ export default {
     font-size: 13px;
     line-height: 15px;
   }
+  .social-list__list {
+    margin-bottom: 0;
+  }
+  .social-list__list-elem {
+    margin-bottom: 5px;
+  }
 }
 </style>
