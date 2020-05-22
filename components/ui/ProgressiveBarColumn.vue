@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="progress-bar__container">
     <div class="progress-bar__column_grey" :style="styleGrey"></div>
     <div class="progress-bar__column_purple" :style="stylePurple"></div>
   </div>
@@ -38,9 +38,10 @@ export default {
   align-self: start;
 }
 
-.container {
+.progress-bar__container {
   display: flex;
   flex-direction: column;
   margin: 0 20px;
+  cursor: pointer;
 }
 </style>

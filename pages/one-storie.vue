@@ -1,8 +1,8 @@
 <template>
-  <container>
+  <container class="storie-container" @click="$emit('cardClic')">
     <section class="storie-header">
       <img
-        src="https://tverlife.ru/wp-content/uploads/2019/11/683174-592828-1voopUqS.jpg"
+        src="https://cdn24.img.ria.ru/images/40774/33/407743348_0:0:600:340_600x0_80_0_0_b3a832999f61b387dd203745e30ce1c4.jpg"
         alt=""
         class="storie-header__img"
       />
@@ -68,24 +68,22 @@
     <section class="storie-share">
       <div class="storie__grey-line"></div>
       <p class="storie-share__link">
-        Поделитесь этой статьей в своих социальных сетях ↗
+        Поделитесь этой статьей в своих социальных сетях &#8599;
       </p>
       <!-- Хаз, здесь элемент grey-line в блоке storie с мод. underline, разве нет? -->
       <div class="storie__grey-line_underline"></div>
     </section>
 
-    <additional-stories>
-      <div v-for="item in stories" :key="item.id" class="story-item">
-        <story-image />
-        <!-- спросить у Данилы, у него позаимствовал -->
-        <p class="story-item__name">{{ item.name }}</p>
-        <p class="story-item__text">
-          {{ item.text }}
-        </p>
-      </div>
-    </additional-stories>
-
-    <more-stories>Больше статей</more-stories>
+    <story-container class="storie__story-container">
+      <story-item
+        v-for="item in stories"
+        :key="item.id"
+        :name="item.name"
+        :text="item.text"
+        @cardClick="goToStorie(card.id)"
+      ></story-item>
+    </story-container>
+    <more-stories class="storie__more-stories">Больше статей</more-stories>
   </container>
 </template>
 
@@ -93,42 +91,26 @@
 import Container from '@/components/Container';
 import StoryContainer from '@/components/StoryContainer';
 import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
+import StoryItem from '@/components/StoryItem';
 
 export default {
   components: {
-    'additional-stories': StoryContainer,
+    'story-container': StoryContainer,
     'more-stories': MoreStoriesBtn,
     container: Container,
+    'story-item': StoryItem,
   },
 
-  data() {
-    // вынести в отдельный store
-    return {
-      stories: [
-        {
-          id: 1,
-          name: 'Владимир Тен',
-          text:
-            'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-        },
-        {
-          id: 2,
-          name: 'Владимир Познер',
-          text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-        },
-        {
-          id: 3,
-          name: 'Владимир Тен',
-          text:
-            'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-        },
-        {
-          id: 4,
-          name: 'Владимир Познер',
-          text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-        },
-      ],
-    };
+  metod: {
+    goToStorie(id) {
+      this.$router.push(`/streams/${id}`);
+    },
+  },
+
+  computed: {
+    stories() {
+      return this.$store.getters['stories1To4/getStoriesOneStorie'];
+    },
   },
 };
 </script>
@@ -136,24 +118,27 @@ export default {
 <style scoped>
 .storie-header {
   display: grid;
-  grid-template: 290px 290px / 580px 680px;
-  grid-gap: 10px;
+  grid-template: 1fr 1fr/1fr 1fr;
   margin: 100px auto;
   justify-content: space-between;
   max-width: 1320px;
 }
 
 .storie-header__img {
-  grid-area: 1 / 1 / span 2;
-  background: limegreen;
   width: 580px;
   height: 580px;
   object-fit: cover;
-  margin: 0 auto;
+  margin: 0;
+  grid-row: 1 / 3;
+}
+
+.storie-header__text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .storie-header__title-container {
-  grid-area: 1 / 2;
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
@@ -173,7 +158,6 @@ export default {
 }
 
 .storie-header__subtitle-container {
-  grid-area: 2 / 2;
   max-width: 680px;
   width: 100%;
   margin: auto auto 0;
@@ -190,10 +174,14 @@ export default {
 
 .storie-header__share {
   grid-area: 1 / 1;
+  font-size: 18px;
+  line-height: 133%;
 }
 
 .storie-header__date {
   grid-area: 1 / 2;
+  font-size: 18px;
+  line-height: 133%;
 }
 
 .storie__grey-line {
@@ -208,18 +196,18 @@ export default {
   background-color: #efefef;
   width: 100%;
   height: 1px;
-  margin: 30px auto 0;
+  margin: 30px auto 0px;
 }
 
 .storie-text {
   max-width: 780px;
   width: 100%;
-  margin: 100px auto 0;
+  margin: 125px auto 0;
 }
 
 .storie-text__abzac {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 33px;
 
   font-family: 'Inter';
   font-style: normal;
@@ -242,5 +230,310 @@ export default {
   margin: 30px auto;
   padding: 0;
   text-align: center;
+  font-size: 18px;
+  line-height: 133%;
+}
+
+.storie__story-container {
+  margin: 160px auto 0;
+}
+
+.storie__more-stories {
+  margin: 0 0 100px;
+}
+
+@media screen and (max-width: 1280px) {
+  .storie-header__img {
+    max-width: 518px;
+    max-height: 518px;
+  }
+
+  .storie-header {
+    margin: 100px auto;
+    justify-content: space-between;
+  }
+
+  .storie-header__text {
+    max-width: 602px;
+    font-size: 34px;
+    line-height: 44px;
+    margin: 30px auto 0 50px;
+  }
+
+  .storie-header__subtitle-container {
+    max-width: 602px;
+  }
+
+  .storie-header__share {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .storie-header__date {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .storie-text {
+    max-width: 700px;
+    margin-top: 120px;
+  }
+
+  .storie-text__abzac {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 28px;
+  }
+
+  .storie-share {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 60px auto;
+  }
+
+  .storie__story-container {
+    margin-top: 150px;
+  }
+
+  .storie__more-stories {
+    margin-top: 0px;
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .storie-header__img {
+    max-width: 407px;
+    max-height: 407px;
+    margin-right: 45px;
+  }
+
+  .storie-header {
+    margin: 100px auto 0;
+    justify-content: space-between;
+  }
+
+  .storie-header__text {
+    max-width: 477px;
+    font-size: 30px;
+    line-height: 38px;
+    margin: 20px 0;
+  }
+
+  .storie-header__subtitle-container {
+    max-width: 477px;
+    margin-left: 0;
+  }
+
+  .storie-header__share {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .storie-header__date {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .storie__grey-line_underline {
+    margin: 10px auto 0px;
+  }
+
+  .storie-text {
+    max-width: 640px;
+    margin-top: 90px;
+  }
+
+  .storie-text__abzac {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 30px;
+  }
+
+  .storie-share {
+    margin: 46px auto;
+  }
+
+  .storie-share__link {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 24px auto;
+  }
+
+  .storie__story-container {
+    margin-top: 120px;
+  }
+
+  /* наверняка поправлено уже, убрать отрицатльный маргин после маржина */
+  .storie__more-stories {
+    margin-top: -30px;
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .storie-header {
+    margin: 80px auto 0;
+    grid-template: 22% 60% 10% / 1fr;
+  }
+
+  .storie-header__img {
+    max-width: 55vw;
+    max-height: 55vw;
+    grid-row: 2 / 5;
+    margin: 20px auto 0;
+    align-content: center;
+  }
+
+  .storie-header__title-container {
+    margin: 0 auto 0px;
+    display: flex;
+    flex-direction: column;
+    width: 680px;
+  }
+
+  .storie-header__text {
+    max-width: 650px;
+    font-size: 30px;
+    line-height: 38px;
+    margin: 20px auto 0;
+    text-align: center;
+  }
+
+  .storie-header__subtitle-container {
+    max-width: 640px;
+    margin: 50px auto 0;
+  }
+
+  .storie-header__subtitle-text {
+    justify-content: space-between;
+  }
+
+  .storie-header__share {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .storie-header__date {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .storie__grey-line_underline {
+    margin: 10px auto 0px;
+  }
+
+  .storie-text {
+    max-width: 640px;
+    margin-top: 141px;
+  }
+
+  .storie-text__abzac {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 30px;
+  }
+
+  .storie-share {
+    margin: 83px auto;
+  }
+
+  .storie-share__link {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 24px auto;
+  }
+
+  .storie__story-container {
+    margin-top: 120px;
+  }
+
+  /* наверняка поправлено уже, убрать отрицатльный маргин после маржина */
+  .storie__more-stories {
+    margin-top: -30px;
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .storie-header {
+    margin: 50px auto 0;
+    grid-template: 22% 60% 10% / 1fr;
+  }
+
+  .storie-header__img {
+    max-width: 290px;
+    max-height: 290px;
+    grid-row: 2 / 5;
+    margin: 10px 0 0;
+  }
+
+  .storie-header__title-container {
+    margin: 0 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .storie-header__text {
+    max-width: 300px;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 20px 0 0;
+    text-align: center;
+  }
+
+  .storie-header__subtitle-container {
+    max-width: 290px;
+    margin: 30px 0 0;
+  }
+
+  .storie-header__subtitle-text {
+    justify-content: space-between;
+  }
+
+  .storie-header__share {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .storie-header__date {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .storie__grey-line_underline {
+    margin: 10px auto 0px;
+  }
+
+  .storie-text {
+    max-width: 290px;
+    margin-top: 65px;
+  }
+
+  .storie-text__abzac {
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+
+  .storie-share {
+    margin: 50px auto;
+  }
+
+  .storie-share__link {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 20px auto;
+  }
+
+  .storie__story-container {
+    margin-top: 120px;
+  }
+
+  /* наверняка поправлено уже, убрать отрицатльный маргин после маржина */
+  .storie__more-stories {
+    margin-top: -30px;
+    margin-bottom: 70px;
+  }
 }
 </style>
