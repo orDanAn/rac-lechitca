@@ -19,7 +19,7 @@
       />
       <div class="content-contact__container-form">
         <div>
-          <p class="content-contact__question">
+          <p class="content-contact__input_mini">
             Электронная почта
           </p>
           <input-popup
@@ -32,11 +32,11 @@
           />
         </div>
         <div>
-          <p class="content-contact__question">
+          <p class="content-contact__input_mini">
             Телефон
           </p>
           <input-popup
-            class="content-contact__input_mini"
+            class="content-contact__input_mini "
             name="tel"
             v-model="tel"
             value="tel"
@@ -96,7 +96,7 @@ export default {
 
 <style scoped>
 form {
-  margin-top: 45px;
+  margin-top: 50px;
 }
 .content-contact {
   width: 920px;
@@ -117,11 +117,18 @@ form {
 
 .content-contact__input_mini {
   width: 400px;
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-left: 40px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .content-contact__input_maxi {
   margin-top: 40px;
+  width: 840px;
 }
 .content-contact__question {
   font-family: Inter;
@@ -131,6 +138,7 @@ form {
   line-height: 24px;
   margin-top: 40px;
   margin-left: 40px;
+  width: 840px;
 }
 
 .content-contact__down-container {
@@ -157,5 +165,145 @@ form {
 .content-contact__button-next {
   width: 226px;
   height: 52px;
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .content-contact {
+    width: 800px;
+    min-height: 710px;
+  }
+  .content-contact__title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .content-contact__question {
+    font-size: 16px;
+    line-height: 22px;
+    width: 720px;
+  }
+  .content-contact__input_mini {
+    width: 343px;
+  }
+  .content-contact__input_maxi {
+    width: 720px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .content-contact {
+    width: 800px;
+    min-height: 710px;
+  }
+  .content-contact__title {
+    font-size: 28px;
+    line-height: 32px;
+    width: 393px;
+  }
+  .content-contact__question {
+    font-size: 16px;
+    line-height: 22px;
+    width: 720px;
+  }
+  .content-contact__input_mini {
+    width: 343px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .content-contact__input_maxi {
+    width: 720px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content-contact {
+    width: 580px;
+    min-height: 710px;
+  }
+  .content-contact__title {
+    font-size: 26px;
+    line-height: 30px;
+    width: 365px;
+  }
+  .content-contact__question {
+    width: 500px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .content-contact__input_maxi {
+    width: 500px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .content-contact__input_mini {
+    width: 230px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .content-contact__button-next {
+    width: 200px;
+    height: 46px;
+  }
+  .personal-data {
+    width: 270px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  form {
+    margin-top: 35px;
+  }
+  .content-contact {
+    width: 290px;
+    min-height: 666px;
+  }
+  .content-contact__title {
+    font-size: 18px;
+    line-height: 21px;
+    width: 185px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .content-contact__question {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  .content-contact__input_mini {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  .content-contact__input_maxi {
+    width: 260px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  .content-contact__button-close {
+    top: 20px;
+    right: 20px;
+  }
+  .content-contact__button-next {
+    width: 260px;
+    height: 40px;
+  }
+  .content-contact__down-container {
+    flex-direction: column;
+    margin: 35px auto 15px auto;
+  }
+  .personal-data {
+    width: 260px;
+    font-size: 11px;
+    line-height: 13px;
+    margin: 10px 0 0 0;
+  }
+  .content-contact__container-form {
+    flex-direction: column;
+  }
 }
 </style>
