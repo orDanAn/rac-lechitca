@@ -25,6 +25,7 @@ export default {
   background: #f4f4f4;
   position: relative;
   margin: 0 20px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1280px) {
