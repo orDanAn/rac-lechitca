@@ -10,8 +10,8 @@ export const getters = {
   },
 };
 
-const INFOSTATIC = {
-  1: {
+const INFOSTATIC = [
+  {
     title:
       'Каждый 3-й в стране уверен, что рак неизлечим. А это примерно 48 918 000 человек.',
     value: 1,
@@ -20,7 +20,7 @@ const INFOSTATIC = {
     statNumbers: '1 из 3',
   },
 
-  2: {
+  {
     title: '2,6% Россиян имеют онкозаболевания.',
     value: 2.6,
     maxValue: 100,
@@ -28,7 +28,7 @@ const INFOSTATIC = {
     statNumbers: '3 700 000',
   },
 
-  3: {
+  {
     title:
       'На 28% выросла доля выявления заболеваний на ранней стадии за 10 лет.',
     value: 65,
@@ -38,7 +38,7 @@ const INFOSTATIC = {
     statNumbers: '↑28%',
   },
 
-  4: {
+  {
     title:
       'На 25% снизилась смертность в течение первого года после постановки диагноза.',
     value: 50,
@@ -47,4 +47,4 @@ const INFOSTATIC = {
     source: 'МНИОИ Герцена 2018',
     statNumbers: '↓25%',
   },
-};
+];

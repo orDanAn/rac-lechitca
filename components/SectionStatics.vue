@@ -4,73 +4,31 @@
       >Статистика по онкозаболеваниям</section-title
     >
     <div class="section-statics__stats-container">
-      <div class="section-statics__singe-stat">
+      <div
+        class="section-statics__singe-stat"
+        v-for="(item, index) in infoStatics"
+        :key="item.message"
+      >
         <p class="section-statics__stat-text">
-          {{ infoStatics[1].title }}
+          {{ infoStatics[index].title }}
         </p>
         <div class="section-statics__stat-illustration">
           <progress-bar-inline
-            :value="infoStatics[1].value"
-            :maxValue="infoStatics[1].maxValue"
+            v-if="!infoStatics[index].absValue"
+            :value="infoStatics[index].value"
+            :maxValue="infoStatics[index].maxValue"
           ></progress-bar-inline>
-          <p class="section-statics__stat-numbers">
-            {{ infoStatics[1].statNumbers }}
-          </p>
-          <p class="section-statics__stat-source">
-            {{ infoStatics[1].source }}
-          </p>
-        </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          {{ infoStatics[2].title }}
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progress-bar-inline
-            :value="infoStatics[2].value"
-            :maxValue="infoStatics[2].maxValue"
-          ></progress-bar-inline>
-          <p class="section-statics__stat-numbers">
-            {{ infoStatics[2].statNumbers }}
-          </p>
-          <p class="section-statics__stat-source">
-            {{ infoStatics[2].source }}
-          </p>
-        </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          {{ infoStatics[3].title }}
-        </p>
-        <div class="section-statics__stat-illustration">
           <progressive-bar-column
-            :value="infoStatics[3].value"
-            :maxValue="infoStatics[3].maxValue"
-            :absValue="infoStatics[3].absValue"
+            v-if="infoStatics[index].absValue"
+            :value="infoStatics[index].value"
+            :maxValue="infoStatics[index].maxValue"
+            :absValue="infoStatics[index].absValue"
           ></progressive-bar-column>
           <p class="section-statics__stat-numbers">
-            {{ infoStatics[3].statNumbers }}
+            {{ infoStatics[index].statNumbers }}
           </p>
           <p class="section-statics__stat-source">
-            {{ infoStatics[3].source }}
-          </p>
-        </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          {{ infoStatics[4].title }}
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progressive-bar-column
-            :value="infoStatics[4].value"
-            :maxValue="infoStatics[4].maxValue"
-            :absValue="infoStatics[4].absValue"
-          ></progressive-bar-column>
-          <p class="section-statics__stat-numbers">
-            {{ infoStatics[4].statNumbers }}
-          </p>
-          <p class="section-statics__stat-source">
-            {{ infoStatics[4].source }}
+            {{ infoStatics[index].source }}
           </p>
         </div>
       </div>
