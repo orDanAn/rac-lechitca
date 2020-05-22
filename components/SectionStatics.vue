@@ -1,60 +1,63 @@
 <template>
   <container>
-    <section-title class="section-statics__title"
-      >Статистика по онкозаболеваниям</section-title
-    >
-    <div class="section-statics__stats-container">
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          Каждый 3-й в стране уверен, что рак неизлечим. А это примерно 48 918
-          000 человек.
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progress-bar-inline :value="1" :maxValue="3"></progress-bar-inline>
-          <p class="section-statics__stat-numbers">1 из 3</p>
-          <p class="section-statics__stat-source">Левада-Центр 2018</p>
+    <div class="section-statics__root">
+      <section-title class="section-statics__title"
+        >Статистика по онкозаболеваниям</section-title
+      >
+      <div class="section-statics__stats-container">
+        <div class="section-statics__singe-stat">
+          <p class="section-statics__stat-text">
+            Каждый 3-й в стране уверен, что рак неизлечим. А это примерно 48 918
+            000 человек.
+          </p>
+          <div class="section-statics__stat-illustration">
+            <progress-bar-inline :value="1" :maxValue="3"></progress-bar-inline>
+            <p class="section-statics__stat-numbers">1 из 3</p>
+            <p class="section-statics__stat-source">Левада-Центр 2018</p>
+          </div>
         </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          2,6% Россиян имеют онкозаболевания.
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progress-bar-inline
-            :value="2.6"
-            :maxValue="100"
-          ></progress-bar-inline>
-          <p class="section-statics__stat-numbers">3 700 000</p>
-          <p class="section-statics__stat-source">Росстат 2018</p>
+        <div class="section-statics__singe-stat">
+          <p class="section-statics__stat-text">
+            2,6% Россиян имеют онкозаболевания.
+          </p>
+          <div class="section-statics__stat-illustration">
+            <progress-bar-inline
+              :value="2.6"
+              :maxValue="100"
+            ></progress-bar-inline>
+            <p class="section-statics__stat-numbers">3 700 000</p>
+            <p class="section-statics__stat-source">Росстат 2018</p>
+          </div>
         </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          На 28% выросла доля выявления заболеваний на ранней стадии за 10 лет.
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progressive-bar-column
-            :value="65"
-            :maxValue="80"
-            :absValue="100"
-          ></progressive-bar-column>
-          <p class="section-statics__stat-numbers">↑28%</p>
-          <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
+        <div class="section-statics__singe-stat">
+          <p class="section-statics__stat-text">
+            На 28% выросла доля выявления заболеваний на ранней стадии за 10
+            лет.
+          </p>
+          <div class="section-statics__stat-illustration">
+            <progressive-bar-column
+              :value="65"
+              :maxValue="80"
+              :absValue="100"
+            ></progressive-bar-column>
+            <p class="section-statics__stat-numbers">↑28%</p>
+            <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
+          </div>
         </div>
-      </div>
-      <div class="section-statics__singe-stat">
-        <p class="section-statics__stat-text">
-          На 25% снизилась смертность в течение первого года после постановки
-          диагноза.
-        </p>
-        <div class="section-statics__stat-illustration">
-          <progressive-bar-column
-            :value="50"
-            :maxValue="90"
-            :absValue="67"
-          ></progressive-bar-column>
-          <p class="section-statics__stat-numbers">↓25%</p>
-          <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
+        <div class="section-statics__singe-stat">
+          <p class="section-statics__stat-text">
+            На 25% снизилась смертность в течение первого года после постановки
+            диагноза.
+          </p>
+          <div class="section-statics__stat-illustration">
+            <progressive-bar-column
+              :value="50"
+              :maxValue="90"
+              :absValue="67"
+            ></progressive-bar-column>
+            <p class="section-statics__stat-numbers">↓25%</p>
+            <p class="section-statics__stat-source">МНИОИ Герцена 2018</p>
+          </div>
         </div>
       </div>
     </div>
@@ -78,6 +81,12 @@ export default {
 </script>
 
 <style scoped>
+.section-statics__root {
+  max-width: 1320px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
 .section-statics__title {
   margin-top: 105px;
 }
