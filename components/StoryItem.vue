@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 .story-item {
   width: 300px;
   margin-bottom: 70px;

@@ -1,10 +1,10 @@
 <template>
   <container>
     <!-- тут тоже надо прокидывать класс миксин если он нужен, а если нет то прямо внутри компонента можно прописать этот же класс -->
-    <baner class="stories-rectangle"
-      ><p class="stories-baner__text">РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ</p>
-      <br
-    /></baner>
+    <baner>
+      РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ
+      <br />
+    </baner>
     <div class="instagram__main-container">
       <div class="instargam__text-container">
         <section-title class="instagram__title"
