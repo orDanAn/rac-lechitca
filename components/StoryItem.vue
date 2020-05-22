@@ -1,11 +1,13 @@
 <template>
-  <div class="story-item">
-    <story-image />
-    <p class="story-item__name">{{ name }}</p>
-    <p class="story-item__text">
-      {{ text }}
-    </p>
-  </div>
+  <nuxt-link to="/stories/1">
+    <div class="story-item">
+      <story-image />
+      <p class="story-item__name">{{ name }}</p>
+      <p class="story-item__text">
+        {{ text }}
+      </p>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
