@@ -15,7 +15,7 @@
       </div>
       <div class="storie-header__subtitle-container">
         <div class="storie-header__subtitle-text">
-          <p class="storie-header__share">Поделитесь ↗</p>
+          <p class="storie-header__share" @click="clickSeti">Поделитесь ↗</p>
           <p class="storie-header__date">20 апреля 2018</p>
         </div>
         <div class="storie__grey-line storie__grey-line_underline"></div>
@@ -67,7 +67,7 @@
 
     <section class="storie-share">
       <div class="storie__grey-line"></div>
-      <p class="storie-share__link">
+      <p class="storie-share__link" @click="clickSeti">
         Поделитесь этой статьей в своих социальных сетях &#8599;
       </p>
       <!-- Хаз, здесь элемент grey-line в блоке storie с мод. underline, разве нет? -->
@@ -101,9 +101,14 @@ export default {
     'story-item': StoryItem,
   },
 
-  metod: {
-    goToStorie(id) {
-      this.$router.push(`/streams/${id}`);
+  //metod: {
+  //goToStorie(id) {
+  // this.$router.push(`/streams/${id}`);
+  // },
+  // },
+  methods: {
+    clickSeti() {
+      this.$store.commit('storePopup/openPopupShowSeti');
     },
   },
 
@@ -176,6 +181,7 @@ export default {
   grid-area: 1 / 1;
   font-size: 18px;
   line-height: 133%;
+  cursor: pointer;
 }
 
 .storie-header__date {
@@ -232,6 +238,7 @@ export default {
   text-align: center;
   font-size: 18px;
   line-height: 133%;
+  cursor: pointer;
 }
 
 .storie__story-container {
