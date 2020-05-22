@@ -87,7 +87,6 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   justify-content: space-between;
-  overflow: auto;
   margin: 70px auto 100px;
 }
 
@@ -193,12 +192,13 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .section-statics__title {
-    margin: 80px 0 0 50px;
+    margin: 80px 10px 0;
   }
 
   .section-statics__stats-container {
-    margin: 60px auto 90px;
+    margin: 60px 10px 90px;
     width: 90%;
+    grid-gap: 10px;
   }
 
   .section-statics__singe-stat {
@@ -238,6 +238,12 @@ export default {
   }
 }
 
+@media screen and (max-width: 950px) {
+  .section-statics__stats-container {
+    overflow: scroll;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section-statics__title {
     margin: 80px auto 50px;
@@ -247,6 +253,7 @@ export default {
   .section-statics__stats-container {
     margin: 60px 0 90px;
     width: 688px;
+    overflow: scroll;
   }
 
   .section-statics__singe-stat {
