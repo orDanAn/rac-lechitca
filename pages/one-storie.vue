@@ -375,6 +375,7 @@ export default {
   .storie-header {
     margin: 80px auto 0;
     grid-template: 22% 60% 10% / 1fr;
+    width: 100vw;
   }
 
   .storie-header__img {
@@ -455,7 +456,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .storie-header {
     margin: 50px auto 0;
     grid-template: 22% 60% 10% / 1fr;
