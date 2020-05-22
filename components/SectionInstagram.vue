@@ -270,14 +270,14 @@ export default {
 
   .instagram__preview-container {
     max-width: 765px;
-    grid-gap: 27px;
-    margin: 40px auto 0 auto;
-    width: 100vw;
+    grid-gap: 17px;
+    margin: 40px auto 0;
+    width: 100%;
   }
 
   .instagram__preview-card {
-    width: 157px;
-    height: 157px;
+    width: 137px;
+    height: 137px;
   }
 }
 
