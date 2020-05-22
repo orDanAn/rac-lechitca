@@ -250,25 +250,31 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
+  .storie-container {
+    max-width: 95%;
+  }
+
   .storie-header__img {
-    max-width: 518px;
-    max-height: 518px;
+    max-width: 430px;
+    max-height: 430px;
   }
 
   .storie-header {
     margin: 100px auto;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .storie-header__text {
-    max-width: 602px;
-    font-size: 34px;
-    line-height: 44px;
+    max-width: 450px;
+    font-size: 30px;
+    line-height: 40px;
     margin: 30px auto 0 50px;
   }
 
   .storie-header__subtitle-container {
     max-width: 602px;
+    width: 60%;
+    align-self: start;
   }
 
   .storie-header__share {
@@ -378,11 +384,20 @@ export default {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   .storie-header {
-    margin: 80px auto 0;
-    grid-template: 22% 60% 10% / 1fr;
-    width: 100vw;
+    margin: 80px 0 0;
+    grid-template: 22% 60% 10% / 80%;
+    width: 600px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 700px) {
+    .storie-header {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   .storie-header__img {
@@ -394,22 +409,22 @@ export default {
   }
 
   .storie-header__title-container {
-    margin: 0 auto 0px;
     display: flex;
     flex-direction: column;
-    width: 680px;
+    width: 100%;
   }
 
   .storie-header__text {
-    max-width: 650px;
+    max-width: 700px;
+    padding: 0 10px;
     font-size: 30px;
     line-height: 38px;
-    margin: 20px auto 0;
+    margin: 20px 0 0;
     text-align: center;
   }
 
   .storie-header__subtitle-container {
-    max-width: 640px;
+    max-width: 80vw;
     margin: 50px auto 0;
   }
 
@@ -491,8 +506,8 @@ export default {
   }
 
   .storie-header__subtitle-container {
-    max-width: 290px;
-    margin: 30px 0 0;
+    width: 90vw;
+    margin: 30px auto 0;
   }
 
   .storie-header__subtitle-text {

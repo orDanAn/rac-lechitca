@@ -98,12 +98,16 @@ export default {
 
 <style scoped>
 .stories-rectangle {
-  margin: 100px auto 0;
-  padding: 5px;
+  margin: 70px 45px 0;
+}
+
+.stories-baner__text {
+  margin: -10px 0 -30px;
 }
 
 .instagram__main-container {
-  margin: 100px auto 100px;
+  margin: 110px 45px 100px;
+  width: 91%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -129,7 +133,7 @@ export default {
 .instagram__preview-container {
   width: 870px;
   display: grid;
-  grid-template: repeat(2, min-content) / repeat(4, min-content);
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   grid-gap: 30px;
 }
 
@@ -145,17 +149,17 @@ export default {
 @media screen and (max-width: 1280px) {
   .instagram__main-container {
     margin-bottom: 90px;
-    max-width: 1180px;
+    max-width: 91vw;
   }
 
   .instagram__preview-container {
-    width: 765px;
-    grid-gap: 27px;
+    max-width: 604px;
+    grid-gap: 20px;
   }
 
   .instagram__preview-card {
-    width: 171px;
-    height: 171px;
+    width: 136px;
+    height: 136px;
   }
 }
 
@@ -166,7 +170,12 @@ export default {
 
   .instagram__main-container {
     margin: 75px auto 0;
-    max-width: 1180px;
+    max-width: 91vw;
+    padding: 0 10px;
+  }
+
+  .instagram__text-container {
+    max-width: 260px;
   }
 
   .instagram__title {
@@ -178,17 +187,45 @@ export default {
   .instagram__subtitle {
     font-size: 13px;
     line-height: 16px;
+    max-width: 260px;
   }
 
   .instagram__preview-container {
-    width: 765px;
-    grid-gap: 27px;
+    max-width: 604px;
+    grid-gap: 20px;
     margin-left: 30px;
   }
 
   .instagram__preview-card {
-    width: 136px;
-    height: 136px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .instagram__main-container {
+    flex-direction: column;
+  }
+
+  .instargam__text-container {
+    justify-content: center;
+    width: 100%;
+  }
+  .instagram__main-container {
+    flex-direction: column;
+  }
+  .instagram__preview-container {
+    margin: 40px auto 70px auto;
+    width: 100vw;
+  }
+
+  .instagram__title {
+    text-align: center;
+    margin: 26px auto;
+  }
+
+  .instagram__subtitle {
+    margin: 26px auto;
   }
 }
 
