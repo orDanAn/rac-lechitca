@@ -20,6 +20,12 @@
         <button-next class="content__button-next" @clicBtnSmoll="nextQustion">
           {{ isLastQuestion ? 'Далее' : 'Отправить' }}
         </button-next>
+        <p class="personal-data" v-if="!isLastQuestion" @click="popupClose">
+          Нажимая на кнопку «отправить», вы даете согласие на
+          <nuxt-link to="/policy" class="policy-link"
+            >обработку персональных данных</nuxt-link
+          >
+        </p>
       </div>
     </form>
     <button-next
@@ -161,6 +167,21 @@ form {
   margin-left: 40px;
 }
 
+.personal-data {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  width: 378px;
+  margin-left: 30px;
+
+  color: #666;
+}
+.policy-link {
+  color: #666;
+}
+
 .content__button-next {
   margin: 0 0 0 10px;
   width: 226px;
@@ -211,7 +232,7 @@ form {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   form {
     top: 230px;
   }
@@ -219,7 +240,11 @@ form {
     min-width: 580px;
     min-height: 520px;
   }
-
+  .personal-data {
+    width: 210px;
+    font-size: 11px;
+    line-height: 13px;
+  }
   .content__title {
     text-align: left;
   }
@@ -264,6 +289,12 @@ form {
   }
   .content__button-container {
     margin-top: 250px;
+  }
+  .personal-data {
+    position: absolute;
+    bottom: 55px;
+    right: 0;
+    width: 206px;
   }
 }
 </style>
