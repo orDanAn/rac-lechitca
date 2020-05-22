@@ -58,14 +58,9 @@ export default {
 </script>
 
 <style scoped>
-.section-statics__root {
-  max-width: 1320px;
-  padding: 0 10px;
-  margin: 0 auto;
-}
-
 .section-statics__title {
   margin-top: 105px;
+  margin-left: 60px;
 }
 
 .section-statics__stats-container {
@@ -73,7 +68,7 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   justify-content: space-between;
-  margin: 70px auto 100px;
+  margin: 70px 60px 100px;
 }
 
 .section-statics__singe-stat {
@@ -130,9 +125,10 @@ export default {
   line-height: 133%;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1395px) {
   .section-statics__title {
     margin-top: 90px;
+    margin-left: 0;
   }
 
   .section-statics__stats-container {
@@ -176,7 +172,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1235px) {
   .section-statics__title {
     margin: 80px 10px 0;
   }
@@ -238,7 +234,7 @@ export default {
 
   .section-statics__stats-container {
     margin: 60px 0 90px;
-    width: 688px;
+    width: auto;
     overflow: scroll;
   }
 

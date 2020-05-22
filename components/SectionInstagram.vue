@@ -1,10 +1,10 @@
 <template>
   <container>
     <!-- тут тоже надо прокидывать класс миксин если он нужен, а если нет то прямо внутри компонента можно прописать этот же класс -->
-    <baner class="stories-rectangle"
-      ><p class="stories-baner__text">РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ</p>
-      <br
-    /></baner>
+    <baner>
+      РАССКАЗЫВАЙТЕ ВАШИ ИСТОРИИ В ИНСТАГРАМ
+      <br />
+    </baner>
     <div class="instagram__main-container">
       <div class="instargam__text-container">
         <section-title class="instagram__title"
@@ -304,7 +304,7 @@ export default {
   }
 
   .instagram__main-container {
-    margin: 25px auto 50px;
+    margin: 25px 0 50px;
     max-width: 1180px;
     flex-direction: column;
   }
@@ -332,7 +332,7 @@ export default {
   .instagram__preview-container {
     width: 100%;
     grid-gap: 27px;
-    margin: 0px auto 0;
+    margin: 0 0 0 15px;
     grid-template: repeat(4, min-content) / repeat(2, min-content);
     grid-gap: 10px;
     justify-content: center;
