@@ -202,7 +202,7 @@ export default {
     font-size: 24px;
     line-height: 40px;
     width: 628px;
-    margin: -10px auto -50px;
+    margin: -10px auto -30px;
   }
 
   .instagram__main-container {
@@ -232,9 +232,10 @@ export default {
   }
 
   .instagram__preview-container {
-    width: 765px;
+    max-width: 765px;
     grid-gap: 27px;
-    margin: 40px auto 0;
+    margin: 40px auto 0 auto;
+    width: 100vw;
   }
 
   .instagram__preview-card {
@@ -243,12 +244,14 @@ export default {
   }
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .instagram__preview-container {
-    grid-template:  repeat(4, min-content) / repeat(2, min-content);
-   grid-gap: 20px;
+    grid-template: repeat(4, min-content) / repeat(2, min-content);
+    grid-gap: 20px;
+    width: 100%;
+    justify-content: center;
   }
-} */
+}
 
 @media screen and (max-width: 320px) {
   .stories-rectangle {
@@ -290,11 +293,12 @@ export default {
   }
 
   .instagram__preview-container {
-    width: 765px;
+    width: 100%;
     grid-gap: 27px;
     margin: 0px auto 0;
     grid-template: repeat(4, min-content) / repeat(2, min-content);
     grid-gap: 10px;
+    justify-content: center;
   }
 
   .instagram__preview-card {

@@ -83,9 +83,11 @@ export default {
 }
 
 .section-statics__stats-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
   justify-content: space-between;
+  overflow: auto;
   margin: 70px auto 100px;
 }
 
