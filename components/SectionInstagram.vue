@@ -98,16 +98,16 @@ export default {
 
 <style scoped>
 .stories-rectangle {
-  margin: 70px 45px 0;
+  margin: 100px 65px 0;
 }
 
 .stories-baner__text {
-  margin: -10px 0 -30px;
+  margin: -10px 0 -25px;
 }
 
 .instagram__main-container {
-  margin: 110px 45px 100px;
-  width: 91%;
+  margin: 105px auto 100px;
+  width: 90.5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

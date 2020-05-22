@@ -58,6 +58,12 @@ export default {
 </script>
 
 <style scoped>
+.section-statics__root {
+  max-width: 1320px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
 .section-statics__title {
   margin-top: 105px;
 }
