@@ -234,7 +234,7 @@ export default {
 
   .section-statics__stats-container {
     margin: 60px 0 90px;
-    width: 688px;
+    width: auto;
     overflow: scroll;
   }
 

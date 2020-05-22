@@ -304,7 +304,7 @@ export default {
   }
 
   .instagram__main-container {
-    margin: 25px auto 50px;
+    margin: 25px 0 50px;
     max-width: 1180px;
     flex-direction: column;
   }
@@ -332,7 +332,7 @@ export default {
   .instagram__preview-container {
     width: 100%;
     grid-gap: 27px;
-    margin: 0px auto 0;
+    margin: 0 0 0 15px;
     grid-template: repeat(4, min-content) / repeat(2, min-content);
     grid-gap: 10px;
     justify-content: center;
