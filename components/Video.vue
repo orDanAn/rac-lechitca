@@ -7,11 +7,11 @@
         <div class="video__button-container">
           <button-switch
             :position="'left'"
-            class="video__buttonL"
+            class="video__button video__button_left"
           ></button-switch>
           <button-switch
             :position="'right'"
-            class="video__buttonR"
+            class="video__button video__button_right"
           ></button-switch>
         </div>
       </div>
@@ -139,14 +139,14 @@ export default {
     margin: 60px auto 0 auto;
     position: relative;
   }
-  .video__buttonL {
+  .video__button {
     position: absolute;
     top: 130px;
+  }
+  .video__button_left {
     right: 345px;
   }
-  .video__buttonR {
-    position: absolute;
-    top: 130px;
+  .video__button_right {
     left: 345px;
   }
   .video__description {
@@ -175,14 +175,14 @@ export default {
     margin: 40px auto 0 auto;
     position: relative;
   }
-  .video__buttonL {
+  .video__button {
     position: absolute;
     top: 66px;
+  }
+  .video__button_left {
     right: 170px;
   }
-  .video__buttonR {
-    position: absolute;
-    top: 66px;
+  .video__button_right {
     left: 170px;
   }
   .video__description {
