@@ -39,7 +39,7 @@
         {{ text5 }}
       </p>
       <p class="storie-text__abzac">
-        {{ texxt6 }}
+        {{ text6 }}
       </p>
     </section>
 

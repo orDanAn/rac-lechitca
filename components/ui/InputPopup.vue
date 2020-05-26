@@ -1,6 +1,6 @@
 <template>
   <input
-    class="input_popup"
+    class="input-popup"
     :type="type"
     :placeholder="placeholder"
     :required="required"
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style scoped>
-.input_popup {
+.input-popup {
   display: block;
   font-family: Inter;
   font-style: normal;

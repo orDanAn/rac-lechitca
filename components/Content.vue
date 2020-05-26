@@ -11,13 +11,17 @@
         {{ explanation }}</span
       >
     </p>
-    <form v-if="question" @submit.prevent="">
+    <form v-if="question" @submit.prevent="" name="form">
       <input-popup name="answer" v-model="answer" value="answer" />
       <div class="content__button-container">
         <button-back @clickButtonBack="prevQustion">
           Назад
         </button-back>
-        <button-next class="content__button-next" @clicBtnSmoll="nextQustion">
+        <button-next
+          class="content__button-next"
+          @clicBtnSmoll="nextQustion"
+          :disabled="answer.length > 1 ? false : true"
+        >
           {{ isLastQuestion ? 'Далее' : 'Отправить' }}
         </button-next>
         <p class="personal-data" v-if="!isLastQuestion" @click="popupClose">
@@ -31,7 +35,7 @@
     <button-next
       class="content__button-finish"
       v-if="!question"
-      @clicBtnSmoll="popupClose"
+      @clicBtnSmoll="popupCloseFinish"
       >Закрыть</button-next
     >
     <button-close
@@ -106,7 +110,11 @@ export default {
       await this.$store.dispatch('storeContentPopup/nextButton', {
         answer: this.answer,
       });
+      if (this.answer === '') {
+        console.log('pusto');
+      }
       this.answer = this.initAnswer;
+      this.disabled = false;
     },
 
     async prevQustion() {
@@ -115,6 +123,11 @@ export default {
     },
 
     popupClose() {
+      this.$store.commit('storePopup/closePopup');
+    },
+
+    popupCloseFinish() {
+      this.$store.commit('storeContentPopup/setCurrentQustionStart');
       this.$store.commit('storePopup/closePopup');
     },
   },

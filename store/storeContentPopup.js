@@ -18,6 +18,10 @@ export const mutations = {
   setInfoContent(state, { infoContent }) {
     state.infoContent = infoContent;
   },
+
+  setCurrentQustionStart(state) {
+    state.quiz.currentQustion = 1;
+  },
 };
 
 export const actions = {

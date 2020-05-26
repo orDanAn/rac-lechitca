@@ -4,7 +4,10 @@
       <h1 class="main-title">
         #РАКЛЕЧИТСЯ
       </h1>
-      <button-main-title class="button" />
+      <button-main-title
+        class="button"
+        @btnMainTaitle="$emit('btnMainTaitle')"
+      />
     </container>
   </div>
 </template>
