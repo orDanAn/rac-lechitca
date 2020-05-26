@@ -2,46 +2,27 @@
   <container class="storie-container" @click="$emit('cardClic')">
     <section class="storie-header">
       <img
-        :src="imageUrl"
+        :src="stories[1].url"
         alt="фото автора статьи"
         class="storie-header__img"
       />
       <div class="storie-header__title-container">
         <div class="storie__grey-line"></div>
         <h3 class="storie-header__text">
-          <span class="storie-header__text-bold">{{ author }}:</span>
-          {{ title }}
+          <span class="storie-header__text-bold">{{ stories[1].author }}:</span>
+          {{ stories[1].title }}
         </h3>
       </div>
       <div class="storie-header__subtitle-container">
         <div class="storie-header__subtitle-text">
           <p class="storie-header__share" @click="clickSeti">Поделитесь ↗</p>
-          <p class="storie-header__date">{{ date }}</p>
+          <p class="storie-header__date">{{ stories[1].date }}</p>
         </div>
         <div class="storie__grey-line storie__grey-line_underline"></div>
       </div>
     </section>
 
-    <section class="storie-text">
-      <p class="storie-text__abzac">
-        {{ text1 }}
-      </p>
-      <p class="storie-text__abzac">
-        {{ text2 }}
-      </p>
-      <p class="storie-text__abzac storie-text__abzac_bold">
-        {{ text3 }}
-      </p>
-      <p class="storie-text__abzac">
-        {{ text4 }}
-      </p>
-      <p class="storie-text__abzac">
-        {{ text5 }}
-      </p>
-      <p class="storie-text__abzac">
-        {{ text6 }}
-      </p>
-    </section>
+    <section class="storie-text" v-html="stories[1].text"></section>
 
     <section class="storie-share">
       <div class="storie__grey-line"></div>
@@ -56,7 +37,7 @@
       <story-item
         v-for="item in stories"
         :key="item.id"
-        :name="item.name"
+        :name="item.author"
         :text="item.text"
         @cardClick="goToStorie(card.id)"
       ></story-item>
@@ -72,28 +53,6 @@ import MoreStoriesBtn from '@/components/ui/MoreStoriesBtn';
 import StoryItem from '@/components/StoryItem';
 
 export default {
-  data() {
-    return {
-      title: '«Я не могу победить свою пунктуальность в отличии от рака»',
-      author: 'Александр Тарханов',
-      date: '20 апреля 2018',
-      id: 1,
-      imageUrl:
-        'https://cdn24.img.ria.ru/images/40774/33/407743348_0:0:600:340_600x0_80_0_0_b3a832999f61b387dd203745e30ce1c4.jpg',
-      text1:
-        'Я из военной семьи. Отец хоть и не был военным сам, но нас всех держал в ежовых рукавицах. Думаю, поэтому мы и выросли такими ответственными.',
-      text2:
-        'У меня дома до сих пор стоят часы в каждой комнате, хотя они и не нужны особо — я сам чувствую, опаздываю куда-то или нет, отстаю от нужного графика или опережаю. Вот такие встроенные внутренние часы! Будильник мне тоже не нужен — я всегда встаю раньше. Одеваюсь тоже быстро, как в армии, за 45 секунд.',
-      text3:
-        '«В футболе если команда опоздала на 15 минут, ей засчитывается поражение».',
-      text4:
-        'Опаздывать я тоже не люблю, на все встречи прихожу заранее. Если знаю, что могу попасть по дороге в пробку, то не еду на машине. В аэропорт приезжаю задолго до начала регистрации. Лучше подожду и кофе попью, чем опоздаю!',
-      text5:
-        'Когда мне было 16 лет, мне в школе геометрию нужно было пересдавать. Я билеты выучил, знал абсолютно все. Пришел в нужное время, а учительница — нет. Ну, я какое-то время подождал ее и ушел. Потом она спрашивала: «Почему не дождался?». Я ответил: «В футболе если команда опоздала на 15 минут, ей засчитывается поражение». Экзамен мне все-таки поставили! Сейчас если кто-то из футболистов моей команды опаздывает — начинаю злиться, могу и прикрикнуть потом. А если кто-то опоздал на тренировку перед игрой — все, подготовка насмарку. Я сразу начинаю думать тогда: «Значит, точно проиграем». Такая болезненная пунктуальность уже не лечится. В отличие от рака.',
-      text6:
-        '«Сейчас если кто-то из футболистов моей команды опаздывает — начинаю злиться, могу и прикрикнуть потом. А если кто-то опоздал на тренировку перед игрой — все, подготовка насмарку. Я сразу начинаю думать тогда: «Значит, точно проиграем». Такая болезненная пунктуальность уже не лечится».',
-    };
-  },
   components: {
     'story-container': StoryContainer,
     'more-stories': MoreStoriesBtn,
@@ -101,15 +60,19 @@ export default {
     'story-item': StoryItem,
   },
 
-  methods: {
-    clickSeti() {
-      this.$store.commit('storePopup/openPopupShowSeti');
+  computed: {
+    stories() {
+      return this.$store.getters['stories/getStories'];
     },
   },
 
-  computed: {
-    stories() {
-      return this.$store.getters['stories1To4/getStoriesOneStorie'];
+  beforeMount() {
+    this.$store.dispatch('stories/fetchStories');
+  },
+
+  methods: {
+    clickSeti() {
+      this.$store.commit('storePopup/openPopupShowSeti');
     },
   },
 };

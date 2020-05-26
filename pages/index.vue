@@ -11,14 +11,14 @@
         <story-item
           v-for="item in stories"
           :key="item.id"
-          :name="item.name"
-          :text="item.text"
+          :name="item.author"
+          :text="item.text.substr(0, item.text.indexOf('/p') + 3)"
         ></story-item>
       </story-container>
-      <more-stories>Больше статей</more-stories>
+      <more-stories>{{}}</more-stories>
     </section-stories>
     <section-instagram />
-    <section-you-story />
+    <section-you-story :title="bloks" :text="bloks" />
     <section-statics />
     <section-rac-lechitca />
   </div>
@@ -67,17 +67,20 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
+    bloks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
+    },
   },
 
-  data() {
-    return {
-      popupShow: false,
-      title: 'Шаг 2 из 12',
-      question: 'Было ли у вас онкологическое заболевание?',
-      explanation:
-        ' Если да – расскажите, пожалуйста, кратко, какой диагноз и текущий статус. Если нет — приглашаем Вас поделиться своей историей неизлечимых привычек в Инстаграм с хештегами #раклечится и #этонелечится.',
-    };
+  beforeMount() {
+    this.$store.dispatch('storeBlocks/fetchBlocks');
+    this.$store.dispatch('stories/fetchStories');
   },
+
+  //async fetch({store}) {
+  //await store.dispatch('stories/fetchStories')
+  //await store.dispatch('storeBlocks/fetchBlocks')
+  //}
 };
 </script>
 

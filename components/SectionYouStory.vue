@@ -2,14 +2,10 @@
   <section class="you-story">
     <container>
       <title-section class="you-story__title">
-        Расскажите свою историю
+        {{ title }}
       </title-section>
       <div class="you-story__container">
-        <info-section>
-          Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
-          поделиться своей историей неизлечимых привычек, навязчивых идей и
-          болезненных привязанностей.
-        </info-section>
+        <info-section v-html="text"> </info-section>
         <div class="you-story__container_inside">
           <div class="you-story__container-link">
             <link-section
@@ -71,6 +67,14 @@ export default {
     'title-section': Title_section,
     'link-section': LinkSection,
     container: Container,
+  },
+  props: {
+    title: {
+      type: String,
+    },
+    text: {
+      type: String,
+    },
   },
 
   computed: {

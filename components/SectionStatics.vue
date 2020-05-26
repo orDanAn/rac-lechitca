@@ -7,10 +7,10 @@
       <div
         class="section-statics__singe-stat"
         v-for="(item, index) in infoStatics"
-        :key="item.message"
+        :key="item.id"
       >
         <p class="section-statics__stat-text">
-          {{ infoStatics[index].title }}
+          {{ infoStatics[index].description }}
         </p>
         <div class="section-statics__stat-illustration">
           <progress-bar-inline
@@ -25,7 +25,7 @@
             :absValue="infoStatics[index].absValue"
           ></progressive-bar-column>
           <p class="section-statics__stat-numbers">
-            {{ infoStatics[index].statNumbers }}
+            {{ infoStatics[index].summary }}
           </p>
           <p class="section-statics__stat-source">
             {{ infoStatics[index].source }}
@@ -53,6 +53,10 @@ export default {
     infoStatics() {
       return this.$store.getters['storeStatics/getInfoStatics'];
     },
+  },
+
+  beforeMount() {
+    this.$store.dispatch('storeStatics/fetchInfoStatics');
   },
 };
 </script>
