@@ -14,7 +14,7 @@
         <p class="footer__description-text">
           Сделано студентами
           <a
-            class="footer__description-text"
+            class="footer__description-link"
             href="https://praktikum.yandex.ru/"
             target="_blank"
             rel="noopener noreferrer"
@@ -81,7 +81,18 @@ export default {
   font-size: 18px;
   line-height: 18px;
   color: #898989;
+}
+.footer__description-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: #898989;
   text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.footer__description-link:hover {
+  opacity: 0.8;
 }
 .footer__menu {
   margin-right: 230px;
@@ -98,6 +109,9 @@ export default {
     max-width: 330px;
   }
   .footer__description-text {
+    font-size: 16px;
+  }
+  .footer__description-link {
     font-size: 16px;
   }
 }
@@ -150,6 +164,9 @@ export default {
   .footer__description-text {
     margin-top: 10px;
   }
+  .footer__description-link {
+    margin-top: 10px;
+  }
 }
 @media screen and (max-width: 400px) {
   .footer__text {
@@ -163,6 +180,11 @@ export default {
   }
 
   .footer__description-text {
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .footer__description-link {
     font-weight: 100;
     font-size: 13px;
     line-height: 15px;
