@@ -2,9 +2,9 @@
   <header class="header">
     <mobile-menu v-if="MobileMenuIsOpen" />
     <container class="header__container">
-      <p class="header__text">
+      <nuxt-link to="/" class="header__logo">
         Проект Благотворительного Фонда Константина Хабенского
-      </p>
+      </nuxt-link>
       <div class="header__block-menu">
         <main-menu
           class="header__menu"
@@ -58,12 +58,18 @@ export default {
   display: flex;
 }
 
-.header__text {
+.header__logo {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   max-width: 340px;
+  color: black;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+.header__logo:hover {
+  opacity: 0.8;
 }
 .header__button {
   font-size: 18px;
@@ -79,7 +85,7 @@ export default {
     min-height: 72px;
     padding: 0 50px;
   }
-  .header__text {
+  .header__logo {
     font-size: 16px;
     line-height: 18px;
   }
@@ -99,7 +105,7 @@ export default {
   .header__container {
     max-width: 768px;
   }
-  .header__text {
+  .header__logo {
     line-height: 18px;
   }
   .header__block-menu {
@@ -120,7 +126,7 @@ export default {
     max-width: 320px;
     min-height: 64px;
   }
-  .header__text {
+  .header__logo {
     font-size: 12px;
     line-height: 14px;
   }
