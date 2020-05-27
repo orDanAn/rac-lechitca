@@ -12,7 +12,7 @@
           v-for="item in stories"
           :key="item.id"
           :name="item.author"
-          :text="item.text.substr(0, item.text.indexOf('/p') + 3)"
+          :text="item.title"
         ></story-item>
       </story-container>
       <more-stories>{{}}</more-stories>
