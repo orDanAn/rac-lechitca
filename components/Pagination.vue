@@ -47,6 +47,7 @@ export default {
 .pagination {
   width: 30%;
   margin: 0 auto;
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
 }

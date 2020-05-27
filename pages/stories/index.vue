@@ -11,8 +11,8 @@
       <story-item
         v-for="item in storyRender"
         :key="item.id"
-        :name="item.name"
-        :text="item.text"
+        :name="item.author"
+        :text="item.title"
       ></story-item>
     </story-container>
     <pagination
@@ -63,7 +63,7 @@ export default {
   },
   data() {
     return {
-      ItemsPerPage: 4,
+      ItemsPerPage: 16,
       startIndex: 0,
     };
   },
