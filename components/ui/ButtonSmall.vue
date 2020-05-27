@@ -1,5 +1,5 @@
 <template>
-  <button class="button-smoll" @click.prevent="$emit('clicBtnSmoll')">
+  <button class="button-smoll" @click="$emit('clicBtnSmoll')">
     <slot>Текст кнопки</slot>
   </button>
 </template>

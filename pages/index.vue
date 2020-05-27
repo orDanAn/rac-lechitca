@@ -1,7 +1,7 @@
 <template>
   <div class="container-main">
-    <main-title />
-    <section-video />
+    <main-title @btnMainTaitle="scroll" />
+    <section-video ref="nextSection" />
     <section-stories>
       <baner>И В ОТЛИЧИЕ ОТ РАКА</baner>
       <section-subtitle class="stories__subtitle"
@@ -54,9 +54,14 @@ export default {
     'story-container': StoryContainer,
   },
 
-  computed: {},
-
-  methods: {},
+  methods: {
+    scroll() {
+      console.log(this.$refs.nextSection.$el);
+      this.$refs.nextSection.$el.scrollIntoView({
+        behavior: 'smooth',
+      });
+    },
+  },
 
   computed: {
     stories() {
