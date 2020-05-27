@@ -12,13 +12,13 @@
           v-for="item in stories"
           :key="item.id"
           :name="item.author"
-          :text="item.text.substr(0, item.text.indexOf('/p') + 3)"
+          :text="item.title"
         ></story-item>
       </story-container>
-      <more-stories>{{}}</more-stories>
+      <more-stories>Больше статей</more-stories>
     </section-stories>
     <section-instagram />
-    <section-you-story :title="bloks" :text="bloks" />
+    <section-you-story :title="bloks[9].title" :text="bloks[9].text" />
     <section-statics />
     <section-rac-lechitca />
   </div>
@@ -56,7 +56,6 @@ export default {
 
   methods: {
     scroll() {
-      console.log(this.$refs.nextSection.$el);
       this.$refs.nextSection.$el.scrollIntoView({
         behavior: 'smooth',
       });
@@ -65,17 +64,22 @@ export default {
 
   computed: {
     stories() {
-      return this.$store.getters['stories/getStories'];
+      return this.$store.getters['stories/getStories'].filter(
+        item => item.id <= 9
+      );
     },
     bloks() {
       return this.$store.getters['storeBlocks/getBlocks'];
     },
+    videos() {
+      return this.$store.getters['storeVideo/getVideo'];
+    },
   },
 
-  beforeMount() {
-    this.$store.dispatch('storeBlocks/fetchBlocks');
-    this.$store.dispatch('stories/fetchStories');
-  },
+  //beforeMount() {
+  // this.$store.dispatch('storeBlocks/fetchBlocks')
+  // this.$store.dispatch('stories/fetchStories')
+  //},
 
   //async fetch({store}) {
   //await store.dispatch('stories/fetchStories')
