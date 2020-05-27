@@ -5,21 +5,21 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setState(state, value) {
+  setState(state, { value }) {
     return (state.infoStatics = value);
   },
 };
 
 export const getters = {
   getInfoStatics(state) {
-    return state.infoStatics.data;
+    return state.infoStatics;
   },
 };
 
 export const actions = {
   fetchInfoStatics(state) {
     return axios.get('https://strapi.kruzhok.io/statistics').then(res => {
-      return state.commit('setState', res);
+      return state.commit('setState', { value: res.data });
     });
   },
 };

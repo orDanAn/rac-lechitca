@@ -1,5 +1,9 @@
 export default {
   mode: 'universal',
+
+  router: {
+    middleware: 'baseDate',
+  },
   /*
    ** Headers of the page
    */

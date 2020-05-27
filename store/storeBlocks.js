@@ -13,13 +13,13 @@ export const mutations = {
 export const actions = {
   fetchBlocks(state) {
     return axios('https://strapi.kruzhok.io/blocks').then(res => {
-      return state.commit('setBlocks', res);
+      return state.commit('setBlocks', res.data);
     });
   },
 };
 
 export const getters = {
   getBlocks(state) {
-    return state.blocks.data;
+    return state.blocks;
   },
 };

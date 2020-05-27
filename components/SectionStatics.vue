@@ -1,7 +1,7 @@
 <template>
   <container>
-    <section-title class="section-statics__title"
-      >Статистика по онкозаболеваниям</section-title
+    <sec-title class="section-statics__title"
+      >Статистика по онкозаболеваниям</sec-title
     >
     <div class="section-statics__stats-container">
       <div
@@ -13,17 +13,17 @@
           {{ infoStatics[index].description }}
         </p>
         <div class="section-statics__stat-illustration">
-          <progress-bar-inline
+          <prog-bar-inline
             v-if="!infoStatics[index].absValue"
             :value="infoStatics[index].value"
             :maxValue="infoStatics[index].maxValue"
-          ></progress-bar-inline>
-          <progressive-bar-column
+          ></prog-bar-inline>
+          <prog-bar-column
             v-if="infoStatics[index].absValue"
             :value="infoStatics[index].value"
             :maxValue="infoStatics[index].maxValue"
             :absValue="infoStatics[index].absValue"
-          ></progressive-bar-column>
+          ></prog-bar-column>
           <p class="section-statics__stat-numbers">
             {{ infoStatics[index].summary }}
           </p>
@@ -44,10 +44,10 @@ import ProgressiveBarColumn from '@/components/ui/ProgressiveBarColumn';
 
 export default {
   components: {
-    'section-title': Title_section,
+    'sec-title': Title_section,
     container: Container,
-    'progress-bar-inline': ProgressBarInline,
-    'progressive-bar-column': ProgressiveBarColumn,
+    'prog-bar-inline': ProgressBarInline,
+    'prog-bar-column': ProgressiveBarColumn,
   },
   computed: {
     infoStatics() {
@@ -56,7 +56,7 @@ export default {
   },
 
   beforeMount() {
-    this.$store.dispatch('storeStatics/fetchInfoStatics');
+    //this.$store.dispatch('storeStatics/fetchInfoStatics');
   },
 };
 </script>

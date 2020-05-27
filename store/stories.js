@@ -6,7 +6,7 @@ export const state = () => ({
 
 export const getters = {
   getStories(state) {
-    return state.stories.data;
+    return state.stories;
   },
 };
 
@@ -19,7 +19,7 @@ export const mutations = {
 export const actions = {
   fetchStories(state) {
     return axios.get('https://strapi.kruzhok.io/stories').then(res => {
-      return state.commit('setStories', res);
+      return state.commit('setStories', res.data);
     });
   },
 };
