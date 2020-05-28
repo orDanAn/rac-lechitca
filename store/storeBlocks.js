@@ -12,7 +12,7 @@ export const mutations = {
 
 export const actions = {
   fetchBlocks(state) {
-    return axios('https://strapi.kruzhok.io/blocks').then(res => {
+    return axios.get(`${process.env.apiUrl}blocks`).then(res => {
       return state.commit('setBlocks', res.data);
     });
   },

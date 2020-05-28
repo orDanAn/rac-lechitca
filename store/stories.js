@@ -18,7 +18,7 @@ export const mutations = {
 
 export const actions = {
   fetchStories(state) {
-    return axios.get('https://strapi.kruzhok.io/stories').then(res => {
+    return axios.get(`${process.env.apiUrl}stories`).then(res => {
       return state.commit('setStories', res.data);
     });
   },

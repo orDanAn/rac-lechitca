@@ -18,7 +18,7 @@
       <more-stories>Больше статей</more-stories>
     </section-stories>
     <section-instagram />
-    <section-you-story :title="bloks[9].title" :text="bloks[9].text" />
+    <section-you-story />
     <section-statics />
     <section-rac-lechitca />
   </div>
@@ -75,7 +75,7 @@ export default {
         );
       }
     },
-    bloks() {
+    blocks() {
       return this.$store.getters['storeBlocks/getBlocks'];
     },
     videos() {

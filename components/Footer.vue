@@ -3,14 +3,17 @@
     <container class="footer__container">
       <div class="footer__info">
         <p class="footer__text">
-          Спасибо всем, кто помог состояться этому проекту
+          {{ blocks.find(item => item.block === 'footer').title }}
         </p>
         <main-menu class="footer__menu" />
         <social-list />
       </div>
 
       <div class="footer__description">
-        <p class="footer__description-text">Рак Лечится {{ date }}</p>
+        <div class="footer__description-text">
+          <div v-html="blocks.find(item => item.block === 'footer').text"></div>
+          <span>{{ date }}</span>
+        </div>
         <p class="footer__description-text">
           Сделано студентами
           <a
@@ -43,6 +46,12 @@ export default {
     return {
       date: currenData.getFullYear(),
     };
+  },
+
+  computed: {
+    blocks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
+    },
   },
 };
 </script>

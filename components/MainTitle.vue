@@ -2,7 +2,7 @@
   <div class="container">
     <container>
       <h1 class="main-title">
-        #РАКЛЕЧИТСЯ
+        {{ blocks[0].hashtag }}
       </h1>
       <button-main-title
         class="button"
@@ -19,6 +19,11 @@ export default {
   components: {
     'button-main-title': ButtonMainTitle,
     container: Container,
+  },
+  computed: {
+    blocks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
+    },
   },
 };
 </script>
