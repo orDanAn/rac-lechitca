@@ -2,8 +2,13 @@
   <div>
     <section class="video">
       <div class="video__text-container">
-        <main-title>{{ text }}</main-title>
-        <description class="video__description">{{ info }}</description>
+        <main-title>{{
+          textFromApi.find(item => item.block === 'videos').title
+        }}</main-title>
+        <description
+          class="video__description"
+          v-html="textFromApi.find(item => item.block === 'videos').text"
+        ></description>
         <div class="video__button-container">
           <button-switch
             :position="'left'"
@@ -18,12 +23,18 @@
       <div class="video__container">
         <iframe class="video__iframe" src="" frameborder="0"></iframe>
         <p class="video__text">
-          Все видео вы можете найте на нашем
+          {{
+            textFromApi.find(item => item.block === 'videos').note.substr(0, 35)
+          }}
           <a
             href="https://www.youtube.com/results?search_query=%23%D1%8D%D1%82%D0%BE%D0%BD%D0%B5%D0%BB%D0%B5%D1%87%D0%B8%D1%82%D1%81%D1%8F"
             target="_blank"
             class="video__link"
-            >YouTube канале</a
+            >{{
+              textFromApi
+                .find(item => item.block === 'videos')
+                .note.substr(35, 14)
+            }}</a
           >.
         </p>
       </div>
@@ -41,12 +52,13 @@ export default {
     description: Info_section,
     'button-switch': ButtonSwitch,
   },
-  data() {
-    return {
-      text: 'Истории людей, победивших рак, но не свои привычки',
-      info:
-        'Есть вещи, которые не лечатся. Вещи ставшие частью нашего «я», фобии, страхи. Но это точно не рак.Рак лечится. Лучшее доказательство — люди с их историями.',
-    };
+  computed: {
+    textFromApi() {
+      return this.$store.getters['storeVideo/getText'];
+    },
+  },
+  beforeMount() {
+    this.$store.dispatch('storeVideo/fetchTextVideoFromApi');
   },
 };
 </script>
