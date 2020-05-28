@@ -18,7 +18,7 @@ export const getters = {
 
 export const actions = {
   fetchInfoStatics(state) {
-    return axios.get('https://strapi.kruzhok.io/statistics').then(res => {
+    return axios.get(`${process.env.apiUrl}statistics`).then(res => {
       return state.commit('setState', { value: res.data });
     });
   },

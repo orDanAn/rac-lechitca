@@ -54,10 +54,6 @@ export default {
       return this.$store.getters['storeStatics/getInfoStatics'];
     },
   },
-
-  beforeMount() {
-    //this.$store.dispatch('storeStatics/fetchInfoStatics');
-  },
 };
 </script>
 

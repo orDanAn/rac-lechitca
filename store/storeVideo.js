@@ -12,7 +12,7 @@ export const mutations = {
 
 export const actions = {
   fetchVideo(state) {
-    return axios.get('https://strapi.kruzhok.io/videos').then(res => {
+    return axios.get(`${process.env.apiUrl}videos`).then(res => {
       return state.commit('setVideo', res.data);
     });
   },

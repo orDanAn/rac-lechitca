@@ -38,7 +38,7 @@
         v-for="item in stories"
         :key="item.id"
         :name="item.author"
-        :text="item.text"
+        :text="item.title"
         @cardClick="goToStorie(card.id)"
       ></story-item>
     </story-container>
@@ -64,10 +64,6 @@ export default {
     stories() {
       return this.$store.getters['stories/getStories'];
     },
-  },
-
-  beforeMount() {
-    this.$store.dispatch('stories/fetchStories');
   },
 
   methods: {

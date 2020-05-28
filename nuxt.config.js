@@ -1,6 +1,10 @@
 export default {
   mode: 'universal',
 
+  env: {
+    apiUrl: process.env.API_URL || 'https://strapi.kruzhok.io/',
+  },
+
   router: {
     middleware: 'baseDate',
   },
@@ -52,7 +56,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://strapi.kruzhok.io/',
+  },
   /*
    ** Build configuration
    */
