@@ -2,38 +2,30 @@
   <section class="you-story">
     <container>
       <title-section class="you-story__title">
-        Расскажите свою историю
+        {{ blocks[9].title }}
       </title-section>
       <div class="you-story__container">
-        <info-section>
-          Мы публикуем новые истории на сайте раз в неделю. Есть 2 варианта
-          поделиться своей историей неизлечимых привычек, навязчивых идей и
-          болезненных привязанностей.
-        </info-section>
+        <info-section v-html="blocks[9].text"> </info-section>
         <div class="you-story__container_inside">
           <div class="you-story__container-link">
             <link-section
               :class="{ 'you-story__link_active': variant.variantOne }"
               @clicLink="onVariantOne"
-              >1-й вариант</link-section
+              >{{ blocks[9].extraTexts[0].title }}</link-section
             >
             <link-section
               :class="{ 'you-story__link_active': variant.variantTwo }"
               @clicLink="onVariantTwo"
-              >2-й вариант</link-section
+              >{{ blocks[9].extraTexts[1].title }}</link-section
             >
           </div>
           <div class="you-story__container_info">
             <info-section-long>
               <template v-if="variant.variantOne">
-                Заполнить подробную форму прямо на сайте и мы опубликуем вашу
-                историю после проверки. Пожалуйста, заполняйте все пункты
-                корректно, если вы испытаете какие-то сложности, воспользуйтесь
-                2-м вариантом.
+                <div v-html="blocks[9].extraTexts[0].text"></div>
               </template>
               <template v-if="variant.variantTwo">
-                Оставить контакт (почту или номер телефона) и мы свяжемся с
-                вами, зададим вопросы, уточним детали вашей истории.
+                <div v-html="blocks[9].extraTexts[1].text"></div>
               </template>
             </info-section-long>
             <button-small
@@ -72,10 +64,12 @@ export default {
     'link-section': LinkSection,
     container: Container,
   },
-
   computed: {
     variant() {
       return this.$store.getters['storeYouStory/getVariant'];
+    },
+    blocks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
     },
   },
 

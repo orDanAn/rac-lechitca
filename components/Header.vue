@@ -3,7 +3,9 @@
     <mobile-menu v-if="MobileMenuIsOpen" />
     <container class="header__container">
       <nuxt-link to="/" class="header__logo">
-        Проект Благотворительного Фонда Константина Хабенского
+
+        {{ blocks.find(item => item.block === 'header').title }}
+        
       </nuxt-link>
       <div class="header__block-menu">
         <main-menu
@@ -39,6 +41,9 @@ export default {
   computed: {
     MobileMenuIsOpen() {
       return this.$store.getters['mobile-menu/getMenuState'];
+    },
+    blocks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
     },
   },
 };
