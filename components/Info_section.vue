@@ -1,7 +1,5 @@
 <template>
-  <div class="conteiner-info">
-    <p class="info_section"><slot>текст параграфа</slot></p>
-  </div>
+  <div class="info_section"><slot>текст параграфа</slot></div>
 </template>
 
 <script>
@@ -9,11 +7,8 @@ export default {};
 </script>
 
 <style scoped>
-.conteiner-info {
-  color: #666;
-}
-
 .info_section {
+  color: #666;
   width: 340px;
   font-style: normal;
   font-weight: normal;
