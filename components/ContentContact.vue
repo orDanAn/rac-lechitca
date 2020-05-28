@@ -12,18 +12,18 @@
         Как вас зовут?
       </p>
       <input-popup
-        class="content-contact__input_maxi"
+        class="content-contact__input-maxi"
         name="name"
         v-model="name"
         value="name"
       />
       <div class="content-contact__container-form">
         <div>
-          <p class="content-contact__input_mini">
+          <p class="content-contact__input-mini">
             Электронная почта
           </p>
           <input-popup
-            class="content-contact__input_mini"
+            class="content-contact__input-mini"
             name="email"
             v-model="email"
             value="email"
@@ -32,11 +32,11 @@
           />
         </div>
         <div>
-          <p class="content-contact__input_mini">
+          <p class="content-contact__input-mini">
             Телефон
           </p>
           <input-popup
-            class="content-contact__input_mini "
+            class="content-contact__input-mini "
             name="tel"
             v-model="tel"
             value="tel"
@@ -49,7 +49,7 @@
         Напишите, если есть предпочтительный способ связи и удобное время
       </p>
       <input-popup
-        class="content-contact__input_maxi"
+        class="content-contact__input-maxi"
         name="coment"
         v-model="coment"
         value="coment"
@@ -101,8 +101,9 @@ form {
 .content-contact {
   width: 920px;
   min-height: 730px;
-  background-color: #ffffff;
+  background-color: #fff;
   position: relative;
+  margin: auto;
 }
 
 .content-contact__title {
@@ -115,7 +116,7 @@ form {
   display: flex;
 }
 
-.content-contact__input_mini {
+.content-contact__input-mini {
   width: 400px;
   margin-top: 40px;
   margin-left: 40px;
@@ -126,7 +127,7 @@ form {
   line-height: 24px;
 }
 
-.content-contact__input_maxi {
+.content-contact__input-maxi {
   margin-top: 40px;
   width: 840px;
 }
@@ -180,10 +181,10 @@ form {
     line-height: 22px;
     width: 720px;
   }
-  .content-contact__input_mini {
+  .content-contact__input-mini {
     width: 343px;
   }
-  .content-contact__input_maxi {
+  .content-contact__input-maxi {
     width: 720px;
   }
 }
@@ -202,12 +203,12 @@ form {
     line-height: 22px;
     width: 720px;
   }
-  .content-contact__input_mini {
+  .content-contact__input-mini {
     width: 343px;
     font-size: 16px;
     line-height: 22px;
   }
-  .content-contact__input_maxi {
+  .content-contact__input-maxi {
     width: 720px;
     font-size: 16px;
     line-height: 22px;
@@ -228,12 +229,12 @@ form {
     font-size: 15px;
     line-height: 19px;
   }
-  .content-contact__input_maxi {
+  .content-contact__input-maxi {
     width: 500px;
     font-size: 15px;
     line-height: 19px;
   }
-  .content-contact__input_mini {
+  .content-contact__input-mini {
     width: 230px;
     font-size: 15px;
     line-height: 19px;
@@ -270,14 +271,14 @@ form {
     margin-top: 30px;
     margin-left: 15px;
   }
-  .content-contact__input_mini {
+  .content-contact__input-mini {
     width: 260px;
     font-size: 13px;
     line-height: 16px;
     margin-top: 30px;
     margin-left: 15px;
   }
-  .content-contact__input_maxi {
+  .content-contact__input-maxi {
     width: 260px;
     font-size: 13px;
     line-height: 16px;
