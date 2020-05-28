@@ -2,13 +2,21 @@
   <div class="stories-rectangle">
     <h2 class="stories-rectangle__text">
       <slot>текст заголовка</slot>
-      <span class="stories-rectangle__tag">#ЭТОНЕЛЕЧИТСЯ</span>
+      <span class="stories-rectangle__tag">{{
+        banner.find(item => item.block === 'note-1').hashtag
+      }}</span>
     </h2>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    banner() {
+      return this.$store.getters['storeBlocks/getBlocks'];
+    },
+  },
+};
 </script>
 
 <style scoped>

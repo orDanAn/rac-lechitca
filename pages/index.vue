@@ -3,7 +3,7 @@
     <main-title @btnMainTaitle="scroll" />
     <section-video ref="nextSection" />
     <section-stories>
-      <baner>И В ОТЛИЧИЕ ОТ РАКА</baner>
+      <baner>{{ blocks.find(item => item.block === 'note-1').title }}</baner>
       <section-subtitle class="stories__subtitle"
         >Истории неизлечимых привычек</section-subtitle
       >
@@ -13,6 +13,7 @@
           :key="item.id"
           :name="item.author"
           :text="item.title"
+          :link="`${apiUrl}${item.ImageUrl[0].url}`"
         ></story-item>
       </story-container>
       <more-stories>Больше статей</more-stories>
@@ -59,6 +60,11 @@ export default {
       this.$refs.nextSection.$el.scrollIntoView({
         behavior: 'smooth',
       });
+    },
+    data() {
+      return {
+        apiUrl: process.env.apiUrl,
+      };
     },
   },
 

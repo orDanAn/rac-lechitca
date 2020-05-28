@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/stories/1">
     <div class="story-item">
-      <story-image />
+      <story-image :src="link" />
       <p class="story-item__name">{{ name }}</p>
       <p class="story-item__text" v-html="text"></p>
     </div>
@@ -14,7 +14,7 @@ export default {
   components: {
     'story-image': StoryImage,
   },
-  props: ['name', 'text'],
+  props: ['name', 'text', 'link'],
 };
 </script>
 
