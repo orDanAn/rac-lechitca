@@ -3,9 +3,7 @@
     <div class="story-item">
       <story-image />
       <p class="story-item__name">{{ name }}</p>
-      <p class="story-item__text">
-        {{ text }}
-      </p>
+      <p class="story-item__text" v-html="text"></p>
     </div>
   </nuxt-link>
 </template>

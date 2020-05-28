@@ -11,8 +11,8 @@
         <story-item
           v-for="item in stories"
           :key="item.id"
-          :name="item.name"
-          :text="item.text"
+          :name="item.author"
+          :text="item.title"
         ></story-item>
       </story-container>
       <more-stories>Больше статей</more-stories>
@@ -56,7 +56,6 @@ export default {
 
   methods: {
     scroll() {
-      console.log(this.$refs.nextSection.$el);
       this.$refs.nextSection.$el.scrollIntoView({
         behavior: 'smooth',
       });
@@ -65,19 +64,27 @@ export default {
 
   computed: {
     stories() {
-      return this.$store.getters['stories/getStories'];
+      return this.$store.getters['stories/getStories'].filter(
+        item => item.id <= 9
+      );
+    },
+    blocks() {
+      return this.$store.getters['storeBlocks/getBlocks'];
+    },
+    videos() {
+      return this.$store.getters['storeVideo/getVideo'];
     },
   },
 
-  data() {
-    return {
-      popupShow: false,
-      title: 'Шаг 2 из 12',
-      question: 'Было ли у вас онкологическое заболевание?',
-      explanation:
-        ' Если да – расскажите, пожалуйста, кратко, какой диагноз и текущий статус. Если нет — приглашаем Вас поделиться своей историей неизлечимых привычек в Инстаграм с хештегами #раклечится и #этонелечится.',
-    };
-  },
+  //beforeMount() {
+  // this.$store.dispatch('storeBlocks/fetchBlocks')
+  // this.$store.dispatch('stories/fetchStories')
+  //},
+
+  //async fetch({store}) {
+  //await store.dispatch('stories/fetchStories')
+  //await store.dispatch('storeBlocks/fetchBlocks')
+  //}
 };
 </script>
 

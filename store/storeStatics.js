@@ -1,12 +1,26 @@
+import axios from 'axios';
+
 export const state = () => ({
-  infoStatics: INFOSTATIC,
+  infoStatics: [],
 });
 
-export const mutations = {};
+export const mutations = {
+  setState(state, { value }) {
+    return (state.infoStatics = value);
+  },
+};
 
 export const getters = {
   getInfoStatics(state) {
     return state.infoStatics;
+  },
+};
+
+export const actions = {
+  fetchInfoStatics(state) {
+    return axios.get(`${process.env.apiUrl}statistics`).then(res => {
+      return state.commit('setState', { value: res.data });
+    });
   },
 };
 

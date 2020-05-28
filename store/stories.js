@@ -1,54 +1,25 @@
+import axios from 'axios';
+
 export const state = () => ({
-  stories: [
-    {
-      id: 1,
-      name: 'Владимир Тен',
-      text:
-        'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-    },
-    {
-      id: 2,
-      name: 'Владимир Познер',
-      text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-    },
-    {
-      id: 3,
-      name: 'Владимир Тен',
-      text:
-        'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-    },
-    {
-      id: 4,
-      name: 'Владимир Познер1',
-      text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-    },
-    {
-      id: 5,
-      name: 'Владимир Тен',
-      text:
-        'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-    },
-    {
-      id: 6,
-      name: 'Владимир Познер',
-      text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-    },
-    {
-      id: 7,
-      name: 'Владимир Тен',
-      text:
-        'Я всегда читаю книги с конца, - и это не лечится, в отличие от рака.',
-    },
-    {
-      id: 8,
-      name: 'Владимир Познер2',
-      text: 'Я боюсь акул — и, в отличии от рака, это не лечится.',
-    },
-  ],
+  stories: [],
 });
 
 export const getters = {
   getStories(state) {
     return state.stories;
+  },
+};
+
+export const mutations = {
+  setStories(state, value) {
+    return (state.stories = value);
+  },
+};
+
+export const actions = {
+  fetchStories(state) {
+    return axios.get(`${process.env.apiUrl}stories`).then(res => {
+      return state.commit('setStories', res.data);
+    });
   },
 };
