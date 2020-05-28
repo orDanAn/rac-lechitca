@@ -64,9 +64,16 @@ export default {
 
   computed: {
     stories() {
-      return this.$store.getters['stories/getStories'].filter(
-        item => item.id <= 9
-      );
+      if (process.browser) {
+        if (window.innerWidth <= 950 && window.innerWidth > 768) {
+          return this.$store.getters['stories/getStories'].filter(
+            item => item.id < 8
+          );
+        }
+        return this.$store.getters['stories/getStories'].filter(
+          item => item.id <= 9
+        );
+      }
     },
     bloks() {
       return this.$store.getters['storeBlocks/getBlocks'];
@@ -111,6 +118,7 @@ export default {
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 46px;
+    text-align: center;
   }
 }
 
@@ -126,7 +134,7 @@ export default {
 @media screen and (max-width: 768px) {
   .stories__subtitle {
     width: 380px;
-    margin: 0;
+    margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 60px;
   }
@@ -135,6 +143,8 @@ export default {
 @media screen and (max-width: 600px) {
   .stories__subtitle {
     width: 380px;
+    margin: 0;
+    text-align: left;
     margin-top: 50px;
     margin-bottom: 40px;
   }
