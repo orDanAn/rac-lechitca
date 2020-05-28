@@ -54,11 +54,8 @@ export default {
   },
   computed: {
     textFromApi() {
-      return this.$store.getters['storeVideo/getText'];
+      return this.$store.getters['storeBlocks/getBlocks'];
     },
-  },
-  beforeMount() {
-    this.$store.dispatch('storeVideo/fetchTextVideoFromApi');
   },
 };
 </script>
