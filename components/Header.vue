@@ -3,7 +3,9 @@
     <mobile-menu v-if="MobileMenuIsOpen" />
     <container class="header__container">
       <nuxt-link to="/" class="header__logo">
+
         {{ blocks.find(item => item.block === 'header').title }}
+        
       </nuxt-link>
       <div class="header__block-menu">
         <main-menu
