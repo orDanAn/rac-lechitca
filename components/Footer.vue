@@ -12,10 +12,10 @@
       <div class="footer__description">
         <div class="footer__description-text">
           <div v-html="blocks.find(item => item.block === 'footer').text"></div>
-          <span>{{ date }}</span>
+          <span>&nbsp;{{ date }}</span>
         </div>
         <p class="footer__description-text">
-          Сделано студентами
+          Сделано студентами&nbsp;
           <a
             class="footer__description-link"
             href="https://praktikum.yandex.ru/"
@@ -90,6 +90,7 @@ export default {
   font-size: 18px;
   line-height: 18px;
   color: #898989;
+  display: flex;
 }
 .footer__description-link {
   font-style: normal;
@@ -171,9 +172,6 @@ export default {
     display: block;
   }
   .footer__description-text {
-    margin-top: 10px;
-  }
-  .footer__description-link {
     margin-top: 10px;
   }
 }

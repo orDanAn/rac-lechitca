@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="video">
+    <!-- <section class="video">
       <div class="video__text-container">
         <main-title>{{
           textFromApi.find(item => item.block === 'videos').title
@@ -38,7 +38,7 @@
           >.
         </p>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
