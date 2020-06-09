@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/stories/1">
     <div class="story-item">
-      <story-image />
+      <story-image :src="link" />
       <p class="story-item__name">{{ name }}</p>
       <p class="story-item__text" v-html="text"></p>
     </div>
@@ -14,7 +14,7 @@ export default {
   components: {
     'story-image': StoryImage,
   },
-  props: ['name', 'text'],
+  props: ['name', 'text', 'link'],
 };
 </script>
 
@@ -44,11 +44,11 @@ a {
 
 @media screen and (max-width: 1350px) {
   .story-item {
-    width: 256px;
+    width: 265px;
   }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
   .story-item {
     width: 225px;
   }
@@ -72,6 +72,12 @@ a {
     line-height: 16px;
     color: #666666;
     max-width: 190px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .story-item {
+    width: 250px;
   }
 }
 

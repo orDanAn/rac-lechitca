@@ -11,8 +11,8 @@
       <story-item
         v-for="item in storyRender"
         :key="item.id"
-        :name="item.name"
-        :text="item.text"
+        :name="item.author"
+        :text="item.title"
       ></story-item>
     </story-container>
     <pagination
@@ -49,21 +49,35 @@ export default {
   computed: {
     storyRender() {
       const { stories } = this.$store.state;
-      return stories.stories.filter(
-        (item, index) =>
-          index >= this.startIndex &&
-          index <= this.startIndex + this.ItemsPerPage - 1
-      );
+      if (process.browser) {
+        if (window.innerWidth <= 950 && window.innerWidth > 768) {
+          this.ItemsPerPage = 12;
+          return stories.stories.filter(
+            (item, index) =>
+              index >= this.startIndex &&
+              index <= this.startIndex + this.ItemsPerPage - 1
+          );
+        }
+        return stories.stories.filter(
+          (item, index) =>
+            index >= this.startIndex &&
+            index <= this.startIndex + this.ItemsPerPage - 1
+        );
+      }
     },
   },
   methods: {
     changeStartIndex(item) {
       this.startIndex = (item - 1) * this.ItemsPerPage;
     },
+    previousPage() {
+      this.startIndex = (this.startIndex - 1) * thix.ItemsPerPage;
+      console.log(startIndex);
+    },
   },
   data() {
     return {
-      ItemsPerPage: 4,
+      ItemsPerPage: 16,
       startIndex: 0,
     };
   },
@@ -86,7 +100,6 @@ a {
   cursor: pointer;
   color: black;
   text-decoration: none;
-  margin-left: 15px;
 }
 
 .section-container {
@@ -116,7 +129,7 @@ a {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .button-search {
-    width: 208px;
+    width: 226px;
     height: 48px;
   }
 }

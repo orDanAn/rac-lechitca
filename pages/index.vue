@@ -3,7 +3,7 @@
     <main-title @btnMainTaitle="scroll" />
     <section-video ref="nextSection" />
     <section-stories>
-      <baner>И В ОТЛИЧИЕ ОТ РАКА</baner>
+      <baner>{{ blocks.find(item => item.block === 'note-1').title }}</baner>
       <section-subtitle class="stories__subtitle"
         >Истории неизлечимых привычек</section-subtitle
       >
@@ -13,6 +13,7 @@
           :key="item.id"
           :name="item.author"
           :text="item.title"
+          :link="`${apiUrl}${item.ImageUrl[0].url}`"
         ></story-item>
       </story-container>
       <more-stories>Больше статей</more-stories>
@@ -60,13 +61,25 @@ export default {
         behavior: 'smooth',
       });
     },
+    data() {
+      return {
+        apiUrl: process.env.apiUrl,
+      };
+    },
   },
 
   computed: {
     stories() {
-      return this.$store.getters['stories/getStories'].filter(
-        item => item.id <= 9
-      );
+      if (process.browser) {
+        if (window.innerWidth <= 950 && window.innerWidth > 768) {
+          return this.$store.getters['stories/getStories'].filter(
+            item => item.id < 8
+          );
+        }
+        return this.$store.getters['stories/getStories'].filter(
+          item => item.id <= 9
+        );
+      }
     },
     blocks() {
       return this.$store.getters['storeBlocks/getBlocks'];
@@ -111,6 +124,7 @@ export default {
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 46px;
+    text-align: center;
   }
 }
 
@@ -126,7 +140,7 @@ export default {
 @media screen and (max-width: 768px) {
   .stories__subtitle {
     width: 380px;
-    margin: 0;
+    margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 60px;
   }
@@ -135,6 +149,8 @@ export default {
 @media screen and (max-width: 600px) {
   .stories__subtitle {
     width: 380px;
+    margin: 0;
+    text-align: left;
     margin-top: 50px;
     margin-bottom: 40px;
   }

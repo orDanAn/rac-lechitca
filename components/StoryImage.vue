@@ -1,11 +1,13 @@
 <template>
   <div>
-    <img src="../static/Image.png" alt="" class="story-item__image" />
+    <img :src="link" alt="" class="story-item__image" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['link'],
+};
 </script>
 
 <style scoped>
